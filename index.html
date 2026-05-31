@@ -13,29 +13,32 @@
 <body>
     <!-- 首頁 Hero -->
     <header class="hero">
-        <div class="hero-decoration">◆ ◇ ◆</div>
-        <h1>神明籤詩塔羅</h1>
-        <p class="subtitle">傳承千年智慧 · 指引人生方向</p>
-        <p class="hint">請先靜心凝神，連續擲出三次聖筊，方可啟動求籤與塔羅占卜</p>
-        
-        <!-- 進度條 -->
-        <div class="progress-container">
-            <div class="progress-fill" id="progress-fill"></div>
-            <span class="progress-text" id="progress-text">0/3 聖筊</span>
+        <div class="hero-inner">
+            <div class="hero-decoration">◆ ◇ ◆</div>
+            <h1>神明籤詩塔羅</h1>
+            <p class="subtitle">傳承千年智慧 · 指引人生方向</p>
+            <p class="hint">請先靜心凝神，連續擲出三次聖筊，方可啟動求籤與塔羅占卜</p>
+            
+            <!-- 進度條 -->
+            <div class="progress-container">
+                <div class="progress-fill" id="progress-fill"></div>
+                <span class="progress-text" id="progress-text">0/3 聖筊</span>
+            </div>
+            
+            <button id="btn-reset" class="btn-reset">重新淨心</button>
         </div>
-        
-        <button id="btn-reset" class="btn" style="background: transparent; font-size: 0.85rem; padding: 8px 20px; border: 1px solid var(--gold-primary);">重新淨心</button>
     </header>
 
     <main class="container">
         <!-- 三聖筊啟動區 -->
-        <section id="locked-section" class="cup-section">
-            <h2>擲筊啟動</h2>
-            <p>點擊下方按鈕擲筊，連續擲出三次聖筊即可解鎖所有功能。</p>
+        <section id="locked-section" class="card card-cup">
+            <div class="card-header">
+                <h2>擲筊啟動</h2>
+                <p>點擊下方按鈕擲筊，連續擲出三次聖筊即可解鎖所有功能</p>
+            </div>
             
             <div class="cup-stage">
                 <div class="cup-pair">
-                    <!-- 左筊杯 -->
                     <div class="jiao-wrapper" id="cup-left-wrapper">
                         <div class="jiao-inner">
                             <div class="jiao-side jiao-front">
@@ -46,8 +49,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- 右筊杯 -->
                     <div class="jiao-wrapper" id="cup-right-wrapper">
                         <div class="jiao-inner">
                             <div class="jiao-side jiao-front">
@@ -61,22 +62,22 @@
                 </div>
             </div>
             
-            <button id="btn-throw-cup" class="btn btn-throw">擲筊</button>
+            <button id="btn-throw-cup" class="btn btn-primary btn-large">擲筊</button>
             
             <div id="cup-result"></div>
             
             <div class="cup-instructions">
                 <div class="instruction-item">
                     <span class="dot holy"></span>
-                    <span><strong>聖筊</strong>：一陰一陽，神明允許</span>
+                    <span><strong>聖筊</strong>：一陰一陽</span>
                 </div>
                 <div class="instruction-item">
                     <span class="dot laugh"></span>
-                    <span><strong>笑筊</strong>：兩面皆陽，神明一笑</span>
+                    <span><strong>笑筊</strong>：兩面皆陽</span>
                 </div>
                 <div class="instruction-item">
                     <span class="dot yin"></span>
-                    <span><strong>陰筊</strong>：兩面皆陰，神明否定</span>
+                    <span><strong>蓋筊</strong>：兩面皆陰</span>
                 </div>
             </div>
         </section>
@@ -84,14 +85,38 @@
         <!-- 已解鎖區域 -->
         <div id="unlocked-section" class="hidden">
             <!-- 求籤區 -->
-            <section class="section">
-                <h2>求籤問事</h2>
+            <section class="card card-fortune">
+                <div class="card-header">
+                    <div class="card-icon">🏯</div>
+                    <h2>求籤問事</h2>
+                    <p>誠心祈求，神明指引</p>
+                </div>
                 
-                <div class="form-group">
-                    <label for="fortune-system">選擇籤詩系統</label>
-                    <select id="fortune-system">
-                        <!-- 動態載入 -->
-                    </select>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fortune-system">選擇籤詩系統</label>
+                        <select id="fortune-system">
+                            <!-- 動態載入 -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fortune-category">問事分類</label>
+                        <select id="fortune-category">
+                            <option value="總論">總論</option>
+                            <option value="事業">事業</option>
+                            <option value="求財">求財</option>
+                            <option value="感情">感情</option>
+                            <option value="婚姻">婚姻</option>
+                            <option value="健康">健康</option>
+                            <option value="家宅">家宅</option>
+                            <option value="考試">考試</option>
+                            <option value="官司">官司</option>
+                            <option value="出行">出行</option>
+                            <option value="失物">失物</option>
+                            <option value="人際">人際</option>
+                            <option value="修心建議">修心建議</option>
+                        </select>
+                    </div>
                 </div>
                 
                 <div class="form-group">
@@ -99,28 +124,10 @@
                     <input type="text" id="fortune-question" placeholder="請輸入您想問的問題...">
                 </div>
                 
-                <div class="form-group">
-                    <label for="fortune-category">問事分類</label>
-                    <select id="fortune-category">
-                        <option value="總論">總論</option>
-                        <option value="事業">事業</option>
-                        <option value="求財">求財</option>
-                        <option value="感情">感情</option>
-                        <option value="婚姻">婚姻</option>
-                        <option value="健康">健康</option>
-                        <option value="家宅">家宅</option>
-                        <option value="考試">考試</option>
-                        <option value="官司">官司</option>
-                        <option value="出行">出行</option>
-                        <option value="失物">失物</option>
-                        <option value="人際">人際</option>
-                        <option value="修心建議">修心建議</option>
-                    </select>
+                <div class="text-center">
+                    <button id="btn-draw-fortune" class="btn btn-primary btn-large">誠心求籤</button>
                 </div>
                 
-                <button id="btn-draw-fortune" class="btn">求籤</button>
-                
-                <!-- 籤詩結果 -->
                 <div class="canvas-container">
                     <canvas id="fortune-canvas" width="800" height="1000" class="fortune-canvas"></canvas>
                 </div>
@@ -129,165 +136,74 @@
             </section>
 
             <!-- 塔羅占卜區 -->
-            <section class="section tarot-section">
-                <h2>塔羅占卜</h2>
-                
-                <div class="form-group">
-                    <label for="tarot-spread">選擇牌陣</label>
-                    <select id="tarot-spread">
-                        <!-- 動態載入 -->
-                    </select>
+            <section class="card card-tarot">
+                <div class="card-header">
+                    <div class="card-icon">🔮</div>
+                    <h2>塔羅占卜</h2>
+                    <p>探索內心，指引方向</p>
                 </div>
                 
-                <div class="form-group">
-                    <label for="tarot-question">您的問題（選填）</label>
-                    <input type="text" id="tarot-question" placeholder="請輸入您想問的問題...">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tarot-spread">選擇牌陣</label>
+                        <select id="tarot-spread">
+                            <!-- 動態載入 -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tarot-question">您的問題（選填）</label>
+                        <input type="text" id="tarot-question" placeholder="請輸入您想問的問題...">
+                    </div>
                 </div>
                 
-                <button id="btn-draw-tarot" class="btn" style="background: var(--tarot-purple);">抽牌</button>
+                <div class="text-center">
+                    <button id="btn-draw-tarot" class="btn btn-tarot btn-large">抽牌占卜</button>
+                </div>
                 
-                <!-- 塔羅結果 -->
                 <div id="tarot-canvas-container" class="canvas-container"></div>
-                
                 <div id="tarot-result"></div>
             </section>
 
             <!-- 資料總表區 -->
-            <section class="section">
-                <h2>資料總表</h2>
+            <section class="card card-data">
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <h2>資料總表</h2>
+                    <p>完整籤詩系統與塔羅牌資料</p>
+                </div>
                 
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>類型</th>
-                            <th>體系</th>
-                            <th>張數</th>
-                            <th>繁中</th>
-                            <th>解釋</th>
-                            <th>Canvas</th>
-                            <th>狀態</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>籤詩</td>
-                            <td>觀音一百籤</td>
-                            <td>100</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>完成</td>
-                        </tr>
-                        <tr>
-                            <td>籤詩</td>
-                            <td>關聖帝君一百籤</td>
-                            <td>100</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>完成</td>
-                        </tr>
-                        <tr>
-                            <td>籤詩</td>
-                            <td>六十甲子籤</td>
-                            <td>60</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>完成</td>
-                        </tr>
-                        <tr>
-                            <td>籤詩</td>
-                            <td>護國嘉濟江東王靈籤</td>
-                            <td>100</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>完成</td>
-                        </tr>
-                        <tr>
-                            <td>籤詩</td>
-                            <td>四聖真君靈籤</td>
-                            <td>49</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>完成</td>
-                        </tr>
-                        <tr>
-                            <td>籤詩</td>
-                            <td>扶天廣聖如意靈籤</td>
-                            <td>120</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>完成</td>
-                        </tr>
-                        <tr>
-                            <td>籤詩</td>
-                            <td>註生娘娘靈籤</td>
-                            <td>99</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>完成</td>
-                        </tr>
-                        <tr>
-                            <td>塔羅</td>
-                            <td>偉特塔羅 78 張</td>
-                            <td>78</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>完成</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="systems-list">
-                    <div class="system-card">
-                        <h4>觀音一百籤</h4>
-                        <p>觀世音菩薩靈籤，共100首，涵蓋人生各方面指引。</p>
-                    </div>
-                    <div class="system-card">
-                        <h4>關聖帝君一百籤</h4>
-                        <p>關聖帝君靈籤，共100首，以義氣與正義為核心。</p>
-                    </div>
-                    <div class="system-card">
-                        <h4>六十甲子籤</h4>
-                        <p>傳統六十甲子籤詩系統，共60首，廣泛應用於各廟宇。</p>
-                    </div>
-                    <div class="system-card">
-                        <h4>護國嘉濟江東王靈籤</h4>
-                        <p>江東王靈籤，共100首，源自正統道藏，公有領域資料。</p>
-                    </div>
-                    <div class="system-card">
-                        <h4>四聖真君靈籤</h4>
-                        <p>四聖真君靈籤，共49首，道教傳統籤詩。</p>
-                    </div>
-                    <div class="system-card">
-                        <h4>扶天廣聖如意靈籤</h4>
-                        <p>扶天廣聖如意靈籤，共120首，道教廟宇常用。</p>
-                    </div>
-                    <div class="system-card">
-                        <h4>註生娘娘靈籤</h4>
-                        <p>註生娘娘靈籤，共99首，常用於求子、生育相關問題。</p>
-                    </div>
-                    <div class="system-card">
-                        <h4>偉特塔羅 78 張</h4>
-                        <p>完整78張偉特塔羅牌，包含22張大阿爾克那與56張小阿爾克那。</p>
-                    </div>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>體系</th>
+                                <th>張數</th>
+                                <th>狀態</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>觀音一百籤</td><td>100</td><td><span class="badge badge-success">完成</span></td></tr>
+                            <tr><td>關聖帝君一百籤</td><td>100</td><td><span class="badge badge-success">完成</span></td></tr>
+                            <tr><td>六十甲子籤</td><td>60</td><td><span class="badge badge-success">完成</span></td></tr>
+                            <tr><td>護國嘉濟江東王靈籤</td><td>100</td><td><span class="badge badge-success">完成</span></td></tr>
+                            <tr><td>四聖真君靈籤</td><td>49</td><td><span class="badge badge-success">完成</span></td></tr>
+                            <tr><td>扶天廣聖如意靈籤</td><td>120</td><td><span class="badge badge-success">完成</span></td></tr>
+                            <tr><td>註生娘娘靈籤</td><td>99</td><td><span class="badge badge-success">完成</span></td></tr>
+                            <tr><td>偉特塔羅</td><td>78</td><td><span class="badge badge-success">完成</span></td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </div>
     </main>
 
     <!-- 頁腳 -->
-    <footer style="text-align: center; padding: 30px; background: var(--ink-dark); color: var(--bg-primary);">
-        <p>台灣籤詩 + 塔羅占卜系統</p>
-        <p style="font-size: 0.85rem; margin-top: 10px; color: var(--gray-warm);">
-            占卜結果僅供參考，不代表絕對結果。重大決定請審慎評估。
-        </p>
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-title">神明籤詩塔羅</p>
+            <p class="footer-desc">占卜結果僅供參考，不代表絕對結果。重大決定請審慎評估。</p>
+            <p class="footer-copy">© 2026 當麻實驗室</p>
+        </div>
     </footer>
 
     <!-- JavaScript -->
@@ -306,29 +222,20 @@
     <script src="assets/js/tarot-canvas.js"></script>
     <script src="assets/js/ui-renderer.js"></script>
     <script>
-        // 初始化應用程式
         async function initApp() {
             console.log('=== Initializing app ===');
-            
             try {
-                // 初始化引擎
                 console.log('1. Loading fortune systems...');
                 await FortuneEngine.init();
-                const fortuneCount = FortuneEngine.getSystems()?.length || 0;
-                console.log('   Fortune systems loaded:', fortuneCount);
+                console.log('   Fortune systems loaded:', FortuneEngine.getSystems()?.length || 0);
                 
                 console.log('2. Loading tarot data...');
                 await TarotEngine.init();
-                const tarotCount = TarotEngine.cards?.length || 0;
-                const spreadCount = TarotEngine.getSpreads()?.length || 0;
-                console.log('   Tarot cards loaded:', tarotCount);
-                console.log('   Tarot spreads loaded:', spreadCount);
+                console.log('   Tarot cards loaded:', TarotEngine.cards?.length || 0);
                 
-                // 初始化 UI
                 console.log('3. Initializing UI...');
                 UIRenderer.init();
                 
-                // 強制更新選單
                 console.log('4. Force updating selects...');
                 UIRenderer.updateFortuneSystemSelect();
                 UIRenderer.updateTarotSpreadSelect();
@@ -339,8 +246,6 @@
                 alert('初始化失敗，請重新整理頁面。錯誤: ' + e.message);
             }
         }
-        
-        // 頁面載入完成後初始化
         document.addEventListener('DOMContentLoaded', initApp);
     </script>
 </body>
