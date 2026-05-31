@@ -174,8 +174,8 @@ body {
 
 /* 筊杯容器 */
 .jiao-wrapper {
-    width: 120px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     position: relative;
     transform-style: preserve-3d;
     cursor: pointer;
@@ -203,15 +203,16 @@ body {
     transform: rotateY(180deg);
 }
 
-.jiao-emoji {
-    font-size: 100px;
-    line-height: 1;
-    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+.jiao-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
     transition: transform 0.3s ease;
 }
 
-.jiao-wrapper:hover .jiao-emoji {
-    transform: scale(1.1) translateY(-5px);
+.jiao-wrapper:hover .jiao-img {
+    transform: scale(1.08) translateY(-3px);
 }
 
 /* 翻轉動畫 */
