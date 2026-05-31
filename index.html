@@ -37,43 +37,64 @@
                     <div class="jiao-wrapper" id="cup-left-wrapper">
                         <div class="jiao-inner">
                             <div class="jiao-side jiao-front">
-                                <svg viewBox="0 0 100 160" class="jiao-svg">
-                                    <!-- 筊杯正面（平面）- 紅色 -->
+                                <svg viewBox="0 0 120 180" class="jiao-svg">
                                     <defs>
-                                        <linearGradient id="redGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#e53935"/>
-                                            <stop offset="50%" style="stop-color:#c62828"/>
-                                            <stop offset="100%" style="stop-color:#8b0000"/>
+                                        <linearGradient id="jiaoBodyL" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#e53935"/>
+                                            <stop offset="30%" stop-color="#c62828"/>
+                                            <stop offset="70%" stop-color="#b71c1c"/>
+                                            <stop offset="100%" stop-color="#8b0000"/>
                                         </linearGradient>
+                                        <linearGradient id="jiaoHighlightL" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
+                                            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                                        </linearGradient>
+                                        <linearGradient id="jiaoShadowL" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
+                                            <stop offset="100%" stop-color="rgba(0,0,0,0.3)"/>
+                                        </linearGradient>
+                                        <filter id="jiaoBlurL">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+                                        </filter>
                                     </defs>
-                                    <!-- 杯身 -->
-                                    <path d="M50 10 C20 10, 10 40, 10 80 C10 120, 25 150, 50 150 C75 150, 90 120, 90 80 C90 40, 80 10, 50 10Z" fill="url(#redGrad1)" stroke="#8b0000" stroke-width="2"/>
-                                    <!-- 中線（金黃色） -->
-                                    <line x1="50" y1="30" x2="50" y2="130" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
+                                    <!-- 筊杯主體（半月形，平面朝上） -->
+                                    <path d="M60 15 Q20 15, 15 50 Q10 85, 20 110 Q30 135, 45 150 Q55 160, 60 165 Q65 160, 75 150 Q90 135, 100 110 Q110 85, 105 50 Q100 15, 60 15Z" fill="url(#jiaoBodyL)" stroke="#6b0000" stroke-width="1.5"/>
+                                    <!-- 高光 -->
+                                    <path d="M60 20 Q30 20, 25 50 Q20 80, 30 100 Q35 110, 45 120 Q50 125, 55 130 Q58 125, 60 120 Q55 100, 50 80 Q45 60, 50 40 Q55 25, 60 20Z" fill="url(#jiaoHighlightL)" opacity="0.6"/>
+                                    <!-- 中線 -->
+                                    <line x1="60" y1="25" x2="60" y2="155" stroke="#ffd700" stroke-width="2.5" stroke-dasharray="4,3" opacity="0.8"/>
                                     <!-- 陽字 -->
-                                    <text x="50" y="75" text-anchor="middle" fill="#ffd700" font-size="28" font-weight="bold" font-family="serif">陽</text>
+                                    <text x="60" y="95" text-anchor="middle" fill="#ffd700" font-size="32" font-weight="bold" font-family="KaiTi, serif" filter="url(#jiaoBlurL)">陽</text>
+                                    <text x="60" y="95" text-anchor="middle" fill="#ffd700" font-size="32" font-weight="bold" font-family="KaiTi, serif">陽</text>
+                                    <!-- 底部陰影 -->
+                                    <ellipse cx="60" cy="168" rx="30" ry="5" fill="rgba(0,0,0,0.2)" filter="url(#jiaoBlurL)"/>
                                 </svg>
                             </div>
                             <div class="jiao-side jiao-back">
-                                <svg viewBox="0 0 100 160" class="jiao-svg">
-                                    <!-- 筊杯背面（凸面）- 深紅色 -->
+                                <svg viewBox="0 0 120 180" class="jiao-svg">
                                     <defs>
-                                        <linearGradient id="redGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#b71c1c"/>
-                                            <stop offset="50%" style="stop-color:#7f0000"/>
-                                            <stop offset="100%" style="stop-color:#4a0000"/>
+                                        <linearGradient id="jiaoBodyBL" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#d32f2f"/>
+                                            <stop offset="40%" stop-color="#b71c1c"/>
+                                            <stop offset="100%" stop-color="#7f0000"/>
                                         </linearGradient>
-                                        <radialGradient id="shine" cx="50%" cy="40%" r="50%">
-                                            <stop offset="0%" style="stop-color:rgba(255,255,255,0.25)"/>
-                                            <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+                                        <radialGradient id="jiaoBumpL" cx="50%" cy="45%" r="40%">
+                                            <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
+                                            <stop offset="60%" stop-color="rgba(255,255,255,0.1)"/>
+                                            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
                                         </radialGradient>
                                     </defs>
-                                    <!-- 杯身（凸起） -->
-                                    <path d="M50 5 C15 5, 5 45, 5 85 C5 125, 20 155, 50 155 C80 155, 95 125, 95 85 C95 45, 85 5, 50 5Z" fill="url(#redGrad2)" stroke="#4a0000" stroke-width="2"/>
+                                    <!-- 筊杯主體（凸面朝上） -->
+                                    <path d="M60 10 Q15 10, 10 50 Q5 90, 18 118 Q30 140, 48 155 Q56 162, 60 165 Q64 162, 72 155 Q90 140, 102 118 Q115 90, 110 50 Q105 10, 60 10Z" fill="url(#jiaoBodyBL)" stroke="#5d0000" stroke-width="1.5"/>
                                     <!-- 凸起光澤 -->
-                                    <ellipse cx="50" cy="55" rx="25" ry="20" fill="url(#shine)"/>
+                                    <ellipse cx="60" cy="65" rx="35" ry="28" fill="url(#jiaoBumpL)"/>
+                                    <!-- 凸起立體感 -->
+                                    <path d="M60 30 Q35 30, 30 55 Q25 80, 35 100 Q45 115, 55 125 Q58 128, 60 130 Q62 128, 65 125 Q75 115, 85 100 Q95 80, 90 55 Q85 30, 60 30Z" fill="rgba(255,255,255,0.08)"/>
                                     <!-- 陰字 -->
-                                    <text x="50" y="75" text-anchor="middle" fill="#ffd700" font-size="28" font-weight="bold" font-family="serif">陰</text>
+                                    <text x="60" y="90" text-anchor="middle" fill="#ffd700" font-size="32" font-weight="bold" font-family="KaiTi, serif" filter="url(#jiaoBlurL)">陰</text>
+                                    <text x="60" y="90" text-anchor="middle" fill="#ffd700" font-size="32" font-weight="bold" font-family="KaiTi, serif">陰</text>
+                                    <!-- 底部陰影 -->
+                                    <ellipse cx="60" cy="168" rx="32" ry="6" fill="rgba(0,0,0,0.25)" filter="url(#jiaoBlurL)"/>
                                 </svg>
                             </div>
                         </div>
@@ -83,35 +104,50 @@
                     <div class="jiao-wrapper" id="cup-right-wrapper">
                         <div class="jiao-inner">
                             <div class="jiao-side jiao-front">
-                                <svg viewBox="0 0 100 160" class="jiao-svg">
+                                <svg viewBox="0 0 120 180" class="jiao-svg">
                                     <defs>
-                                        <linearGradient id="redGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#e53935"/>
-                                            <stop offset="50%" style="stop-color:#c62828"/>
-                                            <stop offset="100%" style="stop-color:#8b0000"/>
+                                        <linearGradient id="jiaoBodyR" x1="100%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#e53935"/>
+                                            <stop offset="30%" stop-color="#c62828"/>
+                                            <stop offset="70%" stop-color="#b71c1c"/>
+                                            <stop offset="100%" stop-color="#8b0000"/>
                                         </linearGradient>
+                                        <linearGradient id="jiaoHighlightR" x1="100%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
+                                            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                                        </linearGradient>
+                                        <filter id="jiaoBlurR">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+                                        </filter>
                                     </defs>
-                                    <path d="M50 10 C20 10, 10 40, 10 80 C10 120, 25 150, 50 150 C75 150, 90 120, 90 80 C90 40, 80 10, 50 10Z" fill="url(#redGrad3)" stroke="#8b0000" stroke-width="2"/>
-                                    <line x1="50" y1="30" x2="50" y2="130" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
-                                    <text x="50" y="75" text-anchor="middle" fill="#ffd700" font-size="28" font-weight="bold" font-family="serif">陽</text>
+                                    <path d="M60 15 Q20 15, 15 50 Q10 85, 20 110 Q30 135, 45 150 Q55 160, 60 165 Q65 160, 75 150 Q90 135, 100 110 Q110 85, 105 50 Q100 15, 60 15Z" fill="url(#jiaoBodyR)" stroke="#6b0000" stroke-width="1.5"/>
+                                    <path d="M60 20 Q30 20, 25 50 Q20 80, 30 100 Q35 110, 45 120 Q50 125, 55 130 Q58 125, 60 120 Q55 100, 50 80 Q45 60, 50 40 Q55 25, 60 20Z" fill="url(#jiaoHighlightR)" opacity="0.6"/>
+                                    <line x1="60" y1="25" x2="60" y2="155" stroke="#ffd700" stroke-width="2.5" stroke-dasharray="4,3" opacity="0.8"/>
+                                    <text x="60" y="95" text-anchor="middle" fill="#ffd700" font-size="32" font-weight="bold" font-family="KaiTi, serif" filter="url(#jiaoBlurR)">陽</text>
+                                    <text x="60" y="95" text-anchor="middle" fill="#ffd700" font-size="32" font-weight="bold" font-family="KaiTi, serif">陽</text>
+                                    <ellipse cx="60" cy="168" rx="30" ry="5" fill="rgba(0,0,0,0.2)" filter="url(#jiaoBlurR)"/>
                                 </svg>
                             </div>
                             <div class="jiao-side jiao-back">
-                                <svg viewBox="0 0 100 160" class="jiao-svg">
+                                <svg viewBox="0 0 120 180" class="jiao-svg">
                                     <defs>
-                                        <linearGradient id="redGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#b71c1c"/>
-                                            <stop offset="50%" style="stop-color:#7f0000"/>
-                                            <stop offset="100%" style="stop-color:#4a0000"/>
+                                        <linearGradient id="jiaoBodyBR" x1="100%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#d32f2f"/>
+                                            <stop offset="40%" stop-color="#b71c1c"/>
+                                            <stop offset="100%" stop-color="#7f0000"/>
                                         </linearGradient>
-                                        <radialGradient id="shine2" cx="50%" cy="40%" r="50%">
-                                            <stop offset="0%" style="stop-color:rgba(255,255,255,0.25)"/>
-                                            <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+                                        <radialGradient id="jiaoBumpR" cx="50%" cy="45%" r="40%">
+                                            <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
+                                            <stop offset="60%" stop-color="rgba(255,255,255,0.1)"/>
+                                            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
                                         </radialGradient>
                                     </defs>
-                                    <path d="M50 5 C15 5, 5 45, 5 85 C5 125, 20 155, 50 155 C80 155, 95 125, 95 85 C95 45, 85 5, 50 5Z" fill="url(#redGrad4)" stroke="#4a0000" stroke-width="2"/>
-                                    <ellipse cx="50" cy="55" rx="25" ry="20" fill="url(#shine2)"/>
-                                    <text x="50" y="75" text-anchor="middle" fill="#ffd700" font-size="28" font-weight="bold" font-family="serif">陰</text>
+                                    <path d="M60 10 Q15 10, 10 50 Q5 90, 18 118 Q30 140, 48 155 Q56 162, 60 165 Q64 162, 72 155 Q90 140, 102 118 Q115 90, 110 50 Q105 10, 60 10Z" fill="url(#jiaoBodyBR)" stroke="#5d0000" stroke-width="1.5"/>
+                                    <ellipse cx="60" cy="65" rx="35" ry="28" fill="url(#jiaoBumpR)"/>
+                                    <path d="M60 30 Q35 30, 30 55 Q25 80, 35 100 Q45 115, 55 125 Q58 128, 60 130 Q62 128, 65 125 Q75 115, 85 100 Q95 80, 90 55 Q85 30, 60 30Z" fill="rgba(255,255,255,0.08)"/>
+                                    <text x="60" y="90" text-anchor="middle" fill="#ffd700" font-size="32" font-weight="bold" font-family="KaiTi, serif" filter="url(#jiaoBlurR)">陰</text>
+                                    <text x="60" y="90" text-anchor="middle" fill="#ffd700" font-size="32" font-weight="bold" font-family="KaiTi, serif">陰</text>
+                                    <ellipse cx="60" cy="168" rx="32" ry="6" fill="rgba(0,0,0,0.25)" filter="url(#jiaoBlurR)"/>
                                 </svg>
                             </div>
                         </div>
