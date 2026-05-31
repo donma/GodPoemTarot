@@ -200,11 +200,20 @@ const FortuneCanvas = {
         const cx = w / 2;
         const pad = Math.max(40, w * 0.08);
         const maxW = w - pad * 2;
+        const maxY = h - 60; // 留出底部邊距
         let y = 55;
         
         // 動態字體大小
         const scale = Math.min(w / 800, 1.2);
         const fs = (size) => Math.round(size * scale) + 'px';
+        
+        // 安全繪製函數 - 防止超出底部
+        const safeFillText = (text, x, currentY) => {
+            if (currentY < maxY) {
+                ctx.fillText(text, x, currentY);
+            }
+            return currentY;
+        };
         
         ctx.textAlign = 'center';
         
@@ -212,12 +221,12 @@ const FortuneCanvas = {
         ctx.fillStyle = colors.accent;
         ctx.font = `bold ${fs(22)} "Noto Serif TC", serif`;
         ctx.globalAlpha = 0.8;
-        ctx.fillText(`〔${system.name}〕`, cx, y);
+        safeFillText(`〔${system.name}〕`, cx, y);
         ctx.globalAlpha = 1;
         y += 45;
 
         // 中國風分隔線
-        this.drawChineseDivider(ctx, pad + 20, y, w - pad - 20, colors);
+        if (y < maxY) this.drawChineseDivider(ctx, pad + 20, y, w - pad - 20, colors);
         y += 50;
 
         // === 籤號 ===
@@ -225,7 +234,7 @@ const FortuneCanvas = {
         ctx.font = `bold ${fs(42)} "Noto Serif TC", serif`;
         ctx.shadowColor = 'rgba(255, 215, 0, 0.5)';
         ctx.shadowBlur = 15;
-        ctx.fillText(fortune.displayNo, cx, y);
+        safeFillText(fortune.displayNo, cx, y);
         ctx.shadowBlur = 0;
         y += 50;
         
@@ -238,11 +247,11 @@ const FortuneCanvas = {
         };
         ctx.fillStyle = levelColors[fortune.level] || colors.accent;
         ctx.font = `bold ${fs(30)} "Noto Serif TC", serif`;
-        ctx.fillText(fortune.level, cx, y);
+        safeFillText(fortune.level, cx, y);
         y += 50;
 
         // 裝飾點線
-        this.drawDotLine(ctx, pad + 30, y, w - pad - 30, colors.accent);
+        if (y < maxY) this.drawDotLine(ctx, pad + 30, y, w - pad - 30, colors.accent);
         y += 40;
 
         // === 籤詩原文 ===
@@ -251,17 +260,16 @@ const FortuneCanvas = {
         
         const poemLines = fortune.poem || [];
         poemLines.forEach((line, i) => {
-            // 詩句陰影
             ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
             ctx.shadowBlur = 5;
-            ctx.fillText(line, cx, y);
+            safeFillText(line, cx, y);
             ctx.shadowBlur = 0;
             y += 45;
         });
         y += 20;
 
         // 中國風分隔線
-        this.drawChineseDivider(ctx, pad + 20, y, w - pad - 20, colors);
+        if (y < maxY) this.drawChineseDivider(ctx, pad + 20, y, w - pad - 20, colors);
         y += 35;
 
         // === 白話解釋 ===
@@ -269,25 +277,30 @@ const FortuneCanvas = {
         ctx.fillStyle = colors.accent;
         ctx.font = `bold ${fs(18)} "Noto Serif TC", serif`;
         ctx.fillText('【白話解釋】', pad, y);
+        // 白話解釋標題
+        ctx.fillStyle = colors.accent;
+        ctx.font = `bold ${fs(18)} "Noto Serif TC", serif`;
+        safeFillText('【白話解釋】', pad, y);
         y += 30;
 
+        // 白話解釋內容
         ctx.fillStyle = colors.text;
         ctx.font = `${fs(15)} "Noto Sans TC", sans-serif`;
         const plainText = fortune.plainMeaning || fortune.classicMeaning || '暫無解釋';
         const plainLines = this.wrapText(ctx, plainText, maxW - 10);
         const maxPlain = Math.min(plainLines.length, 6);
         for (let i = 0; i < maxPlain; i++) {
-            ctx.fillText(plainLines[i], pad, y);
+            safeFillText(plainLines[i], pad, y);
             y += 26;
         }
         y += 15;
 
         // === 聖意 ===
         const shengYi = fortune.categoryReadings?.聖意 || '';
-        if (shengYi && shengYi.length > 3) {
+        if (shengYi && shengYi.length > 3 && y < maxY) {
             ctx.fillStyle = colors.accent;
             ctx.font = `bold ${fs(18)} "Noto Serif TC", serif`;
-            ctx.fillText('【聖意】', pad, y);
+            safeFillText('【聖意】', pad, y);
             y += 30;
 
             ctx.fillStyle = colors.text;
@@ -295,7 +308,7 @@ const FortuneCanvas = {
             const shengLines = this.wrapText(ctx, shengYi, maxW - 10);
             const maxSheng = Math.min(shengLines.length, 5);
             for (let i = 0; i < maxSheng; i++) {
-                ctx.fillText(shengLines[i], pad, y);
+                safeFillText(shengLines[i], pad, y);
                 y += 22;
             }
             y += 15;
@@ -303,10 +316,10 @@ const FortuneCanvas = {
 
         // === 解曰/總論 ===
         const jieYue = fortune.categoryReadings?.解曰 || fortune.categoryReadings?.總論 || '';
-        if (jieYue && jieYue.length > 3 && jieYue !== shengYi) {
+        if (jieYue && jieYue.length > 3 && jieYue !== shengYi && y < maxY) {
             ctx.fillStyle = colors.accent;
             ctx.font = `bold ${fs(18)} "Noto Serif TC", serif`;
-            ctx.fillText('【解曰】', pad, y);
+            safeFillText('【解曰】', pad, y);
             y += 30;
 
             ctx.fillStyle = colors.text;
@@ -314,7 +327,7 @@ const FortuneCanvas = {
             const jieLines = this.wrapText(ctx, jieYue, maxW - 10);
             const maxJie = Math.min(jieLines.length, 6);
             for (let i = 0; i < maxJie; i++) {
-                ctx.fillText(jieLines[i], pad, y);
+                safeFillText(jieLines[i], pad, y);
                 y += 22;
             }
             y += 15;
@@ -322,10 +335,10 @@ const FortuneCanvas = {
 
         // === 行動建議 ===
         const advice = fortune.actionAdvice?.[0] || '';
-        if (advice && advice.length > 3) {
+        if (advice && advice.length > 3 && y < maxY) {
             ctx.fillStyle = colors.gold;
             ctx.font = `bold ${fs(16)} "Noto Serif TC", serif`;
-            ctx.fillText('【行動建議】', pad, y);
+            safeFillText('【行動建議】', pad, y);
             y += 28;
 
             ctx.fillStyle = colors.text;
@@ -333,24 +346,26 @@ const FortuneCanvas = {
             const adviceLines = this.wrapText(ctx, advice, maxW - 10);
             const maxAdvice = Math.min(adviceLines.length, 4);
             for (let i = 0; i < maxAdvice; i++) {
-                ctx.fillText(adviceLines[i], pad, y);
+                safeFillText(adviceLines[i], pad, y);
                 y += 22;
             }
             y += 15;
         }
 
         // === 底部 ===
-        y += 15;
-        this.drawChineseDivider(ctx, pad + 10, y, w - pad - 10, colors);
-        y += 30;
+        if (y + 50 < maxY) {
+            y += 15;
+            this.drawChineseDivider(ctx, pad + 10, y, w - pad - 10, colors);
+            y += 30;
 
-        // 浮水印
-        ctx.textAlign = 'center';
-        ctx.fillStyle = colors.accent;
-        ctx.globalAlpha = 0.4;
-        ctx.font = `${fs(12)} "Noto Serif TC", serif`;
-        ctx.fillText(`${system.name} ｜ 當麻實驗室`, cx, y);
-        ctx.globalAlpha = 1;
+            // 浮水印
+            ctx.textAlign = 'center';
+            ctx.fillStyle = colors.accent;
+            ctx.globalAlpha = 0.4;
+            ctx.font = `${fs(12)} "Noto Serif TC", serif`;
+            ctx.fillText(`${system.name} ｜ 當麻實驗室`, cx, y);
+            ctx.globalAlpha = 1;
+        }
     },
 
     /**
@@ -484,7 +499,7 @@ const FortuneCanvas = {
         y += 30;
         ctx.font = '15px "Noto Sans TC", sans-serif';
         const plainText = fortune.plainMeaning || fortune.classicMeaning || '';
-        y += 26 * Math.min(this.wrapText(ctx, plainText, maxW).length, 5);
+        y += 26 * Math.min(this.wrapText(ctx, plainText, maxW).length, 6);
         y += 15;
         
         // 聖意
@@ -492,7 +507,7 @@ const FortuneCanvas = {
         if (shengYi && shengYi.length > 3) {
             y += 30;
             ctx.font = '14px "Noto Sans TC", sans-serif';
-            y += 22 * Math.min(this.wrapText(ctx, shengYi, maxW).length, 4);
+            y += 22 * Math.min(this.wrapText(ctx, shengYi, maxW).length, 5);
             y += 15;
         }
         
@@ -501,7 +516,7 @@ const FortuneCanvas = {
         if (jieYue && jieYue.length > 3 && jieYue !== shengYi) {
             y += 30;
             ctx.font = '14px "Noto Sans TC", sans-serif';
-            y += 22 * Math.min(this.wrapText(ctx, jieYue, maxW).length, 5);
+            y += 22 * Math.min(this.wrapText(ctx, jieYue, maxW).length, 6);
             y += 15;
         }
         
@@ -510,17 +525,17 @@ const FortuneCanvas = {
         if (advice && advice.length > 3) {
             y += 28;
             ctx.font = '14px "Noto Sans TC", sans-serif';
-            y += 22 * Math.min(this.wrapText(ctx, advice, maxW).length, 3);
+            y += 22 * Math.min(this.wrapText(ctx, advice, maxW).length, 4);
             y += 15;
         }
         
         // 底部
         y += 45;
         
-        // 邊距
-        y += 40;
+        // 邊距 - 增加緩衝
+        y += 60;
         
-        return Math.max(y, 600);
+        return Math.max(y, 700);
     }
 };
 
