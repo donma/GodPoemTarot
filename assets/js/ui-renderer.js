@@ -212,27 +212,28 @@ const UIRenderer = {
         await new Promise(resolve => setTimeout(resolve, 1300));
         
         // 判定結果
+        // 0 = 陽面（平面）, 1 = 蓋面（凸面）
         let result;
         let resultName;
         let resultClass;
         let resultEmoji;
         
         if (leftResult !== rightResult) {
-            // 一陰一陽 = 聖筊
+            // 一陽一蓋 = 聖筊
             result = 'holy';
             resultName = '聖筊';
             resultClass = 'result-holy';
             resultEmoji = '✨';
         } else if (leftResult === 0 && rightResult === 0) {
-            // 兩陽 = 笑筊
+            // 兩蓋 = 笑筊
             result = 'laugh';
             resultName = '笑筊';
             resultClass = 'result-laugh';
             resultEmoji = '😄';
         } else {
-            // 兩陰 = 陰筊
+            // 兩陽 = 蓋筊
             result = 'yin';
-            resultName = '陰筊';
+            resultName = '蓋筊';
             resultClass = 'result-yin';
             resultEmoji = '😔';
         }
@@ -244,7 +245,7 @@ const UIRenderer = {
         // 顯示結果
         let resultHTML = `<div class="cup-result-content ${resultClass}">`;
         resultHTML += `<h3>${resultEmoji} ${resultName} ${resultEmoji}</h3>`;
-        resultHTML += `<p style="font-size:1.1rem;">左：${leftResult === 0 ? '陽 ☀️' : '陰 🌙'}　右：${rightResult === 0 ? '陽 ☀️' : '陰 🌙'}</p>`;
+        resultHTML += `<p style="font-size:1.1rem;">左：${leftResult === 0 ? '陽 ☀️' : '蓋 🌙'}　右：${rightResult === 0 ? '陽 ☀️' : '蓋 🌙'}</p>`;
         resultHTML += `<p style="font-size:1.2rem; margin-top:10px;">連續聖筊：<strong>${state.successiveHolyCount}</strong> / 3</p>`;
         
         if (state.isUnlocked) {
