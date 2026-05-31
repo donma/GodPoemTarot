@@ -220,16 +220,16 @@ const FortuneCanvas = {
         this.drawChineseDivider(ctx, pad + 20, y, w - pad - 20, colors);
         y += 50;
 
-        // === 籤號 + 吉凶 ===
+        // === 籤號 ===
         ctx.fillStyle = colors.gold;
-        ctx.font = `bold ${fs(40)} "Noto Serif TC", serif`;
+        ctx.font = `bold ${fs(42)} "Noto Serif TC", serif`;
         ctx.shadowColor = 'rgba(255, 215, 0, 0.5)';
         ctx.shadowBlur = 15;
         ctx.fillText(fortune.displayNo, cx, y);
         ctx.shadowBlur = 0;
-        y += 25;
+        y += 50;
         
-        // 吉凶標籤
+        // === 吉凶標籤 ===
         const levelColors = {
             '上上': '#ffd700', '上吉': '#ffd700', '上籤': '#ffd700',
             '中平': '#e8c9a0', '中吉': '#e8c9a0', '中籤': '#e8c9a0', '中凶': '#d4a574',
@@ -237,9 +237,9 @@ const FortuneCanvas = {
             '大吉': '#ffd700', '全凶': '#c41e3a'
         };
         ctx.fillStyle = levelColors[fortune.level] || colors.accent;
-        ctx.font = `bold ${fs(28)} "Noto Serif TC", serif`;
+        ctx.font = `bold ${fs(30)} "Noto Serif TC", serif`;
         ctx.fillText(fortune.level, cx, y);
-        y += 45;
+        y += 50;
 
         // 裝飾點線
         this.drawDotLine(ctx, pad + 30, y, w - pad - 30, colors.accent);
@@ -275,7 +275,7 @@ const FortuneCanvas = {
         ctx.font = `${fs(15)} "Noto Sans TC", sans-serif`;
         const plainText = fortune.plainMeaning || fortune.classicMeaning || '暫無解釋';
         const plainLines = this.wrapText(ctx, plainText, maxW - 10);
-        const maxPlain = Math.min(plainLines.length, 5);
+        const maxPlain = Math.min(plainLines.length, 6);
         for (let i = 0; i < maxPlain; i++) {
             ctx.fillText(plainLines[i], pad, y);
             y += 26;
@@ -293,15 +293,15 @@ const FortuneCanvas = {
             ctx.fillStyle = colors.text;
             ctx.font = `${fs(14)} "Noto Sans TC", sans-serif`;
             const shengLines = this.wrapText(ctx, shengYi, maxW - 10);
-            const maxSheng = Math.min(shengLines.length, 3);
+            const maxSheng = Math.min(shengLines.length, 5);
             for (let i = 0; i < maxSheng; i++) {
                 ctx.fillText(shengLines[i], pad, y);
                 y += 22;
             }
-            y += 10;
+            y += 15;
         }
 
-        // === 解曰 ===
+        // === 解曰/總論 ===
         const jieYue = fortune.categoryReadings?.解曰 || fortune.categoryReadings?.總論 || '';
         if (jieYue && jieYue.length > 3 && jieYue !== shengYi) {
             ctx.fillStyle = colors.accent;
@@ -312,12 +312,12 @@ const FortuneCanvas = {
             ctx.fillStyle = colors.text;
             ctx.font = `${fs(14)} "Noto Sans TC", sans-serif`;
             const jieLines = this.wrapText(ctx, jieYue, maxW - 10);
-            const maxJie = Math.min(jieLines.length, 4);
+            const maxJie = Math.min(jieLines.length, 6);
             for (let i = 0; i < maxJie; i++) {
                 ctx.fillText(jieLines[i], pad, y);
                 y += 22;
             }
-            y += 10;
+            y += 15;
         }
 
         // === 行動建議 ===
@@ -331,12 +331,12 @@ const FortuneCanvas = {
             ctx.fillStyle = colors.text;
             ctx.font = `${fs(14)} "Noto Sans TC", sans-serif`;
             const adviceLines = this.wrapText(ctx, advice, maxW - 10);
-            const maxAdvice = Math.min(adviceLines.length, 3);
+            const maxAdvice = Math.min(adviceLines.length, 4);
             for (let i = 0; i < maxAdvice; i++) {
                 ctx.fillText(adviceLines[i], pad, y);
                 y += 22;
             }
-            y += 10;
+            y += 15;
         }
 
         // === 底部 ===
@@ -454,54 +454,73 @@ const FortuneCanvas = {
         canvas.width = 800;
         const ctx = canvas.getContext('2d');
         
-        const scale = 1;
-        const fs = (size) => Math.round(size * scale) + 'px';
         const pad = 60;
         const maxW = 800 - pad * 2;
         let y = 55;
         
-        y += 45; // 系統名稱
-        y += 50; // 分隔線
-        y += 65; // 籤號+吉凶
-        y += 40; // 裝飾線
-        y += 45 * (fortune.poem?.length || 4); // 詩句
-        y += 20;
-        y += 35; // 分隔線
+        // 系統名稱
+        y += 45;
         
-        y += 30; // 白話解釋標題
-        ctx.font = `${fs(15)} "Noto Sans TC", sans-serif`;
+        // 分隔線
+        y += 50;
+        
+        // 籤號
+        y += 50;
+        
+        // 吉凶
+        y += 50;
+        
+        // 裝飾線
+        y += 40;
+        
+        // 詩句
+        y += 45 * (fortune.poem?.length || 4);
+        y += 20;
+        
+        // 分隔線
+        y += 35;
+        
+        // 白話解釋
+        y += 30;
+        ctx.font = '15px "Noto Sans TC", sans-serif';
         const plainText = fortune.plainMeaning || fortune.classicMeaning || '';
         y += 26 * Math.min(this.wrapText(ctx, plainText, maxW).length, 5);
         y += 15;
         
+        // 聖意
         const shengYi = fortune.categoryReadings?.聖意 || '';
         if (shengYi && shengYi.length > 3) {
             y += 30;
-            ctx.font = `${fs(14)} "Noto Sans TC", sans-serif`;
-            y += 22 * Math.min(this.wrapText(ctx, shengYi, maxW).length, 3);
-            y += 10;
+            ctx.font = '14px "Noto Sans TC", sans-serif';
+            y += 22 * Math.min(this.wrapText(ctx, shengYi, maxW).length, 4);
+            y += 15;
         }
         
+        // 解曰/總論
         const jieYue = fortune.categoryReadings?.解曰 || fortune.categoryReadings?.總論 || '';
         if (jieYue && jieYue.length > 3 && jieYue !== shengYi) {
             y += 30;
-            ctx.font = `${fs(14)} "Noto Sans TC", sans-serif`;
-            y += 22 * Math.min(this.wrapText(ctx, jieYue, maxW).length, 4);
-            y += 10;
+            ctx.font = '14px "Noto Sans TC", sans-serif';
+            y += 22 * Math.min(this.wrapText(ctx, jieYue, maxW).length, 5);
+            y += 15;
         }
         
+        // 行動建議
         const advice = fortune.actionAdvice?.[0] || '';
         if (advice && advice.length > 3) {
             y += 28;
-            ctx.font = `${fs(14)} "Noto Sans TC", sans-serif`;
+            ctx.font = '14px "Noto Sans TC", sans-serif';
             y += 22 * Math.min(this.wrapText(ctx, advice, maxW).length, 3);
-            y += 10;
+            y += 15;
         }
         
-        y += 45; // 底部
-        y += 30; // 邊距
+        // 底部
+        y += 45;
         
-        return Math.max(y, 500);
+        // 邊距
+        y += 40;
+        
+        return Math.max(y, 600);
     }
 };
 
