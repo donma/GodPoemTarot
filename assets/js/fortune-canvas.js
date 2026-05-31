@@ -1,5 +1,5 @@
 /**
- * 籤詩 Canvas 繪圖引擎 - RWD 版
+ * 籤詩 Canvas 繪圖引擎 - 中國風版
  */
 const FortuneCanvas = {
     draw(canvas, fortune, system, style) {
@@ -8,85 +8,263 @@ const FortuneCanvas = {
         const h = canvas.height;
         ctx.clearRect(0, 0, w, h);
 
-        // 根據系統選擇背景
+        // 中國風配色方案
         const bgColors = {
-            'gold_lotus_ink': { bg: '#faf5e8', accent: '#8b6914', text: '#2b2118' },
-            'red_temple_stick': { bg: '#8b1a1a', accent: '#c79a3b', text: '#f7efe2' },
-            'rice_paper_red': { bg: '#f7efe2', accent: '#9b1c1c', text: '#2b2118' },
-            'gold_temple': { bg: '#f5e6d0', accent: '#8b0000', text: '#2b2118' },
-            'purple_divine': { bg: '#2d1b4e', accent: '#d4a5ff', text: '#e0e0e0' },
-            'green_taoist': { bg: '#1a3a1a', accent: '#90ee90', text: '#e0e0e0' },
-            'pink_motherly': { bg: '#fff0f5', accent: '#c41e3a', text: '#2b2118' },
-            'blue_divine': { bg: '#0a1a3a', accent: '#7ab8f5', text: '#e0e0e0' },
-            'green_medicine': { bg: '#1a3a2a', accent: '#90ee90', text: '#e0e0e0' }
+            'gold_lotus_ink': { 
+                bg: '#1a0f0a', 
+                bgGrad: '#2d1810',
+                accent: '#d4a574', 
+                accentLight: '#e8c9a0',
+                text: '#f5e6d3',
+                border: '#8b6914',
+                gold: '#ffd700'
+            },
+            'red_temple_stick': { 
+                bg: '#2d0a0a', 
+                bgGrad: '#1a0505',
+                accent: '#c79a3b', 
+                accentLight: '#e8c9a0',
+                text: '#f5e6d3',
+                border: '#8b0000',
+                gold: '#ffd700'
+            },
+            'rice_paper_red': { 
+                bg: '#1a0f0a', 
+                bgGrad: '#2d1810',
+                accent: '#c41e3a', 
+                accentLight: '#e74c3c',
+                text: '#f5e6d3',
+                border: '#8b0000',
+                gold: '#ffd700'
+            },
+            'gold_temple': { 
+                bg: '#1a150a', 
+                bgGrad: '#2d2510',
+                accent: '#d4a574', 
+                accentLight: '#e8c9a0',
+                text: '#f5e6d3',
+                border: '#8b6914',
+                gold: '#ffd700'
+            },
+            'purple_divine': { 
+                bg: '#1a0f2d', 
+                bgGrad: '#0d071a',
+                accent: '#b39ddb', 
+                accentLight: '#d1c4e9',
+                text: '#e8e0f0',
+                border: '#7e57c2',
+                gold: '#ffd700'
+            },
+            'green_taoist': { 
+                bg: '#0a1a0f', 
+                bgGrad: '#051a0a',
+                accent: '#81c784', 
+                accentLight: '#a5d6a7',
+                text: '#e0f0e0',
+                border: '#388e3c',
+                gold: '#ffd700'
+            },
+            'pink_motherly': { 
+                bg: '#2d1a1a', 
+                bgGrad: '#1a0f0f',
+                accent: '#f48fb1', 
+                accentLight: '#f8bbd0',
+                text: '#f5e6e6',
+                border: '#c2185b',
+                gold: '#ffd700'
+            },
+            'blue_divine': { 
+                bg: '#0a1a2d', 
+                bgGrad: '#050f1a',
+                accent: '#90caf9', 
+                accentLight: '#bbdefb',
+                text: '#e0e8f5',
+                border: '#1976d2',
+                gold: '#ffd700'
+            },
+            'green_medicine': { 
+                bg: '#0a1a15', 
+                bgGrad: '#051a0f',
+                accent: '#80cbc4', 
+                accentLight: '#b2dfdb',
+                text: '#e0f0ea',
+                border: '#00897b',
+                gold: '#ffd700'
+            }
         };
         
         const colors = bgColors[system.canvasStyle] || bgColors['gold_lotus_ink'];
         
-        // 繪製背景
-        ctx.fillStyle = colors.bg;
+        // 繪製背景漸層
+        const bgGrad = ctx.createLinearGradient(0, 0, 0, h);
+        bgGrad.addColorStop(0, colors.bg);
+        bgGrad.addColorStop(1, colors.bgGrad);
+        ctx.fillStyle = bgGrad;
         ctx.fillRect(0, 0, w, h);
         
-        // 繪製邊框
-        ctx.strokeStyle = colors.accent;
-        ctx.lineWidth = 3;
-        this.drawRoundedRect(ctx, 8, 8, w - 16, h - 16, 12);
+        // 繪製中國風邊框
+        this.drawChineseBorder(ctx, w, h, colors);
         
         // 繪製內容
         this.drawFortuneContent(ctx, w, h, fortune, system, colors);
     },
 
+    /**
+     * 繪製中國風邊框
+     */
+    drawChineseBorder(ctx, w, h, colors) {
+        const pad = 15;
+        const cornerSize = 30;
+        
+        // 外框
+        ctx.strokeStyle = colors.border;
+        ctx.lineWidth = 3;
+        this.drawRoundedRect(ctx, pad, pad, w - pad * 2, h - pad * 2, 8);
+        
+        // 內框
+        ctx.strokeStyle = colors.accent;
+        ctx.lineWidth = 1;
+        ctx.globalAlpha = 0.4;
+        this.drawRoundedRect(ctx, pad + 8, pad + 8, w - (pad + 8) * 2, h - (pad + 8) * 2, 5);
+        ctx.globalAlpha = 1;
+        
+        // 四角裝飾
+        this.drawCornerDecor(ctx, pad + 5, pad + 5, cornerSize, colors, 'tl');
+        this.drawCornerDecor(ctx, w - pad - 5, pad + 5, cornerSize, colors, 'tr');
+        this.drawCornerDecor(ctx, pad + 5, h - pad - 5, cornerSize, colors, 'bl');
+        this.drawCornerDecor(ctx, w - pad - 5, h - pad - 5, cornerSize, colors, 'br');
+    },
+
+    /**
+     * 繪製角落裝飾
+     */
+    drawCornerDecor(ctx, x, y, size, colors, position) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.strokeStyle = colors.accent;
+        ctx.lineWidth = 2;
+        ctx.globalAlpha = 0.6;
+        
+        const s = size;
+        switch(position) {
+            case 'tl':
+                ctx.beginPath();
+                ctx.moveTo(0, s);
+                ctx.lineTo(0, 0);
+                ctx.lineTo(s, 0);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(5, 5, 3, 0, Math.PI * 2);
+                ctx.fillStyle = colors.accent;
+                ctx.fill();
+                break;
+            case 'tr':
+                ctx.beginPath();
+                ctx.moveTo(-s, 0);
+                ctx.lineTo(0, 0);
+                ctx.lineTo(0, s);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(-5, 5, 3, 0, Math.PI * 2);
+                ctx.fillStyle = colors.accent;
+                ctx.fill();
+                break;
+            case 'bl':
+                ctx.beginPath();
+                ctx.moveTo(0, -s);
+                ctx.lineTo(0, 0);
+                ctx.lineTo(s, 0);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(5, -5, 3, 0, Math.PI * 2);
+                ctx.fillStyle = colors.accent;
+                ctx.fill();
+                break;
+            case 'br':
+                ctx.beginPath();
+                ctx.moveTo(-s, 0);
+                ctx.lineTo(0, 0);
+                ctx.lineTo(0, -s);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(-5, -5, 3, 0, Math.PI * 2);
+                ctx.fillStyle = colors.accent;
+                ctx.fill();
+                break;
+        }
+        
+        ctx.restore();
+    },
+
     drawFortuneContent(ctx, w, h, fortune, system, colors) {
         const cx = w / 2;
-        const pad = Math.max(30, w * 0.06);
+        const pad = Math.max(40, w * 0.08);
         const maxW = w - pad * 2;
-        let y = 50;
+        let y = 55;
         
-        // 根據 Canvas 寬度動態調整字體大小
+        // 動態字體大小
         const scale = Math.min(w / 800, 1.2);
         const fs = (size) => Math.round(size * scale) + 'px';
         
-        // 確保文字永遠置中
         ctx.textAlign = 'center';
         
         // === 系統名稱 ===
         ctx.fillStyle = colors.accent;
-        ctx.font = `bold ${fs(24)} "Noto Serif TC", serif`;
-        ctx.fillText(`【${system.name}】`, cx, y);
-        y += 40;
+        ctx.font = `bold ${fs(22)} "Noto Serif TC", serif`;
+        ctx.globalAlpha = 0.8;
+        ctx.fillText(`〔${system.name}〕`, cx, y);
+        ctx.globalAlpha = 1;
+        y += 45;
 
-        // 分隔線
-        this.drawLine(ctx, pad, y, w - pad, y, colors.accent, 1);
+        // 中國風分隔線
+        this.drawChineseDivider(ctx, pad + 20, y, w - pad - 20, colors);
         y += 50;
 
-        // === 籤號 + 吉凶 (同一行，置中) ===
-        ctx.textAlign = 'center';
-        ctx.fillStyle = colors.accent;
-        ctx.font = `bold ${fs(36)} "Noto Serif TC", serif`;
-        ctx.fillText(fortune.displayNo + '  ' + fortune.level, cx, y);
-        y += 60;
+        // === 籤號 + 吉凶 ===
+        ctx.fillStyle = colors.gold;
+        ctx.font = `bold ${fs(40)} "Noto Serif TC", serif`;
+        ctx.shadowColor = 'rgba(255, 215, 0, 0.5)';
+        ctx.shadowBlur = 15;
+        ctx.fillText(fortune.displayNo, cx, y);
+        ctx.shadowBlur = 0;
+        y += 25;
+        
+        // 吉凶標籤
+        const levelColors = {
+            '上上': '#ffd700', '上吉': '#ffd700', '上籤': '#ffd700',
+            '中平': '#e8c9a0', '中吉': '#e8c9a0', '中籤': '#e8c9a0', '中凶': '#d4a574',
+            '下下': '#c41e3a', '下籤': '#c41e3a', '下凶': '#c41e3a',
+            '大吉': '#ffd700', '全凶': '#c41e3a'
+        };
+        ctx.fillStyle = levelColors[fortune.level] || colors.accent;
+        ctx.font = `bold ${fs(28)} "Noto Serif TC", serif`;
+        ctx.fillText(fortune.level, cx, y);
+        y += 45;
 
-        // 裝飾線
-        this.drawDotLine(ctx, pad + 20, y, w - pad - 20, colors.accent);
+        // 裝飾點線
+        this.drawDotLine(ctx, pad + 30, y, w - pad - 30, colors.accent);
         y += 40;
 
-        // === 籤詩原文 (置中，重要！) ===
-        ctx.textAlign = 'center';
+        // === 籤詩原文 ===
         ctx.fillStyle = colors.text;
-        ctx.font = `bold ${fs(24)} "Noto Serif TC", serif`;
+        ctx.font = `bold ${fs(26)} "Noto Serif TC", serif`;
         
         const poemLines = fortune.poem || [];
-        poemLines.forEach(line => {
+        poemLines.forEach((line, i) => {
+            // 詩句陰影
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+            ctx.shadowBlur = 5;
             ctx.fillText(line, cx, y);
-            y += 42;
+            ctx.shadowBlur = 0;
+            y += 45;
         });
         y += 20;
 
-        // 分隔線
-        this.drawLine(ctx, pad, y, w - pad, y, colors.accent, 2);
-        y += 30;
+        // 中國風分隔線
+        this.drawChineseDivider(ctx, pad + 20, y, w - pad - 20, colors);
+        y += 35;
 
-        // === 白話解釋 (靠左) ===
+        // === 白話解釋 ===
         ctx.textAlign = 'left';
         ctx.fillStyle = colors.accent;
         ctx.font = `bold ${fs(18)} "Noto Serif TC", serif`;
@@ -94,7 +272,7 @@ const FortuneCanvas = {
         y += 30;
 
         ctx.fillStyle = colors.text;
-        ctx.font = `${fs(16)} "Noto Sans TC", sans-serif`;
+        ctx.font = `${fs(15)} "Noto Sans TC", sans-serif`;
         const plainText = fortune.plainMeaning || fortune.classicMeaning || '暫無解釋';
         const plainLines = this.wrapText(ctx, plainText, maxW - 10);
         const maxPlain = Math.min(plainLines.length, 5);
@@ -104,10 +282,9 @@ const FortuneCanvas = {
         }
         y += 15;
 
-        // === 聖意（如果有） ===
+        // === 聖意 ===
         const shengYi = fortune.categoryReadings?.聖意 || '';
         if (shengYi && shengYi.length > 3) {
-            ctx.textAlign = 'left';
             ctx.fillStyle = colors.accent;
             ctx.font = `bold ${fs(18)} "Noto Serif TC", serif`;
             ctx.fillText('【聖意】', pad, y);
@@ -124,10 +301,9 @@ const FortuneCanvas = {
             y += 10;
         }
 
-        // === 解曰（如果有） ===
-        const jieYue = fortune.categoryReadings?.解曰 || '';
-        if (jieYue && jieYue.length > 3) {
-            ctx.textAlign = 'left';
+        // === 解曰 ===
+        const jieYue = fortune.categoryReadings?.解曰 || fortune.categoryReadings?.總論 || '';
+        if (jieYue && jieYue.length > 3 && jieYue !== shengYi) {
             ctx.fillStyle = colors.accent;
             ctx.font = `bold ${fs(18)} "Noto Serif TC", serif`;
             ctx.fillText('【解曰】', pad, y);
@@ -144,16 +320,73 @@ const FortuneCanvas = {
             y += 10;
         }
 
-        // === 底部 ===
-        y += 10;
-        this.drawDotLine(ctx, pad + 10, y, w - pad - 10, colors.accent);
-        y += 25;
+        // === 行動建議 ===
+        const advice = fortune.actionAdvice?.[0] || '';
+        if (advice && advice.length > 3) {
+            ctx.fillStyle = colors.gold;
+            ctx.font = `bold ${fs(16)} "Noto Serif TC", serif`;
+            ctx.fillText('【行動建議】', pad, y);
+            y += 28;
 
-        // 來源 + 標註 (置中)
+            ctx.fillStyle = colors.text;
+            ctx.font = `${fs(14)} "Noto Sans TC", sans-serif`;
+            const adviceLines = this.wrapText(ctx, advice, maxW - 10);
+            const maxAdvice = Math.min(adviceLines.length, 3);
+            for (let i = 0; i < maxAdvice; i++) {
+                ctx.fillText(adviceLines[i], pad, y);
+                y += 22;
+            }
+            y += 10;
+        }
+
+        // === 底部 ===
+        y += 15;
+        this.drawChineseDivider(ctx, pad + 10, y, w - pad - 10, colors);
+        y += 30;
+
+        // 浮水印
         ctx.textAlign = 'center';
-        ctx.fillStyle = '#888';
-        ctx.font = `${fs(12)} "Noto Sans TC", sans-serif`;
-        ctx.fillText(`${system.name} ｜ 占卜僅供參考 ｜ 當麻實驗室`, cx, y);
+        ctx.fillStyle = colors.accent;
+        ctx.globalAlpha = 0.4;
+        ctx.font = `${fs(12)} "Noto Serif TC", serif`;
+        ctx.fillText(`${system.name} ｜ 當麻實驗室`, cx, y);
+        ctx.globalAlpha = 1;
+    },
+
+    /**
+     * 繪製中國風分隔線
+     */
+    drawChineseDivider(ctx, x1, y, x2, colors) {
+        const mid = (x1 + x2) / 2;
+        const len = (x2 - x1) / 2;
+        
+        ctx.strokeStyle = colors.accent;
+        ctx.lineWidth = 1;
+        ctx.globalAlpha = 0.5;
+        
+        // 左線
+        ctx.beginPath();
+        ctx.moveTo(x1, y);
+        ctx.lineTo(mid - 15, y);
+        ctx.stroke();
+        
+        // 右線
+        ctx.beginPath();
+        ctx.moveTo(mid + 15, y);
+        ctx.lineTo(x2, y);
+        ctx.stroke();
+        
+        // 中間菱形
+        ctx.fillStyle = colors.accent;
+        ctx.beginPath();
+        ctx.moveTo(mid, y - 6);
+        ctx.lineTo(mid + 8, y);
+        ctx.lineTo(mid, y + 6);
+        ctx.lineTo(mid - 8, y);
+        ctx.closePath();
+        ctx.fill();
+        
+        ctx.globalAlpha = 1;
     },
 
     /**
@@ -198,27 +431,6 @@ const FortuneCanvas = {
         ctx.globalAlpha = 1;
     },
 
-    drawDecorLine(ctx, x1, y, x2, color) {
-        ctx.strokeStyle = color;
-        ctx.lineWidth = 1;
-        ctx.globalAlpha = 0.5;
-        ctx.beginPath();
-        ctx.moveTo(x1, y);
-        ctx.lineTo(x2, y);
-        ctx.stroke();
-        // 中間菱形
-        const mid = (x1 + x2) / 2;
-        ctx.fillStyle = color;
-        ctx.beginPath();
-        ctx.moveTo(mid, y - 5);
-        ctx.lineTo(mid + 5, y);
-        ctx.lineTo(mid, y + 5);
-        ctx.lineTo(mid - 5, y);
-        ctx.closePath();
-        ctx.fill();
-        ctx.globalAlpha = 1;
-    },
-
     drawRoundedRect(ctx, x, y, w, h, r) {
         ctx.beginPath();
         ctx.moveTo(x + r, y);
@@ -234,21 +446,62 @@ const FortuneCanvas = {
         ctx.stroke();
     },
 
-    getLevelColor(level) {
-        const colors = {
-            '大吉': '#c41e3a', '上吉': '#c41e3a', '上籤': '#c41e3a',
-            '中吉': '#c79a3b', '小吉': '#c79a3b', '吉': '#c79a3b', '中籤': '#c79a3b',
-            '中平': '#756b5d',
-            '凶': '#4a4a4a', '下下': '#4a4a4a', '下籤': '#4a4a4a', '下吉': '#4a4a4a'
-        };
-        return colors[level] || '#756b5d';
-    },
-
-    downloadPNG(canvas, filename) {
-        const link = document.createElement('a');
-        link.download = filename || 'fortune.png';
-        link.href = canvas.toDataURL('image/png');
-        link.click();
+    /**
+     * 動態計算 Canvas 高度
+     */
+    calculateHeight(fortune, system) {
+        const canvas = document.createElement('canvas');
+        canvas.width = 800;
+        const ctx = canvas.getContext('2d');
+        
+        const scale = 1;
+        const fs = (size) => Math.round(size * scale) + 'px';
+        const pad = 60;
+        const maxW = 800 - pad * 2;
+        let y = 55;
+        
+        y += 45; // 系統名稱
+        y += 50; // 分隔線
+        y += 65; // 籤號+吉凶
+        y += 40; // 裝飾線
+        y += 45 * (fortune.poem?.length || 4); // 詩句
+        y += 20;
+        y += 35; // 分隔線
+        
+        y += 30; // 白話解釋標題
+        ctx.font = `${fs(15)} "Noto Sans TC", sans-serif`;
+        const plainText = fortune.plainMeaning || fortune.classicMeaning || '';
+        y += 26 * Math.min(this.wrapText(ctx, plainText, maxW).length, 5);
+        y += 15;
+        
+        const shengYi = fortune.categoryReadings?.聖意 || '';
+        if (shengYi && shengYi.length > 3) {
+            y += 30;
+            ctx.font = `${fs(14)} "Noto Sans TC", sans-serif`;
+            y += 22 * Math.min(this.wrapText(ctx, shengYi, maxW).length, 3);
+            y += 10;
+        }
+        
+        const jieYue = fortune.categoryReadings?.解曰 || fortune.categoryReadings?.總論 || '';
+        if (jieYue && jieYue.length > 3 && jieYue !== shengYi) {
+            y += 30;
+            ctx.font = `${fs(14)} "Noto Sans TC", sans-serif`;
+            y += 22 * Math.min(this.wrapText(ctx, jieYue, maxW).length, 4);
+            y += 10;
+        }
+        
+        const advice = fortune.actionAdvice?.[0] || '';
+        if (advice && advice.length > 3) {
+            y += 28;
+            ctx.font = `${fs(14)} "Noto Sans TC", sans-serif`;
+            y += 22 * Math.min(this.wrapText(ctx, advice, maxW).length, 3);
+            y += 10;
+        }
+        
+        y += 45; // 底部
+        y += 30; // 邊距
+        
+        return Math.max(y, 500);
     }
 };
 

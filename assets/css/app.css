@@ -1,18 +1,26 @@
-/* 台灣籤詩 + 塔羅占卜 - 主要樣式 */
+/* 台灣籤詩 + 塔羅占卜 - 中國風樣式 */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
 
 /* 變數 */
 :root {
-    --bg-primary: #f7efe2;
-    --bg-secondary: #fffaf1;
-    --red-primary: #9b1c1c;
-    --red-dark: #7a1515;
-    --gold-primary: #c79a3b;
-    --gold-light: #d6b56d;
-    --ink-dark: #2b2118;
-    --gray-warm: #756b5d;
-    --tarot-bg: #151827;
+    --bg-primary: #1a0f0a;
+    --bg-secondary: #2d1810;
+    --bg-card: #3d2218;
+    --red-primary: #c41e3a;
+    --red-dark: #8b0000;
+    --red-light: #e74c3c;
+    --gold-primary: #d4a574;
+    --gold-light: #e8c9a0;
+    --gold-bright: #ffd700;
+    --ink-dark: #f5e6d3;
+    --ink-light: #d4b896;
+    --gray-warm: #a89282;
+    --tarot-bg: #0d0d1a;
     --tarot-gold: #d6b56d;
     --tarot-purple: #5b4b8a;
+    --border-chinese: #8b6914;
 }
 
 /* 重設 */
@@ -23,10 +31,15 @@
 }
 
 body {
-    font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Serif TC', 'Microsoft JhengHei', serif;
     background-color: var(--bg-primary);
+    background-image: 
+        radial-gradient(ellipse at 20% 50%, rgba(139,0,0,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(139,105,20,0.1) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a574' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     color: var(--ink-dark);
-    line-height: 1.6;
+    line-height: 1.8;
+    min-height: 100vh;
 }
 
 /* 容器 */
@@ -39,40 +52,107 @@ body {
 /* 首頁 Hero */
 .hero {
     text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-    border-bottom: 3px solid var(--gold-primary);
+    padding: 80px 20px 60px;
+    background: 
+        linear-gradient(180deg, rgba(26,15,10,0.95) 0%, rgba(45,24,16,0.98) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='%23d4a574' fill-opacity='0.05'%3E%3Ccircle cx='100' cy='100' r='80' stroke='%23d4a574' stroke-opacity='0.1' fill='none'/%3E%3Ccircle cx='100' cy='100' r='60' stroke='%23d4a574' stroke-opacity='0.08' fill='none'/%3E%3Ccircle cx='100' cy='100' r='40' stroke='%23d4a574' stroke-opacity='0.06' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+    border-bottom: 4px solid var(--gold-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.hero::after {
+    content: '◆';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold-primary);
+    font-size: 24px;
+    background: var(--bg-primary);
+    padding: 0 20px;
+}
+
+.hero-decoration {
+    color: var(--gold-primary);
+    font-size: 1.5rem;
+    letter-spacing: 15px;
+    margin-bottom: 20px;
+    opacity: 0.6;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    color: var(--red-primary);
-    margin-bottom: 10px;
-    font-family: 'Noto Serif TC', serif;
+    font-size: 4rem;
+    color: var(--gold-primary);
+    margin-bottom: 20px;
+    font-weight: 900;
+    text-shadow: 
+        0 0 20px rgba(212,165,116,0.5),
+        0 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 12px;
+    position: relative;
+}
+
+.hero h1::before,
+.hero h1::after {
+    content: '━';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold-primary);
+    opacity: 0.4;
+    font-size: 2rem;
+}
+
+.hero h1::before {
+    left: -60px;
+}
+
+.hero h1::after {
+    right: -60px;
 }
 
 .hero .subtitle {
-    font-size: 1.1rem;
-    color: var(--gray-warm);
-    margin-bottom: 30px;
+    font-size: 1.4rem;
+    color: var(--ink-light);
+    margin-bottom: 35px;
+    letter-spacing: 6px;
+    font-weight: 300;
 }
 
 .hero .hint {
-    font-size: 0.95rem;
-    color: var(--red-primary);
-    font-style: italic;
-    margin-bottom: 30px;
+    font-size: 1rem;
+    color: var(--gold-primary);
+    font-style: normal;
+    margin-bottom: 35px;
+    padding: 18px 35px;
+    background: rgba(212,165,116,0.08);
+    border: 1px solid rgba(212,165,116,0.3);
+    border-radius: 10px;
+    display: inline-block;
+    letter-spacing: 2px;
 }
 
 /* 進度條 */
 .progress-container {
     max-width: 400px;
     margin: 0 auto 20px;
-    background: #e8dcc8;
-    border-radius: 20px;
+    background: var(--bg-card);
+    border-radius: 25px;
     overflow: hidden;
-    height: 30px;
+    height: 35px;
     position: relative;
+    border: 2px solid var(--border-chinese);
 }
 
 .progress-fill {
@@ -80,6 +160,17 @@ body {
     background: linear-gradient(90deg, var(--red-primary), var(--gold-primary));
     transition: width 0.5s ease;
     width: 0%;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);
 }
 
 .progress-text {
@@ -87,89 +178,120 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--ink-dark);
+    color: var(--gold-bright);
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    z-index: 1;
 }
 
 /* 按鈕 */
 .btn {
     display: inline-block;
-    padding: 12px 30px;
-    background: var(--red-primary);
-    color: white;
-    border: none;
+    padding: 14px 35px;
+    background: linear-gradient(180deg, var(--red-primary) 0%, var(--red-dark) 100%);
+    color: var(--gold-bright);
+    border: 2px solid var(--gold-primary);
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: inherit;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .btn:hover {
-    background: var(--red-dark);
-    transform: translateY(-2px);
+    background: linear-gradient(180deg, var(--red-light) 0%, var(--red-primary) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(196,30,58,0.4);
 }
 
 .btn:disabled {
-    background: #ccc;
+    background: #4a3a2a;
+    border-color: #666;
+    color: #666;
     cursor: not-allowed;
     transform: none;
 }
 
 .btn-download {
     display: inline-block;
-    padding: 10px 20px;
-    background: var(--gold-primary);
-    color: var(--ink-dark);
-    border: none;
+    padding: 12px 25px;
+    background: linear-gradient(180deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+    color: var(--bg-primary);
+    border: 2px solid var(--gold-bright);
     border-radius: 6px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     cursor: pointer;
     margin-top: 20px;
     transition: all 0.3s ease;
+    font-weight: 600;
 }
 
 .btn-download:hover {
-    background: var(--gold-light);
+    background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold-primary) 100%);
+    transform: translateY(-2px);
 }
 
 /* 擲筊區 */
 .cup-section {
-    background: linear-gradient(180deg, #fffaf1 0%, #f7efe2 100%);
-    border-radius: 15px;
-    padding: 40px;
-    margin: 30px auto;
-    max-width: 600px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin: 40px auto;
+    max-width: 650px;
+    box-shadow: 
+        0 10px 40px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(212,165,116,0.2);
     text-align: center;
-    border: 2px solid #c79a3b;
+    border: 3px solid var(--border-chinese);
+    position: relative;
+}
+
+.cup-section::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid rgba(212,165,116,0.2);
+    border-radius: 15px;
+    pointer-events: none;
 }
 
 .cup-section h2 {
-    color: var(--red-primary);
+    color: var(--gold-primary);
     font-family: 'Noto Serif TC', serif;
-    margin-bottom: 10px;
-    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .cup-stage {
-    background: radial-gradient(ellipse at center, #f5e6d0 0%, #e8d4b8 100%);
+    background: radial-gradient(ellipse at center, var(--bg-card) 0%, var(--bg-secondary) 100%);
     border-radius: 50%;
-    width: 300px;
-    height: 220px;
-    margin: 30px auto;
+    width: 320px;
+    height: 240px;
+    margin: 35px auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0 2px 10px rgba(0,0,0,0.2);
-    border: 3px solid #8b0000;
+    box-shadow: 
+        inset 0 5px 20px rgba(0,0,0,0.4),
+        0 0 0 4px var(--border-chinese),
+        0 0 0 6px rgba(139,105,20,0.3);
+    border: 2px solid var(--gold-primary);
 }
 
 .cup-pair {
     display: flex;
-    gap: 40px;
-    perspective: 600px;
+    gap: 50px;
+    perspective: 800px;
 }
 
 /* 筊杯容器 */
@@ -207,12 +329,12 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.5));
     transition: transform 0.3s ease;
 }
 
 .jiao-wrapper:hover .jiao-img {
-    transform: scale(1.08) translateY(-3px);
+    transform: scale(1.1) translateY(-5px);
 }
 
 /* 翻轉動畫 */
@@ -249,29 +371,31 @@ body {
 
 /* 擲筊按鈕 */
 .btn-throw {
-    background: linear-gradient(180deg, #e53935 0%, #8b0000 100%);
-    color: #ffd700;
-    font-size: 1.3rem;
-    padding: 15px 50px;
-    border: 2px solid #ffd700;
-    border-radius: 30px;
+    background: linear-gradient(180deg, var(--red-primary) 0%, var(--red-dark) 100%);
+    color: var(--gold-bright);
+    font-size: 1.4rem;
+    padding: 18px 60px;
+    border: 3px solid var(--gold-primary);
+    border-radius: 50px;
     font-family: 'Noto Serif TC', serif;
-    font-weight: bold;
-    letter-spacing: 4px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-    box-shadow: 0 4px 15px rgba(139,0,0,0.4);
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-shadow: 0 2px 3px rgba(0,0,0,0.4);
+    box-shadow: 
+        0 6px 20px rgba(139,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
 .btn-throw:hover {
-    background: linear-gradient(180deg, #d42a4a 0%, #a00020 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(139,0,0,0.5);
+    background: linear-gradient(180deg, var(--red-light) 0%, var(--red-primary) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(139,0,0,0.5);
 }
 
 .btn-throw:disabled {
-    background: #666;
-    border-color: #999;
-    color: #999;
+    background: #3a2a1a;
+    border-color: #666;
+    color: #666;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
@@ -279,514 +403,370 @@ body {
 
 /* 結果顯示 */
 .cup-result-content {
-    padding: 25px;
+    padding: 30px;
     border-radius: 15px;
-    margin-top: 25px;
-    font-size: 1.1rem;
+    margin-top: 30px;
+    font-size: 1.2rem;
     transition: all 0.3s ease;
 }
 
 .result-holy {
-    background: linear-gradient(135deg, #ffd700, #ffed4e);
-    color: #5d4e00;
-    box-shadow: 0 4px 20px rgba(255,215,0,0.4);
+    background: linear-gradient(135deg, #2d1b00 0%, #1a0f00 100%);
+    color: var(--gold-bright);
+    box-shadow: 
+        0 0 30px rgba(255,215,0,0.3),
+        inset 0 0 20px rgba(255,215,0,0.1);
+    border: 2px solid var(--gold-primary);
 }
 
 .result-laugh {
-    background: linear-gradient(135deg, #87ceeb, #b0e0e6);
-    color: #1a5276;
-    box-shadow: 0 4px 20px rgba(135,206,235,0.4);
+    background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%);
+    color: #90ee90;
+    box-shadow: 
+        0 0 20px rgba(144,238,144,0.2),
+        inset 0 0 15px rgba(144,238,144,0.1);
+    border: 2px solid #4a7a4a;
 }
 
 .result-yin {
-    background: linear-gradient(135deg, #4a4a4a, #666);
-    color: #e0e0e0;
-    box-shadow: 0 4px 20px rgba(74,74,74,0.4);
+    background: linear-gradient(135deg, #1a1a2d 0%, #0d0d1a 100%);
+    color: #87ceeb;
+    box-shadow: 
+        0 0 20px rgba(135,206,235,0.2),
+        inset 0 0 15px rgba(135,206,235,0.1);
+    border: 2px solid #4a6a8b;
 }
 
 .result-holy h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 8px;
 }
 
 .result-laugh h3, .result-yin h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 8px;
 }
 
 .unlock-message {
-    color: #155724;
+    color: var(--gold-bright);
     font-weight: bold;
-    margin-top: 15px;
-    font-size: 1.2rem;
-    background: rgba(255,255,255,0.5);
-    padding: 10px;
-    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    background: rgba(255,215,0,0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--gold-primary);
+    letter-spacing: 4px;
 }
 
 /* 說明區 */
 .cup-instructions {
-    margin-top: 25px;
-    font-size: 0.9rem;
-    color: var(--gray-warm);
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: var(--ink-light);
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
 .cup-instructions .instruction-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .cup-instructions .dot {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     display: inline-block;
+    border: 2px solid rgba(255,255,255,0.3);
 }
 
-.cup-instructions .dot.holy { background: #ffd700; }
-.cup-instructions .dot.laugh { background: #87ceeb; }
-.cup-instructions .dot.yin { background: #4a4a4a; }
-
-/* 區塊樣式 */
-.section {
-    background: var(--bg-secondary);
-    border-radius: 15px;
-    padding: 40px;
-    margin: 30px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.section h2 {
-    color: var(--red-primary);
-    font-family: 'Noto Serif TC', serif;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* 表單 */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--ink-dark);
-}
-
-.form-group select,
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #e8dcc8;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: inherit;
-    background: white;
-    color: #2b2118;
-    transition: border-color 0.3s ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.form-group select {
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b2118' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 18px;
-    padding-right: 40px;
-}
-
-.form-group select option {
-    background: white;
-    color: #2b2118;
-    padding: 8px;
-}
-
-.form-group select:focus,
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--gold-primary);
-    box-shadow: 0 0 0 3px rgba(199, 154, 59, 0.2);
-}
-
-/* Canvas 容器 */
-.canvas-container {
-    text-align: center;
-    margin: 20px 0;
-    overflow: hidden;
-}
-
-.fortune-canvas {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    display: block;
-    margin: 0 auto;
-}
-
-/* RWD Canvas */
-@media (max-width: 768px) {
-    .fortune-canvas {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-/* 籤詩結果 */
-.fortune-result-content {
-    padding: 30px;
-}
-
-.fortune-result-content h2 {
-    color: var(--red-primary);
-    font-family: 'Noto Serif TC', serif;
-    margin-bottom: 10px;
-}
-
-.fortune-level {
-    display: inline-block;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.fortune-level.大吉,
-.fortune-level.上吉 {
-    background: linear-gradient(135deg, #ffd700, #ffed4e);
-    color: var(--ink-dark);
-}
-
-.fortune-level.中吉,
-.fortune-level.小吉,
-.fortune-level.吉 {
-    background: linear-gradient(135deg, #c79a3b, #d6b56d);
-    color: white;
-}
-
-.fortune-level.中平 {
-    background: linear-gradient(135deg, #756b5d, #8a7d6d);
-    color: white;
-}
-
-.fortune-level.凶,
-.fortune-level.下下 {
-    background: linear-gradient(135deg, #4a4a4a, #666);
-    color: white;
-}
-
-.fortune-poem {
-    background: var(--bg-primary);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px 0;
-    text-align: center;
-    font-family: 'Noto Serif TC', serif;
-    font-size: 1.2rem;
-    line-height: 2;
-}
-
-.fortune-section {
-    margin: 25px 0;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    border-left: 4px solid var(--gold-primary);
-}
-
-.fortune-section h4 {
-    color: var(--red-primary);
-    margin-bottom: 10px;
-    font-family: 'Noto Serif TC', serif;
-}
-
-.fortune-section ul {
-    padding-left: 20px;
-}
-
-.fortune-section li {
-    margin-bottom: 8px;
-}
-
-/* 塔羅區 */
-.tarot-section {
-    background: var(--tarot-bg);
-    color: #e0e0e0;
-}
-
-.tarot-section h2 {
-    color: var(--tarot-gold);
-}
-
-.tarot-section label {
-    color: #e0e0e0;
-}
-
-.tarot-section select,
-.tarot-section input[type="text"] {
-    background: #1e2340;
-    color: #e0e0e0;
-    border-color: #3a3f5c;
-}
-
-.tarot-section select {
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e0e0e0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 18px;
-    padding-right: 40px;
-}
-
-.tarot-section select option {
-    background: #1e2340;
-    color: #e0e0e0;
-    padding: 8px;
-}
-
-.tarot-section select:focus,
-.tarot-section input[type="text"]:focus {
-    border-color: var(--tarot-gold);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(214, 181, 109, 0.2);
-}
-
-.tarot-section .form-group {
-    margin-bottom: 20px;
-}
-
-.tarot-section .btn {
-    background: var(--tarot-purple);
-    color: #e0e0e0;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
-}
-
-.tarot-section .btn:hover {
-    background: #7a5bb8;
-}
-
-.tarot-section .btn:disabled {
-    background: #3a3f5c;
-    cursor: not-allowed;
-}
-
-.tarot-card-item {
-    display: inline-block;
-    margin: 15px;
-    text-align: center;
-    vertical-align: top;
-}
-
-.tarot-position {
-    font-size: 0.9rem;
-    color: var(--tarot-gold);
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.tarot-canvas {
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-}
-
-.tarot-card-name {
-    margin-top: 10px;
-    font-size: 0.95rem;
-    color: #b0b0b0;
-}
-
-.tarot-result-content {
-    padding: 30px;
-    color: #e0e0e0;
-}
-
-.tarot-question {
-    color: var(--tarot-gold);
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-.tarot-card-reading {
-    background: rgba(255,255,255,0.05);
-    padding: 25px;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-.tarot-card-reading h3 {
-    color: var(--tarot-gold);
-    margin-bottom: 15px;
-}
-
-.tarot-keywords {
-    color: var(--tarot-purple);
-    margin-bottom: 15px;
-}
-
-.tarot-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.tarot-details div {
-    padding: 10px;
-    background: rgba(255,255,255,0.03);
-    border-radius: 8px;
-}
-
-.tarot-details strong {
-    color: var(--tarot-gold);
-}
-
-/* 洗牌動畫 */
-.shuffle-animation {
-    text-align: center;
-    padding: 40px;
-    font-size: 1.5rem;
-    color: var(--tarot-gold);
-    animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-/* 資料總表 */
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-.data-table th,
-.data-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #e8dcc8;
-}
-
-.data-table th {
-    background: var(--red-primary);
-    color: white;
-    font-weight: bold;
-}
-
-.data-table tr:nth-child(even) {
-    background: rgba(0,0,0,0.02);
-}
-
-.data-table tr:hover {
-    background: rgba(199, 154, 59, 0.1);
-}
-
-/* 隱藏類別 */
+/* 佔位符 */
 .hidden {
     display: none !important;
 }
 
-/* RWD 響應式 */
+/* 功能區 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.feature-card {
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 
+        0 8px 30px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(212,165,116,0.2);
+    text-align: center;
+    border: 2px solid var(--border-chinese);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.feature-card h3 {
+    color: var(--gold-primary);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 4px;
+}
+
+.feature-card p {
+    color: var(--ink-light);
+    line-height: 1.8;
+}
+
+/* 選單區 */
+.select-group {
+    margin: 25px 0;
+}
+
+.select-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--gold-primary);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.select-group select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid var(--border-chinese);
+    border-radius: 10px;
+    background: var(--bg-card);
+    color: var(--ink-dark);
+    font-size: 1.1rem;
+    font-family: 'Noto Serif TC', serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d4a574' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+.select-group select:hover {
+    border-color: var(--gold-primary);
+}
+
+.select-group select:focus {
+    outline: none;
+    border-color: var(--gold-bright);
+    box-shadow: 0 0 0 3px rgba(212,165,116,0.3);
+}
+
+/* 籤詩區 */
+.fortune-section {
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 
+        0 10px 40px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(212,165,116,0.2);
+    border: 3px solid var(--border-chinese);
+    position: relative;
+}
+
+.fortune-section::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid rgba(212,165,116,0.15);
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.fortune-section h2 {
+    color: var(--gold-primary);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    letter-spacing: 6px;
+    text-align: center;
+}
+
+/* Canvas 容器 */
+.canvas-container {
+    background: var(--bg-card);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: inset 0 3px 10px rgba(0,0,0,0.3);
+    border: 2px solid rgba(212,165,116,0.2);
+    display: flex;
+    justify-content: center;
+}
+
+.canvas-container canvas {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* 下載按鈕 */
+.btn-download-section {
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* 塔羅區 */
+.tarot-section {
+    background: linear-gradient(180deg, #0d0d1a 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border: 3px solid #4a3a6a;
+}
+
+.tarot-section h2 {
+    color: #d6b56d;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    letter-spacing: 6px;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(214,181,109,0.5);
+}
+
+/* 資料摘要 */
+.data-summary {
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 1000px;
+    border: 2px solid var(--border-chinese);
+}
+
+.data-summary h3 {
+    color: var(--gold-primary);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.data-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-summary th {
+    background: var(--bg-card);
+    color: var(--gold-primary);
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid var(--border-chinese);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.data-summary td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(212,165,116,0.15);
+    color: var(--ink-light);
+}
+
+.data-summary tr:hover td {
+    background: rgba(212,165,116,0.05);
+}
+
+/* 頁尾 */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-top: 3px solid var(--border-chinese);
+    background: var(--bg-secondary);
+}
+
+.footer p {
+    color: var(--gray-warm);
+    margin-bottom: 10px;
+}
+
+.footer .copyright {
+    font-size: 0.9rem;
+    color: var(--gray-warm);
+}
+
+/* RWD */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
+        letter-spacing: 4px;
     }
     
     .hero .subtitle {
         font-size: 1rem;
     }
     
-    .cup-container {
-        gap: 20px;
+    .cup-section {
+        padding: 30px 20px;
     }
     
-    .cup {
-        width: 60px;
-        height: 90px;
+    .cup-stage {
+        width: 280px;
+        height: 200px;
     }
     
-    .section {
-        padding: 25px;
+    .cup-pair {
+        gap: 30px;
     }
     
-    .tarot-card-item {
-        display: block;
-        margin: 20px auto;
+    .jiao-wrapper {
+        width: 120px;
+        height: 120px;
     }
     
-    .tarot-details {
+    .btn-throw {
+        padding: 15px 40px;
+        font-size: 1.2rem;
+    }
+    
+    .fortune-section, .tarot-section {
+        padding: 30px 20px;
+    }
+    
+    .features-grid {
         grid-template-columns: 1fr;
     }
     
-    .data-table {
-        font-size: 0.9rem;
-    }
-    
-    .data-table th,
-    .data-table td {
-        padding: 8px;
+    .cup-instructions {
+        gap: 20px;
     }
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding: 40px 15px;
-    }
-    
     .hero h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
     
-    .cup-section {
-        padding: 25px;
+    .cup-stage {
+        width: 250px;
+        height: 180px;
     }
     
-    .fortune-poem {
-        font-size: 1rem;
+    .jiao-wrapper {
+        width: 100px;
+        height: 100px;
     }
-}
-
-/* 列表樣式 */
-.systems-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.system-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid var(--red-primary);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.system-card h4 {
-    color: var(--red-primary);
-    margin-bottom: 10px;
-}
-
-/* 下載按鈕容器 */
-.download-container {
-    text-align: center;
-    margin: 20px 0;
 }

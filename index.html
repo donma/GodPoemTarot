@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台灣籤詩 + 塔羅占卜</title>
+    <title>神明籤詩塔羅 - 台灣傳統籤詩占卜系統</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏯</text></svg>">
 </head>
 <body>
     <!-- 首頁 Hero -->
     <header class="hero">
-        <h1>台灣籤詩 + 塔羅占卜</h1>
-        <p class="subtitle">傳統籤詩與現代塔羅的完美結合</p>
-        <p class="hint">請先靜心，連續擲出三次聖筊後，方可啟動求籤與塔羅占卜。</p>
+        <div class="hero-decoration">◆ ◇ ◆</div>
+        <h1>神明籤詩塔羅</h1>
+        <p class="subtitle">傳承千年智慧 · 指引人生方向</p>
+        <p class="hint">請先靜心凝神，連續擲出三次聖筊，方可啟動求籤與塔羅占卜</p>
         
         <!-- 進度條 -->
         <div class="progress-container">
@@ -22,7 +24,7 @@
             <span class="progress-text" id="progress-text">0/3 聖筊</span>
         </div>
         
-        <button id="btn-reset" class="btn" style="background: var(--gray-warm); font-size: 0.85rem; padding: 8px 16px;">重新淨心</button>
+        <button id="btn-reset" class="btn" style="background: transparent; font-size: 0.85rem; padding: 8px 20px; border: 1px solid var(--gold-primary);">重新淨心</button>
     </header>
 
     <main class="container">
