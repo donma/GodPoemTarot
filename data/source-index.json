@@ -1,0 +1,81 @@
+{
+  "sources": [
+    {
+      "sourceId": "chance_guanyin_100",
+      "title": "籤詩網・觀音一百籤",
+      "url": "https://www.chance.org.tw/",
+      "type": "fortune",
+      "systemId": "guanyin_100",
+      "language": "zh-Hant",
+      "official": false,
+      "usage": "reference_only",
+      "copyrightNote": "僅作比對與資料來源紀錄，現代解釋自行重寫"
+    },
+    {
+      "sourceId": "temple01_guandi_100",
+      "title": "好廟網・關聖帝君一百籤",
+      "url": "https://www.temple01.com/",
+      "type": "fortune",
+      "systemId": "guandi_100",
+      "language": "zh-Hant",
+      "official": false,
+      "usage": "reference_only",
+      "copyrightNote": "僅作比對與資料來源紀錄，現代解釋自行重寫"
+    },
+    {
+      "sourceId": "mazu_official",
+      "title": "媽祖籤詩",
+      "url": "https://www.matsu.org.tw/",
+      "type": "fortune",
+      "systemId": "mazu_60",
+      "language": "zh-Hant",
+      "official": true,
+      "usage": "reference_only",
+      "copyrightNote": "媽祖廟籤詩文化資料"
+    },
+    {
+      "sourceId": "chance_60jiazi",
+      "title": "籤詩網・六十甲子籤",
+      "url": "https://www.chance.org.tw/",
+      "type": "fortune",
+      "systemId": "liu_shi_jia_zi_60",
+      "language": "zh-Hant",
+      "official": false,
+      "usage": "reference_only",
+      "copyrightNote": "僅作比對與資料來源紀錄"
+    },
+    {
+      "sourceId": "yuelao_temple",
+      "title": "月老姻緣籤",
+      "url": "https://www.yuelao.org.tw/",
+      "type": "fortune",
+      "systemId": "yuelao",
+      "language": "zh-Hant",
+      "official": true,
+      "usage": "reference_only",
+      "copyrightNote": "月老廟籤詩文化資料"
+    },
+    {
+      "sourceId": "chenghuang_temple",
+      "title": "城隍籤詩",
+      "url": "https://www.chenghuang.org.tw/",
+      "type": "fortune",
+      "systemId": "chenghuang",
+      "language": "zh-Hant",
+      "official": true,
+      "usage": "reference_only",
+      "copyrightNote": "城隍廟籤詩文化資料"
+    },
+    {
+      "sourceId": "wikimedia_rws_public_domain",
+      "title": "Wikimedia Commons - Rider-Waite Tarot",
+      "url": "https://commons.wikimedia.org/",
+      "type": "tarot",
+      "systemId": "tarot_rws_78",
+      "language": "en",
+      "official": false,
+      "usage": "public_domain_text",
+      "copyrightNote": "Rider-Waite-Smith 塔羅牌圖案已進入公共領域"
+    }
+  ]
+}

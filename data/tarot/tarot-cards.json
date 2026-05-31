@@ -1,0 +1,3204 @@
+{
+  "deckId": "tarot_rws_78",
+  "name": "偉特塔羅 78 張",
+  "items": [
+    {
+      "id": "major_00_fool",
+      "nameZh": "愚者",
+      "nameEn": "The Fool",
+      "arcana": "major",
+      "number": 0,
+      "suit": null,
+      "rank": null,
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "cliff_sun_dog_bundle",
+      "upright": {
+        "keywords": [
+          "開始",
+          "自由",
+          "冒險",
+          "相信直覺"
+        ],
+        "meaning": "愚者代表新的開始和無限的可能性。現在是踏出第一步的時候，不要害怕未知，相信你的直覺，帶著開放的心態去冒險。",
+        "love": "感情上可能有新的開始，單身者有機會遇到有趣的對象。保持開放的心態，不要設太多條件。",
+        "career": "適合開始新的計畫或轉換跑道。不要害怕失敗，勇於嘗試新的可能性。",
+        "money": "財務上可能有意外的收穫，但也要注意不要過於冒險。適合小額投資或嘗試新的理財方式。",
+        "health": "身心狀態良好，充滿活力。適合開始新的運動或養生計畫。"
+      },
+      "reversed": {
+        "keywords": [
+          "魯莽",
+          "逃避",
+          "準備不足",
+          "不穩定"
+        ],
+        "meaning": "逆位的愚者提醒你不要過於魯莽。你可能沒有做好充分的準備就想要行動，這會帶來風險。先做好準備再出發。",
+        "love": "感情上可能過於衝動，沒有考慮清楚就投入。先了解對方再決定是否交往。",
+        "career": "工作上可能過於冒險，沒有做好準備就想要改變。先穩定現狀再考慮轉變。",
+        "money": "財務上可能有損失的風險，不要盲目投資。保守理財為上策。",
+        "health": "健康上可能因為疏忽而有問題。注意安全，不要冒險。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_01_magician",
+      "nameZh": "魔術師",
+      "nameEn": "The Magician",
+      "arcana": "major",
+      "number": 1,
+      "suit": null,
+      "rank": null,
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "table_wands_infinity",
+      "upright": {
+        "keywords": [
+          "創造力",
+          "意志力",
+          "技巧",
+          "資源充足"
+        ],
+        "meaning": "魔術師代表你擁有實現目標所需的一切資源和能力。現在是發揮創造力和意志力的時候，相信自己能夠成功。",
+        "love": "感情上你有足夠的魅力和能力去吸引對方。主動出擊，展現你的才華。",
+        "career": "工作上你擁有完成任務所需的所有技能。把握機會，展現你的能力。",
+        "money": "財務上你有足夠的智慧去管理金錢。適合投資或開始新的財務計畫。",
+        "health": "健康狀況良好，你有足夠的意志力去維持健康。開始新的養生計畫吧。"
+      },
+      "reversed": {
+        "keywords": [
+          "欺騙",
+          "操縱",
+          "能力不足",
+          "浪費 talent"
+        ],
+        "meaning": "逆位的魔術師提醒你可能在濫用你的能力，或者沒有發揮你的潛力。檢視自己是否有欺騙或操縱他人的行為。",
+        "love": "感情上可能有欺騙或隱瞞的行為。誠實面對自己的感情。",
+        "career": "工作上可能沒有發揮你的能力，或者在浪費你的才華。重新評估你的職業規劃。",
+        "money": "財務上可能有欺騙或不誠實的行為。誠實理財，不要投機取巧。",
+        "health": "健康上可能因為疏忽而有問題。認真對待你的健康。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_02_high_priestess",
+      "nameZh": "女祭司",
+      "nameEn": "The High Priestess",
+      "arcana": "major",
+      "number": 2,
+      "suit": null,
+      "rank": null,
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "moon_pillars_scroll",
+      "upright": {
+        "keywords": [
+          "直覺",
+          "智慧",
+          "神秘",
+          "內在聲音"
+        ],
+        "meaning": "女祭司代表直覺和內在的智慧。現在是聆聽你內在聲音的時候，不要只依賴邏輯，相信你的直覺。",
+        "love": "感情上要相信你的直覺。如果感覺不對，就不要勉強。內在的聲音會指引你找到對的人。",
+        "career": "工作上要相信你的直覺和經驗。不要只看表面，深入了解問題的本質。",
+        "money": "財務上要相信你的直覺。如果感覺某個投資不對勁，就不要投入。",
+        "health": "健康上要聆聽你身體的聲音。如果感覺不舒服，就去檢查。"
+      },
+      "reversed": {
+        "keywords": [
+          "忽視直覺",
+          "過度理性",
+          "秘密",
+          "混亂"
+        ],
+        "meaning": "逆位的女祭司提醒你可能忽視了你的直覺。你可能過度依賴邏輯，而忽略了內在的聲音。重新連結你的直覺。",
+        "love": "感情上可能忽視了你的直覺。如果你感覺對方有問題，就認真面對。",
+        "career": "工作上可能忽視了你的經驗和直覺。不要只看數據，也要相信你的判斷。",
+        "money": "財務上可能忽視了你的直覺。如果你感覺某個投資有問題，就重新評估。",
+        "health": "健康上可能忽視了身體的信號。認真對待身體的不適。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_03_empress",
+      "nameZh": "女皇",
+      "nameEn": "The Empress",
+      "arcana": "major",
+      "number": 3,
+      "suit": null,
+      "rank": null,
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "wheat_heart_crown",
+      "upright": {
+        "keywords": [
+          "豐盛",
+          "創造力",
+          "母性",
+          "自然"
+        ],
+        "meaning": "女皇代表豐盛和創造力。現在是享受生活的美好，發揮你的創造力的時候。與自然連結，感受生命的豐盛。",
+        "love": "感情上充滿愛和溫暖。有伴侶者感情甜蜜，單身者有機會遇到溫柔體貼的對象。",
+        "career": "工作上充滿創造力和生產力。適合開始新的創作或計畫。",
+        "money": "財務豐盛，收入穩定。適合投資或享受生活。",
+        "health": "健康狀況良好，充滿活力。與自然連結，養生保健。"
+      },
+      "reversed": {
+        "keywords": [
+          "過度依賴",
+          "創意受阻",
+          "忽視自我",
+          "缺乏豐盛"
+        ],
+        "meaning": "逆位的女皇提醒你可能過度依賴他人，或者忽視了自己的需求。重新連結你的創造力和內在的力量。",
+        "love": "感情上可能過度依賴對方，或者忽視了自己的需求。學會愛自己。",
+        "career": "工作上可能創意受阻，或者過度勞累。重新找回你的創造力。",
+        "money": "財務上可能感覺匱乏，或者過度消費。重新評估你的財務狀況。",
+        "health": "健康上可能因為忽視自己而有問題。認真照顧自己。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_04_emperor",
+      "nameZh": "皇帝",
+      "nameEn": "The Emperor",
+      "arcana": "major",
+      "number": 4,
+      "suit": null,
+      "rank": null,
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "throne_mountain_staff",
+      "upright": {
+        "keywords": [
+          "權威",
+          "結構",
+          "穩定",
+          "領導力"
+        ],
+        "meaning": "皇帝代表權威和結構。現在是建立秩序，發揮領導力的時候。用理性和邏輯來解決問題。",
+        "love": "感情上需要穩定和承諾。有伴侶者要負起責任，單身者要認真對待感情。",
+        "career": "工作上要發揮領導力和組織能力。建立規則和結構，帶領團隊前進。",
+        "money": "財務上要建立穩定的結構。制定預算和計畫，理性管理金錢。",
+        "health": "健康上要建立規律的生活習慣。制定養生計畫，堅持執行。"
+      },
+      "reversed": {
+        "keywords": [
+          "專制",
+          "固執",
+          "缺乏彈性",
+          "控制欲"
+        ],
+        "meaning": "逆位的皇帝提醒你可能過於專制或固執。學會彈性和包容，不要過度控制他人。",
+        "love": "感情上可能過於控制或專制。給對方空間，學會尊重和包容。",
+        "career": "工作上可能過於固執或專制。學會授權和信任他人。",
+        "money": "財務上可能過於保守或固執。學會彈性處理財務問題。",
+        "health": "健康上可能因為固執而忽視問題。開放態度，接受建議。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_05_hierophant",
+      "nameZh": "教皇",
+      "nameEn": "The Hierophant",
+      "arcana": "major",
+      "number": 5,
+      "suit": null,
+      "rank": null,
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "keys_crown_staff",
+      "upright": {
+        "keywords": [
+          "傳統",
+          "信仰",
+          "指導",
+          "學習"
+        ],
+        "meaning": "教皇代表傳統和信仰。現在是學習傳統智慧，尋求指導的時候。尊重規則和制度。",
+        "love": "感情上要尊重傳統價值觀。有伴侶者要認真對待承諾，單身者要尋找有共同價值觀的對象。",
+        "career": "工作上要尊重規則和制度。學習傳統智慧，尋求指導。",
+        "money": "財務上要遵循傳統的理財方式。穩健投資，不要冒險。",
+        "health": "健康上要遵循傳統的養生方式。規律生活，養成好習慣。"
+      },
+      "reversed": {
+        "keywords": [
+          "挑戰傳統",
+          "自由思想",
+          "叛逆",
+          "非傳統"
+        ],
+        "meaning": "逆位的教皇代表挑戰傳統和自由思想。現在是打破規則，尋找新的道路的時候。",
+        "love": "感情上可能想要打破傳統。尋找非傳統的關係模式。",
+        "career": "工作上可能想要挑戰規則。尋找新的方法和道路。",
+        "money": "財務上可能想要嘗試非傳統的投資方式。但要謹慎評估風險。",
+        "health": "健康上可能想要嘗試非傳統的療法。但要謹慎選擇。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_06_lovers",
+      "nameZh": "戀人",
+      "nameEn": "The Lovers",
+      "arcana": "major",
+      "number": 6,
+      "suit": null,
+      "rank": null,
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "couple_angel_sun",
+      "upright": {
+        "keywords": [
+          "愛情",
+          "選擇",
+          "結合",
+          "價值觀"
+        ],
+        "meaning": "戀人代表愛情和選擇。現在是做出重要選擇的時候，特別是關於愛情和價值觀。相信你的心。",
+        "love": "感情上充滿愛和連結。有伴侶者感情甜蜜，單身者有機會遇到真愛。",
+        "career": "工作上要做出重要的選擇。相信你的價值觀，選擇正確的道路。",
+        "money": "財務上要做出重要的選擇。根據你的價值觀來做決定。",
+        "health": "健康上要做出重要的選擇。選擇健康的生活方式。"
+      },
+      "reversed": {
+        "keywords": [
+          "價值觀衝突",
+          "選擇錯誤",
+          "不和諧",
+          "分離"
+        ],
+        "meaning": "逆位的戀人代表價值觀衝突和選擇錯誤。重新檢視你的選擇和價值觀。",
+        "love": "感情上可能有價值觀衝突。與伴侶溝通，解決分歧。",
+        "career": "工作上可能做了錯誤的選擇。重新評估你的職業道路。",
+        "money": "財務上可能做了錯誤的選擇。重新評估你的投資策略。",
+        "health": "健康上可能做了錯誤的選擇。重新評估你的生活方式。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_07_chariot",
+      "nameZh": "戰車",
+      "nameEn": "The Chariot",
+      "arcana": "major",
+      "number": 7,
+      "suit": null,
+      "rank": null,
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "wheels_horses_star_crown",
+      "upright": {
+        "keywords": [
+          "勝利",
+          "意志力",
+          "決心",
+          "前進"
+        ],
+        "meaning": "戰車代表勝利和意志力。現在是發揮決心和毅力的時候。只要堅持下去，你一定能夠成功。",
+        "love": "感情上要積極爭取。有伴侶者要共同前進，單身者要主動追求。",
+        "career": "工作上要發揮意志力和決心。克服困難，堅持到底。",
+        "money": "財務上要積極管理。制定計畫，堅持執行。",
+        "health": "健康上要發揮意志力。堅持運動和養生計畫。"
+      },
+      "reversed": {
+        "keywords": [
+          "失控",
+          "缺乏方向",
+          "挫折",
+          "失去信心"
+        ],
+        "meaning": "逆位的戰車代表失控和挫折。你可能失去了方向或信心。重新找回你的目標和動力。",
+        "love": "感情上可能失去方向。重新檢視你的感情目標。",
+        "career": "工作上可能遇到挫折。重新找回你的動力和方向。",
+        "money": "財務上可能失控。重新制定財務計畫。",
+        "health": "健康上可能失去動力。重新找回你的健康目標。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_08_strength",
+      "nameZh": "力量",
+      "nameEn": "Strength",
+      "arcana": "major",
+      "number": 8,
+      "suit": null,
+      "rank": null,
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "lion_infinity_woman",
+      "upright": {
+        "keywords": [
+          "勇氣",
+          "內在力量",
+          "耐心",
+          "溫柔"
+        ],
+        "meaning": "力量代表內在的力量和勇氣。現在是發揮你的內在力量的時候。用溫柔和耐心來克服困難。",
+        "love": "感情上要有勇氣面對問題。用溫柔和耐心來經營感情。",
+        "career": "工作上要發揮內在的力量。用溫柔和耐心來處理問題。",
+        "money": "財務上要有勇氣面對問題。用耐心和智慧來管理金錢。",
+        "health": "健康上要發揮內在的力量。用耐心和毅力來維持健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "自我懷疑",
+          "軟弱",
+          "缺乏自信",
+          "恐懼"
+        ],
+        "meaning": "逆位的力量代表自我懷疑和軟弱。你可能缺乏自信或感到恐懼。重新找回你的內在力量。",
+        "love": "感情上可能缺乏自信。相信自己，你值得被愛。",
+        "career": "工作上可能自我懷疑。相信你的能力，你能夠成功。",
+        "money": "財務上可能感到恐懼。面對你的財務問題，尋求幫助。",
+        "health": "健康上可能缺乏動力。相信自己，你能夠維持健康。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_09_hermit",
+      "nameZh": "隱者",
+      "nameEn": "The Hermit",
+      "arcana": "major",
+      "number": 9,
+      "suit": null,
+      "rank": null,
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "lantern_mountain_staff",
+      "upright": {
+        "keywords": [
+          "內省",
+          "智慧",
+          "孤獨",
+          "指導"
+        ],
+        "meaning": "隱者代表內省和智慧。現在是獨處和反思的時候。在安靜中尋找答案和指導。",
+        "love": "感情上需要獨處和反思。了解自己真正想要的是什麼。",
+        "career": "工作上需要深入思考。獨處和反思能夠幫助你找到答案。",
+        "money": "財務上需要謹慎思考。不要衝動，先想清楚再行動。",
+        "health": "健康上需要獨處和休息。給自己時間恢復和充電。"
+      },
+      "reversed": {
+        "keywords": [
+          "孤立",
+          "逃避",
+          "固執",
+          "拒絕幫助"
+        ],
+        "meaning": "逆位的隱者代表孤立和逃避。你可能過於獨來獨往，拒絕他人的幫助。學會接受幫助。",
+        "love": "感情上可能過於孤立。打開心扉，接受他人的關心。",
+        "career": "工作上可能逃避問題。面對問題，尋求幫助。",
+        "money": "財務上可能固執己見。接受他人的建議，尋求幫助。",
+        "health": "健康上可能忽視問題。面對健康問題，尋求專業幫助。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_10_wheel_of_fortune",
+      "nameZh": "命運之輪",
+      "nameEn": "Wheel of Fortune",
+      "arcana": "major",
+      "number": 10,
+      "suit": null,
+      "rank": null,
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wheel_symbols_clouds",
+      "upright": {
+        "keywords": [
+          "命運",
+          "轉變",
+          "機會",
+          "週期"
+        ],
+        "meaning": "命運之輪代表命運的轉變和機會。現在是命運轉折的時候，把握機會，順勢而為。",
+        "love": "感情上可能有轉變。把握機會，順勢而為。",
+        "career": "工作上可能有轉變。把握機會，順勢而為。",
+        "money": "財務上可能有轉變。把握機會，順勢而為。",
+        "health": "健康上可能有轉變。把握機會，改善健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "壞運",
+          "抗拒改變",
+          "錯失機會",
+          "停滯"
+        ],
+        "meaning": "逆位的命運之輪代表壞運和抗拒改變。你可能錯失了機會，或者停滯不前。接受改變，尋找新的機會。",
+        "love": "感情上可能遇到困難。接受改變，尋找新的機會。",
+        "career": "工作上可能遇到困難。接受改變，尋找新的機會。",
+        "money": "財務上可能遇到困難。接受改變，尋找新的機會。",
+        "health": "健康上可能遇到困難。接受改變，尋找新的機會。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_11_justice",
+      "nameZh": "正義",
+      "nameEn": "Justice",
+      "arcana": "major",
+      "number": 11,
+      "suit": null,
+      "rank": null,
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "scales_sword_woman",
+      "upright": {
+        "keywords": [
+          "正義",
+          "公平",
+          "真相",
+          "責任"
+        ],
+        "meaning": "正義代表公平和真相。現在是追求真相和公平的時候。承擔責任，做出正確的選擇。",
+        "love": "感情上要公平對待。誠實面對自己的感情。",
+        "career": "工作上要公平對待。承擔責任，做出正確的決定。",
+        "money": "財務上要公平交易。誠實理財，不要投機取巧。",
+        "health": "健康上要公平對待自己的身體。認真照顧健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "不公平",
+          "偏見",
+          "逃避責任",
+          "不誠實"
+        ],
+        "meaning": "逆位的正義代表不公平和偏見。你可能逃避責任或不誠實。面對真相，承擔責任。",
+        "love": "感情上可能不公平。誠實面對自己的感情。",
+        "career": "工作上可能不公平。承擔責任，誠實對待。",
+        "money": "財務上可能不公平。誠實理財，不要投機取巧。",
+        "health": "健康上可能不公平對待自己。認真照顧健康。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_12_hanged_man",
+      "nameZh": "倒吊人",
+      "nameEn": "The Hanged Man",
+      "arcana": "major",
+      "number": 12,
+      "suit": null,
+      "rank": null,
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "hanging_man_halo_tree",
+      "upright": {
+        "keywords": [
+          "犧牲",
+          "放下",
+          "新視角",
+          "等待"
+        ],
+        "meaning": "倒吊人代表犧牲和放下。現在是放下執著，從新的角度看事情的時候。犧牲能夠帶來新的視角。",
+        "love": "感情上要學會放下。從新的角度看感情問題。",
+        "career": "工作上要學會犧牲。從新的角度看工作問題。",
+        "money": "財務上要學會放下。從新的角度看財務問題。",
+        "health": "健康上要學會放下。從新的角度看健康問題。"
+      },
+      "reversed": {
+        "keywords": [
+          "拖延",
+          "抗拒",
+          "無謂犧牲",
+          "停滯"
+        ],
+        "meaning": "逆位的倒吊人代表拖延和抗拒。你可能在無謂犧牲，或者停滯不前。停止拖延，採取行動。",
+        "love": "感情上可能拖延。停止拖延，面對問題。",
+        "career": "工作上可能拖延。停止拖延，採取行動。",
+        "money": "財務上可能拖延。停止拖延，面對問題。",
+        "health": "健康上可能拖延。停止拖延，面對問題。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_13_death",
+      "nameZh": "死神",
+      "nameEn": "Death",
+      "arcana": "major",
+      "number": 13,
+      "suit": null,
+      "rank": null,
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "skeleton_flag_sunrise",
+      "upright": {
+        "keywords": [
+          "結束",
+          "轉變",
+          "重生",
+          "放下"
+        ],
+        "meaning": "死神代表結束和重生。現在是放下舊的事物，迎接新的開始的時候。結束是為了更好的開始。",
+        "love": "感情上可能有結束和新的開始。放下舊的感情，迎接新的緣分。",
+        "career": "工作上可能有結束和新的開始。放下舊的工作，迎接新的機會。",
+        "money": "財務上可能有結束和新的開始。放下舊的財務問題，迎接新的機會。",
+        "health": "健康上可能有結束和新的開始。放下舊的習慣，迎接新的健康生活。"
+      },
+      "reversed": {
+        "keywords": [
+          "抗拒改變",
+          "恐懼",
+          "停滯",
+          "無法放下"
+        ],
+        "meaning": "逆位的死神代表抗拒改變和恐懼。你可能無法放下舊的事物，或者停滯不前。接受改變，放下過去。",
+        "love": "感情上可能無法放下。接受改變，放下過去。",
+        "career": "工作上可能抗拒改變。接受改變，放下過去。",
+        "money": "財務上可能抗拒改變。接受改變，放下過去。",
+        "health": "健康上可能抗拒改變。接受改變，放下過去。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_14_temperance",
+      "nameZh": "節制",
+      "nameEn": "Temperance",
+      "arcana": "major",
+      "number": 14,
+      "suit": null,
+      "rank": null,
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "cups_water_wings",
+      "upright": {
+        "keywords": [
+          "平衡",
+          "節制",
+          "耐心",
+          "調和"
+        ],
+        "meaning": "節制代表平衡和節制。現在是尋找平衡，保持節制的時候。耐心和調和能夠帶來成功。",
+        "love": "感情上要保持平衡。不要過度，也不要不足。",
+        "career": "工作上要保持平衡。不要過度勞累，也不要偷懶。",
+        "money": "財務上要保持平衡。不要過度消費，也不要過度節省。",
+        "health": "健康上要保持平衡。不要過度，也不要不足。"
+      },
+      "reversed": {
+        "keywords": [
+          "失衡",
+          "過度",
+          "缺乏耐心",
+          "衝突"
+        ],
+        "meaning": "逆位的節制代表失衡和過度。你可能過度或不足，導致問題。重新找回平衡。",
+        "love": "感情上可能失衡。重新找回平衡。",
+        "career": "工作上可能失衡。重新找回平衡。",
+        "money": "財務上可能失衡。重新找回平衡。",
+        "health": "健康上可能失衡。重新找回平衡。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_15_devil",
+      "nameZh": "惡魔",
+      "nameEn": "The Devil",
+      "arcana": "major",
+      "number": 15,
+      "suit": null,
+      "rank": null,
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "chains_horns_fire",
+      "upright": {
+        "keywords": [
+          "束縛",
+          "慾望",
+          "物質",
+          "誘惑"
+        ],
+        "meaning": "惡魔代表束縛和慾望。你可能被物質或慾望所束縛。認清真相，掙脫束縛。",
+        "love": "感情上可能被慾望所束縛。認清真相，掙脫束縛。",
+        "career": "工作上可能被物質所束縛。認清真相，掙脫束縛。",
+        "money": "財務上可能被慾望所束縛。認清真相，掙脫束縛。",
+        "health": "健康上可能被壞習慣所束縛。認清真相，掙脫束縛。"
+      },
+      "reversed": {
+        "keywords": [
+          "掙脫束縛",
+          "自由",
+          "覺醒",
+          "釋放"
+        ],
+        "meaning": "逆位的惡魔代表掙脫束縛和自由。你已經覺醒，正在掙脫束縛。繼續保持自由。",
+        "love": "感情上已經掙脫束縛。保持自由，不要再次被束縛。",
+        "career": "工作上已經掙脫束縛。保持自由，不要再次被束縛。",
+        "money": "財務上已經掙脫束縛。保持自由，不要再次被束縛。",
+        "health": "健康上已經掙脫束縛。保持自由，不要再次被束縛。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_16_tower",
+      "nameZh": "高塔",
+      "nameEn": "The Tower",
+      "arcana": "major",
+      "number": 16,
+      "suit": null,
+      "rank": null,
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "lightning_tower_falling",
+      "upright": {
+        "keywords": [
+          "突變",
+          "破壞",
+          "覺醒",
+          "釋放"
+        ],
+        "meaning": "高塔代表突變和破壞。雖然看似可怕，但這是必要的釋放和覺醒。接受改變，從廢墟中重建。",
+        "love": "感情上可能有突變。接受改變，重新開始。",
+        "career": "工作上可能有突變。接受改變，重新開始。",
+        "money": "財務上可能有突變。接受改變，重新開始。",
+        "health": "健康上可能有突變。接受改變，重新開始。"
+      },
+      "reversed": {
+        "keywords": [
+          "抗拒改變",
+          "恐懼",
+          "延遲災難",
+          "避免"
+        ],
+        "meaning": "逆位的高塔代表抗拒改變和恐懼。你可能在延遲災難，或者避免面對問題。接受改變，面對問題。",
+        "love": "感情上可能抗拒改變。接受改變，面對問題。",
+        "career": "工作上可能抗拒改變。接受改變，面對問題。",
+        "money": "財務上可能抗拒改變。接受改變，面對問題。",
+        "health": "健康上可能抗拒改變。接受改變，面對問題。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_17_star",
+      "nameZh": "星星",
+      "nameEn": "The Star",
+      "arcana": "major",
+      "number": 17,
+      "suit": null,
+      "rank": null,
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "stars_water_lake",
+      "upright": {
+        "keywords": [
+          "希望",
+          "靈感",
+          "平靜",
+          "療癒"
+        ],
+        "meaning": "星星代表希望和靈感。現在是充滿希望和靈感的時候。保持平靜，讓療癒發生。",
+        "love": "感情上充滿希望。保持平靜，讓愛情自然發生。",
+        "career": "工作上充滿靈感。保持平靜，讓創意流動。",
+        "money": "財務上充滿希望。保持平靜，讓財務改善。",
+        "health": "健康上充滿希望。保持平靜，讓療癒發生。"
+      },
+      "reversed": {
+        "keywords": [
+          "失望",
+          "缺乏信心",
+          "絕望",
+          "失去希望"
+        ],
+        "meaning": "逆位的星星代表失望和缺乏信心。你可能失去了希望。重新找回你的信心和希望。",
+        "love": "感情上可能失望。重新找回你的信心和希望。",
+        "career": "工作上可能失望。重新找回你的信心和希望。",
+        "money": "財務上可能失望。重新找回你的信心和希望。",
+        "health": "健康上可能失望。重新找回你的信心和希望。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_18_moon",
+      "nameZh": "月亮",
+      "nameEn": "The Moon",
+      "arcana": "major",
+      "number": 18,
+      "suit": null,
+      "rank": null,
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "moon_dogs_wolf_path",
+      "upright": {
+        "keywords": [
+          "幻覺",
+          "直覺",
+          "潛意識",
+          "恐懼"
+        ],
+        "meaning": "月亮代表幻覺和潛意識。你可能被幻覺所迷惑，或者有隱藏的恐懼。相信你的直覺，面對你的恐懼。",
+        "love": "感情上可能有幻覺。相信你的直覺，面對真相。",
+        "career": "工作上可能有幻覺。相信你的直覺，面對真相。",
+        "money": "財務上可能有幻覺。相信你的直覺，面對真相。",
+        "health": "健康上可能有幻覺。相信你的直覺，面對真相。"
+      },
+      "reversed": {
+        "keywords": [
+          "釋放恐懼",
+          "真相",
+          "清醒",
+          "克服幻覺"
+        ],
+        "meaning": "逆位的月亮代表釋放恐懼和真相。你已經克服了幻覺，看到了真相。繼續保持清醒。",
+        "love": "感情上已經看到真相。繼續保持清醒。",
+        "career": "工作上已經看到真相。繼續保持清醒。",
+        "money": "財務上已經看到真相。繼續保持清醒。",
+        "health": "健康上已經看到真相。繼續保持清醒。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_19_sun",
+      "nameZh": "太陽",
+      "nameEn": "The Sun",
+      "arcana": "major",
+      "number": 19,
+      "suit": null,
+      "rank": null,
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "sun_child_flowers",
+      "upright": {
+        "keywords": [
+          "成功",
+          "快樂",
+          "活力",
+          "光明"
+        ],
+        "meaning": "太陽代表成功和快樂。現在是充滿活力和光明的時候。享受成功，傳播快樂。",
+        "love": "感情上充滿快樂。享受愛情，傳播幸福。",
+        "career": "工作上充滿成功。享受成就，傳播正能量。",
+        "money": "財務上充滿成功。享受財富，傳播慷慨。",
+        "health": "健康上充滿活力。享受健康，傳播快樂。"
+      },
+      "reversed": {
+        "keywords": [
+          "暫時失敗",
+          "延遲",
+          "缺乏活力",
+          "悲觀"
+        ],
+        "meaning": "逆位的太陽代表暫時失敗和缺乏活力。你可能感到悲觀。重新找回你的活力和樂觀。",
+        "love": "感情上可能暫時失敗。重新找回你的活力和樂觀。",
+        "career": "工作上可能暫時失敗。重新找回你的活力和樂觀。",
+        "money": "財務上可能暫時失敗。重新找回你的活力和樂觀。",
+        "health": "健康上可能缺乏活力。重新找回你的活力和樂觀。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_20_judgement",
+      "nameZh": "審判",
+      "nameEn": "Judgement",
+      "arcana": "major",
+      "number": 20,
+      "suit": null,
+      "rank": null,
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "trumpet_flag_coffin",
+      "upright": {
+        "keywords": [
+          "覺醒",
+          "重生",
+          "召喚",
+          "反思"
+        ],
+        "meaning": "審判代表覺醒和重生。現在是反思過去，迎接新的開始的時候。聆聽你內在的召喚。",
+        "love": "感情上可能有覺醒。反思過去，迎接新的開始。",
+        "career": "工作上可能有覺醒。反思過去，迎接新的開始。",
+        "money": "財務上可能有覺醒。反思過去，迎接新的開始。",
+        "health": "健康上可能有覺醒。反思過去，迎接新的開始。"
+      },
+      "reversed": {
+        "keywords": [
+          "自我懷疑",
+          "拒絕反思",
+          "錯失機會",
+          "停滯"
+        ],
+        "meaning": "逆位的審判代表自我懷疑和拒絕反思。你可能錯失了機會，或者停滯不前。面對過去，接受反思。",
+        "love": "感情上可能自我懷疑。面對過去，接受反思。",
+        "career": "工作上可能自我懷疑。面對過去，接受反思。",
+        "money": "財務上可能自我懷疑。面對過去，接受反思。",
+        "health": "健康上可能自我懷疑。面對過去，接受反思。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "major_21_world",
+      "nameZh": "世界",
+      "nameEn": "The World",
+      "arcana": "major",
+      "number": 21,
+      "suit": null,
+      "rank": null,
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "wreath_dancer_symbols",
+      "upright": {
+        "keywords": [
+          "完成",
+          "圓滿",
+          "成就",
+          "整合"
+        ],
+        "meaning": "世界代表完成和圓滿。你已經完成了重要的階段，獲得了成就。享受你的成功，準備新的旅程。",
+        "love": "感情上圓滿完成。享受愛情，準備新的階段。",
+        "career": "工作上圓滿完成。享受成就，準備新的挑戰。",
+        "money": "財務上圓滿完成。享受財富，準備新的計畫。",
+        "health": "健康上圓滿完成。享受健康，準備新的目標。"
+      },
+      "reversed": {
+        "keywords": [
+          "未完成",
+          "延遲",
+          "缺乏 closure",
+          "停滯"
+        ],
+        "meaning": "逆位的世界代表未完成和延遲。你可能還沒有完成重要的階段。繼續努力，完成你的目標。",
+        "love": "感情上可能未完成。繼續努力，完成你的目標。",
+        "career": "工作上可能未完成。繼續努力，完成你的目標。",
+        "money": "財務上可能未完成。繼續努力，完成你的目標。",
+        "health": "健康上可能未完成。繼續努力，完成你的目標。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_01",
+      "nameZh": "權杖一",
+      "nameEn": "Ace of Wands",
+      "arcana": "minor",
+      "number": 1,
+      "suit": "wands",
+      "rank": "ace",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wand_flame",
+      "upright": {
+        "keywords": [
+          "開始",
+          "創造力",
+          "靈感",
+          "潛力"
+        ],
+        "meaning": "權杖一代表新的開始和創造力。現在是發揮你的創造力和潛力的時候。把握機會，開始新的計畫。",
+        "love": "感情上有新的開始。把握機會，展開新的戀情。",
+        "career": "工作上有新的開始。發揮創造力，開始新的計畫。",
+        "money": "財務上有新的開始。把握機會，開始新的投資。",
+        "health": "健康上有新的開始。開始新的養生計畫。"
+      },
+      "reversed": {
+        "keywords": [
+          "延遲",
+          "缺乏靈感",
+          "錯失機會",
+          "創意受阻"
+        ],
+        "meaning": "逆位的權杖一代表延遲和缺乏靈感。你可能錯失了機會，或者創意受阻。重新找回你的靈感。",
+        "love": "感情上可能延遲。重新找回你的熱情。",
+        "career": "工作上可能缺乏靈感。重新找回你的創造力。",
+        "money": "財務上可能錯失機會。重新評估你的計畫。",
+        "health": "健康上可能缺乏動力。重新找回你的活力。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_02",
+      "nameZh": "權杖二",
+      "nameEn": "Two of Wands",
+      "arcana": "minor",
+      "number": 2,
+      "suit": "wands",
+      "rank": "two",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_globe",
+      "upright": {
+        "keywords": [
+          "規劃",
+          "決定",
+          "展望",
+          "未來"
+        ],
+        "meaning": "權杖二代表規劃和決定。現在是為未來做規劃的時候。展望未來，做出正確的決定。",
+        "love": "感情上要為未來做規劃。與伴侶討論未來。",
+        "career": "工作上要為未來做規劃。制定長期計畫。",
+        "money": "財務上要為未來做規劃。制定財務計畫。",
+        "health": "健康上要為未來做規劃。制定養生計畫。"
+      },
+      "reversed": {
+        "keywords": [
+          "缺乏規劃",
+          "猶豫不決",
+          "錯失機會",
+          "短視"
+        ],
+        "meaning": "逆位的權杖二代表缺乏規劃和猶豫不決。你可能錯失了機會。重新規劃你的未來。",
+        "love": "感情上可能猶豫不決。做出決定，不要錯失機會。",
+        "career": "工作上可能缺乏規劃。重新規劃你的職業。",
+        "money": "財務上可能缺乏規劃。重新規劃你的財務。",
+        "health": "健康上可能缺乏規劃。重新規劃你的養生。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_03",
+      "nameZh": "權杖三",
+      "nameEn": "Three of Wands",
+      "arcana": "minor",
+      "number": 3,
+      "suit": "wands",
+      "rank": "three",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_ships",
+      "upright": {
+        "keywords": [
+          "展望",
+          "擴展",
+          "機會",
+          "前進"
+        ],
+        "meaning": "權杖三代表展望和擴展。現在是展望未來，擴展你的視野的時候。把握機會，前進。",
+        "love": "感情上有新的展望。擴展你的社交圈。",
+        "career": "工作上有新的展望。擴展你的業務。",
+        "money": "財務上有新的展望。擴展你的投資。",
+        "health": "健康上有新的展望。擴展你的養生方式。"
+      },
+      "reversed": {
+        "keywords": [
+          "延遲",
+          "挫折",
+          "缺乏遠見",
+          "阻礙"
+        ],
+        "meaning": "逆位的權杖三代表延遲和挫折。你可能遇到阻礙。重新評估你的計畫。",
+        "love": "感情上可能遇到挫折。重新評估你的感情。",
+        "career": "工作上可能遇到阻礙。重新評估你的計畫。",
+        "money": "財務上可能遇到挫折。重新評估你的投資。",
+        "health": "健康上可能遇到阻礙。重新評估你的養生。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_04",
+      "nameZh": "權杖四",
+      "nameEn": "Four of Wands",
+      "arcana": "minor",
+      "number": 4,
+      "suit": "wands",
+      "rank": "four",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_celebration",
+      "upright": {
+        "keywords": [
+          "慶祝",
+          "和諧",
+          "家庭",
+          "穩定"
+        ],
+        "meaning": "權杖四代表慶祝和和諧。現在是慶祝和享受家庭和諧的時候。",
+        "love": "感情上和諧穩定。與伴侶慶祝愛情。",
+        "career": "工作上和諧穩定。慶祝你的成就。",
+        "money": "財務上和諧穩定。享受你的財富。",
+        "health": "健康上和諧穩定。享受你的健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "不和諧",
+          "家庭問題",
+          "不穩定",
+          "衝突"
+        ],
+        "meaning": "逆位的權杖四代表不和諧和家庭問題。你可能遇到衝突。解決問題，恢復和諧。",
+        "love": "感情上可能不和諧。解決問題，恢復和諧。",
+        "career": "工作上可能不和諧。解決問題，恢復和諧。",
+        "money": "財務上可能不穩定。解決問題，恢復穩定。",
+        "health": "健康上可能不穩定。解決問題，恢復健康。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_05",
+      "nameZh": "權杖五",
+      "nameEn": "Five of Wands",
+      "arcana": "minor",
+      "number": 5,
+      "suit": "wands",
+      "rank": "five",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_conflict",
+      "upright": {
+        "keywords": [
+          "衝突",
+          "競爭",
+          "挑戰",
+          "成長"
+        ],
+        "meaning": "權杖五代表衝突和競爭。現在是面對挑戰的時候。通過競爭來成長。",
+        "love": "感情上可能有競爭。面對挑戰，成長。",
+        "career": "工作上可能有競爭。面對挑戰，成長。",
+        "money": "財務上可能有競爭。面對挑戰，成長。",
+        "health": "健康上可能有挑戰。面對挑戰，成長。"
+      },
+      "reversed": {
+        "keywords": [
+          "避免衝突",
+          "解決問題",
+          "和諧",
+          "合作"
+        ],
+        "meaning": "逆位的權杖五代表避免衝突和解決問題。現在是尋求和諧和合作的時候。",
+        "love": "感情上尋求和諧。避免衝突，尋求合作。",
+        "career": "工作上尋求和諧。避免衝突，尋求合作。",
+        "money": "財務上尋求和諧。避免衝突，尋求合作。",
+        "health": "健康上尋求和諧。避免衝突，尋求合作。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_06",
+      "nameZh": "權杖六",
+      "nameEn": "Six of Wands",
+      "arcana": "minor",
+      "number": 6,
+      "suit": "wands",
+      "rank": "six",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_victory",
+      "upright": {
+        "keywords": [
+          "勝利",
+          "成功",
+          "認可",
+          "自信"
+        ],
+        "meaning": "權杖六代表勝利和成功。現在是獲得認可和自信的時候。享受你的成功。",
+        "love": "感情上獲得成功。獲得伴侶的認可。",
+        "career": "工作上獲得成功。獲得同事的認可。",
+        "money": "財務上獲得成功。獲得財務的認可。",
+        "health": "健康上獲得成功。獲得健康的認可。"
+      },
+      "reversed": {
+        "keywords": [
+          "失敗",
+          "缺乏自信",
+          "延遲",
+          "挫折"
+        ],
+        "meaning": "逆位的權杖六代表失敗和缺乏自信。你可能遇到挫折。重新找回你的自信。",
+        "love": "感情上可能失敗。重新找回你的自信。",
+        "career": "工作上可能失敗。重新找回你的自信。",
+        "money": "財務上可能失敗。重新找回你的自信。",
+        "health": "健康上可能失敗。重新找回你的自信。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_07",
+      "nameZh": "權杖七",
+      "nameEn": "Seven of Wands",
+      "arcana": "minor",
+      "number": 7,
+      "suit": "wands",
+      "rank": "seven",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_defense",
+      "upright": {
+        "keywords": [
+          "防禦",
+          "堅持",
+          "挑戰",
+          "勇氣"
+        ],
+        "meaning": "權杖七代表防禦和堅持。現在是面對挑戰，堅持你的立場的時候。展現你的勇氣。",
+        "love": "感情上要堅持你的立場。面對挑戰，展現勇氣。",
+        "career": "工作上要堅持你的立場。面對挑戰，展現勇氣。",
+        "money": "財務上要堅持你的立場。面對挑戰，展現勇氣。",
+        "health": "健康上要堅持你的立場。面對挑戰，展現勇氣。"
+      },
+      "reversed": {
+        "keywords": [
+          "放棄",
+          "退縮",
+          "缺乏勇氣",
+          "失敗"
+        ],
+        "meaning": "逆位的權杖七代表放棄和退縮。你可能缺乏勇氣。重新找回你的勇氣。",
+        "love": "感情上可能放棄。重新找回你的勇氣。",
+        "career": "工作上可能放棄。重新找回你的勇氣。",
+        "money": "財務上可能放棄。重新找回你的勇氣。",
+        "health": "健康上可能放棄。重新找回你的勇氣。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_08",
+      "nameZh": "權杖八",
+      "nameEn": "Eight of Wands",
+      "arcana": "minor",
+      "number": 8,
+      "suit": "wands",
+      "rank": "eight",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_flight",
+      "upright": {
+        "keywords": [
+          "迅速",
+          "行動",
+          "進展",
+          "消息"
+        ],
+        "meaning": "權杖八代表迅速和行動。現在是迅速行動的時候。把握機會，快速前進。",
+        "love": "感情上迅速發展。把握機會，快速前進。",
+        "career": "工作上迅速發展。把握機會，快速前進。",
+        "money": "財務上迅速發展。把握機會，快速前進。",
+        "health": "健康上迅速改善。把握機會，快速前進。"
+      },
+      "reversed": {
+        "keywords": [
+          "延遲",
+          "阻礙",
+          "緩慢",
+          "挫折"
+        ],
+        "meaning": "逆位的權杖八代表延遲和阻礙。你可能遇到挫折。耐心等待，重新評估。",
+        "love": "感情上可能延遲。耐心等待，重新評估。",
+        "career": "工作上可能延遲。耐心等待，重新評估。",
+        "money": "財務上可能延遲。耐心等待，重新評估。",
+        "health": "健康上可能延遲。耐心等待，重新評估。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_09",
+      "nameZh": "權杖九",
+      "nameEn": "Nine of Wands",
+      "arcana": "minor",
+      "number": 9,
+      "suit": "wands",
+      "rank": "nine",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_resilience",
+      "upright": {
+        "keywords": [
+          "韌性",
+          "堅持",
+          "毅力",
+          "最後階段"
+        ],
+        "meaning": "權杖九代表韌性和堅持。現在是最後階段，堅持到底。你的毅力會帶來成功。",
+        "love": "感情上要堅持到底。最後階段，不要放棄。",
+        "career": "工作上要堅持到底。最後階段，不要放棄。",
+        "money": "財務上要堅持到底。最後階段，不要放棄。",
+        "health": "健康上要堅持到底。最後階段，不要放棄。"
+      },
+      "reversed": {
+        "keywords": [
+          "疲憊",
+          "放棄",
+          "缺乏毅力",
+          "挫折"
+        ],
+        "meaning": "逆位的權杖九代表疲憊和放棄。你可能缺乏毅力。重新找回你的動力。",
+        "love": "感情上可能疲憊。重新找回你的動力。",
+        "career": "工作上可能疲憊。重新找回你的動力。",
+        "money": "財務上可能疲憊。重新找回你的動力。",
+        "health": "健康上可能疲憊。重新找回你的動力。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_10",
+      "nameZh": "權杖十",
+      "nameEn": "Ten of Wands",
+      "arcana": "minor",
+      "number": 10,
+      "suit": "wands",
+      "rank": "ten",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_burden",
+      "upright": {
+        "keywords": [
+          "負擔",
+          "責任",
+          "壓力",
+          "努力"
+        ],
+        "meaning": "權杖十代表負擔和責任。現在是承擔責任，努力工作的時候。雖然辛苦，但會有收穫。",
+        "love": "感情上承擔責任。雖然辛苦，但會有收穫。",
+        "career": "工作上承擔責任。雖然辛苦，但會有收穫。",
+        "money": "財務上承擔責任。雖然辛苦，但會有收穫。",
+        "health": "健康上承擔責任。雖然辛苦，但會有收穫。"
+      },
+      "reversed": {
+        "keywords": [
+          "釋放負擔",
+          "減輕壓力",
+          "委託",
+          "簡化"
+        ],
+        "meaning": "逆位的權杖十代表釋放負擔和減輕壓力。現在是委託他人，簡化生活的時候。",
+        "love": "感情上釋放負擔。委託他人，簡化生活。",
+        "career": "工作上釋放負擔。委託他人，簡化工作。",
+        "money": "財務上釋放負擔。委託他人，簡化財務。",
+        "health": "健康上釋放負擔。委託他人，簡化生活。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_page",
+      "nameZh": "權杖侍者",
+      "nameEn": "Page of Wands",
+      "arcana": "minor",
+      "number": 11,
+      "suit": "wands",
+      "rank": "page",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_page",
+      "upright": {
+        "keywords": [
+          "探索",
+          "冒險",
+          "好奇心",
+          "新機會"
+        ],
+        "meaning": "權杖侍者代表探索和冒險。現在是發揮好奇心，探索新機會的時候。",
+        "love": "感情上有新的探索。發揮好奇心，探索新戀情。",
+        "career": "工作上有新的探索。發揮好奇心，探索新機會。",
+        "money": "財務上有新的探索。發揮好奇心，探索新投資。",
+        "health": "健康上有新的探索。發揮好奇心，探索新養生。"
+      },
+      "reversed": {
+        "keywords": [
+          "缺乏方向",
+          "幼稚",
+          "錯失機會",
+          "延遲"
+        ],
+        "meaning": "逆位的權杖侍者代表缺乏方向和幼稚。你可能錯失了機會。重新找回你的方向。",
+        "love": "感情上可能缺乏方向。重新找回你的方向。",
+        "career": "工作上可能缺乏方向。重新找回你的方向。",
+        "money": "財務上可能缺乏方向。重新找回你的方向。",
+        "health": "健康上可能缺乏方向。重新找回你的方向。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_knight",
+      "nameZh": "權杖騎士",
+      "nameEn": "Knight of Wands",
+      "arcana": "minor",
+      "number": 12,
+      "suit": "wands",
+      "rank": "knight",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_knight",
+      "upright": {
+        "keywords": [
+          "行動",
+          "冒險",
+          "熱情",
+          "前進"
+        ],
+        "meaning": "權杖騎士代表行動和冒險。現在是發揮熱情，積極前進的時候。",
+        "love": "感情上積極行動。發揮熱情，積極追求。",
+        "career": "工作上積極行動。發揮熱情，積極前進。",
+        "money": "財務上積極行動。發揮熱情，積極投資。",
+        "health": "健康上積極行動。發揮熱情，積極養生。"
+      },
+      "reversed": {
+        "keywords": [
+          "衝動",
+          "魯莽",
+          "延遲",
+          "挫折"
+        ],
+        "meaning": "逆位的權杖騎士代表衝動和魯莽。你可能遇到挫折。冷靜思考，重新評估。",
+        "love": "感情上可能衝動。冷靜思考，重新評估。",
+        "career": "工作上可能衝動。冷靜思考，重新評估。",
+        "money": "財務上可能衝動。冷靜思考，重新評估。",
+        "health": "健康上可能衝動。冷靜思考，重新評估。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_queen",
+      "nameZh": "權杖皇后",
+      "nameEn": "Queen of Wands",
+      "arcana": "minor",
+      "number": 13,
+      "suit": "wands",
+      "rank": "queen",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_queen",
+      "upright": {
+        "keywords": [
+          "自信",
+          "獨立",
+          "熱情",
+          "領導力"
+        ],
+        "meaning": "權杖皇后代表自信和獨立。現在是發揮你的領導力和熱情的時候。",
+        "love": "感情上自信獨立。發揮你的魅力，吸引對方。",
+        "career": "工作上自信獨立。發揮你的領導力，帶領團隊。",
+        "money": "財務上自信獨立。發揮你的智慧，管理財務。",
+        "health": "健康上自信獨立。發揮你的毅力，維持健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "嫉妒",
+          "依賴",
+          "缺乏自信",
+          "控制欲"
+        ],
+        "meaning": "逆位的權杖皇后代表嫉妒和依賴。你可能缺乏自信。重新找回你的自信和獨立。",
+        "love": "感情上可能嫉妒。重新找回你的自信和獨立。",
+        "career": "工作上可能依賴。重新找回你的自信和獨立。",
+        "money": "財務上可能依賴。重新找回你的自信和獨立。",
+        "health": "健康上可能依賴。重新找回你的自信和獨立。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "wands_king",
+      "nameZh": "權杖國王",
+      "nameEn": "King of Wands",
+      "arcana": "minor",
+      "number": 14,
+      "suit": "wands",
+      "rank": "king",
+      "element": "fire",
+      "image": "",
+      "canvasSymbol": "wands_king",
+      "upright": {
+        "keywords": [
+          "領導力",
+          "遠見",
+          "魅力",
+          "成功"
+        ],
+        "meaning": "權杖國王代表領導力和遠見。現在是發揮你的領導力和魅力的時候。你會獲得成功。",
+        "love": "感情上發揮領導力。發揮你的魅力，吸引對方。",
+        "career": "工作上發揮領導力。發揮你的遠見，帶領團隊。",
+        "money": "財務上發揮領導力。發揮你的智慧，管理財務。",
+        "health": "健康上發揮領導力。發揮你的毅力，維持健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "專制",
+          "固執",
+          "缺乏遠見",
+          "失敗"
+        ],
+        "meaning": "逆位的權杖國王代表專制和固執。你可能缺乏遠見。重新找回你的領導力。",
+        "love": "感情上可能專制。重新找回你的領導力。",
+        "career": "工作上可能固執。重新找回你的領導力。",
+        "money": "財務上可能固執。重新找回你的領導力。",
+        "health": "健康上可能固執。重新找回你的領導力。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_01",
+      "nameZh": "聖杯一",
+      "nameEn": "Ace of Cups",
+      "arcana": "minor",
+      "number": 1,
+      "suit": "cups",
+      "rank": "ace",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cup_water",
+      "upright": {
+        "keywords": [
+          "愛情",
+          "情感",
+          "新開始",
+          "直覺"
+        ],
+        "meaning": "聖杯一代表愛情和情感的新開始。現在是打開心扉，接受愛情的時候。",
+        "love": "感情上有新的開始。打開心扉，接受愛情。",
+        "career": "工作上有新的開始。發揮你的直覺，開始新的計畫。",
+        "money": "財務上有新的開始。發揮你的直覺，開始新的投資。",
+        "health": "健康上有新的開始。發揮你的直覺，開始新的養生。"
+      },
+      "reversed": {
+        "keywords": [
+          "情感封閉",
+          "錯失機會",
+          "延遲",
+          "空虛"
+        ],
+        "meaning": "逆位的聖杯一代表情感封閉和錯失機會。你可能感到空虛。打開心扉，接受愛情。",
+        "love": "感情上可能封閉。打開心扉，接受愛情。",
+        "career": "工作上可能錯失機會。打開心扉，接受機會。",
+        "money": "財務上可能錯失機會。打開心扉，接受機會。",
+        "health": "健康上可能感到空虛。打開心扉，接受健康。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_02",
+      "nameZh": "聖杯二",
+      "nameEn": "Two of Cups",
+      "arcana": "minor",
+      "number": 2,
+      "suit": "cups",
+      "rank": "two",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_union",
+      "upright": {
+        "keywords": [
+          "結合",
+          "伴侶",
+          "愛情",
+          "和諧"
+        ],
+        "meaning": "聖杯二代表結合和伴侶。現在是與他人結合，建立和諧關係的時候。",
+        "love": "感情上結合和諧。與伴侶建立深厚關係。",
+        "career": "工作上結合和諧。與同事建立合作關係。",
+        "money": "財務上結合和諧。與他人建立合作關係。",
+        "health": "健康上結合和諧。與他人建立健康關係。"
+      },
+      "reversed": {
+        "keywords": [
+          "分離",
+          "衝突",
+          "失衡",
+          "不和諧"
+        ],
+        "meaning": "逆位的聖杯二代表分離和衝突。你可能遇到不和諧。解決問題，恢復和諧。",
+        "love": "感情上可能分離。解決問題，恢復和諧。",
+        "career": "工作上可能衝突。解決問題，恢復和諧。",
+        "money": "財務上可能衝突。解決問題，恢復和諧。",
+        "health": "健康上可能衝突。解決問題，恢復和諧。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_03",
+      "nameZh": "聖杯三",
+      "nameEn": "Three of Cups",
+      "arcana": "minor",
+      "number": 3,
+      "suit": "cups",
+      "rank": "three",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_celebration",
+      "upright": {
+        "keywords": [
+          "慶祝",
+          "友誼",
+          "社交",
+          "快樂"
+        ],
+        "meaning": "聖杯三代表慶祝和友誼。現在是與朋友慶祝，享受社交的時候。",
+        "love": "感情上慶祝快樂。與朋友分享你的幸福。",
+        "career": "工作上慶祝成功。與同事分享你的成就。",
+        "money": "財務上慶祝成功。與他人分享你的財富。",
+        "health": "健康上慶祝成功。與他人分享你的健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "孤立",
+          "社交問題",
+          "過度狂歡",
+          "衝突"
+        ],
+        "meaning": "逆位的聖杯三代表孤立和社交問題。你可能遇到衝突。解決問題，恢復社交。",
+        "love": "感情上可能孤立。解決問題，恢復社交。",
+        "career": "工作上可能孤立。解決問題，恢復社交。",
+        "money": "財務上可能孤立。解決問題，恢復社交。",
+        "health": "健康上可能孤立。解決問題，恢復社交。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_04",
+      "nameZh": "聖杯四",
+      "nameEn": "Four of Cups",
+      "arcana": "minor",
+      "number": 4,
+      "suit": "cups",
+      "rank": "four",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_meditation",
+      "upright": {
+        "keywords": [
+          "冥想",
+          "內省",
+          "冷漠",
+          "機會"
+        ],
+        "meaning": "聖杯四代表冥想和內省。現在是反思和重新評估的時候。注意新的機會。",
+        "love": "感情上需要反思。注意新的機會。",
+        "career": "工作上需要反思。注意新的機會。",
+        "money": "財務上需要反思。注意新的機會。",
+        "health": "健康上需要反思。注意新的機會。"
+      },
+      "reversed": {
+        "keywords": [
+          "覺醒",
+          "新機會",
+          "行動",
+          "擺脫冷漠"
+        ],
+        "meaning": "逆位的聖杯四代表覺醒和新機會。現在是行動的時候。擺脫冷漠，把握機會。",
+        "love": "感情上覺醒。行動，把握機會。",
+        "career": "工作上覺醒。行動，把握機會。",
+        "money": "財務上覺醒。行動，把握機會。",
+        "health": "健康上覺醒。行動，把握機會。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_05",
+      "nameZh": "聖杯五",
+      "nameEn": "Five of Cups",
+      "arcana": "minor",
+      "number": 5,
+      "suit": "cups",
+      "rank": "five",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_loss",
+      "upright": {
+        "keywords": [
+          "損失",
+          "遺憾",
+          "悲傷",
+          "失望"
+        ],
+        "meaning": "聖杯五代表損失和遺憾。現在是面對悲傷和失望的時候。接受過去，向前看。",
+        "love": "感情上面對損失。接受過去，向前看。",
+        "career": "工作上面對損失。接受過去，向前看。",
+        "money": "財務上面對損失。接受過去，向前看。",
+        "health": "健康上面對損失。接受過去，向前看。"
+      },
+      "reversed": {
+        "keywords": [
+          "復原",
+          "接受",
+          "向前看",
+          "希望"
+        ],
+        "meaning": "逆位的聖杯五代表復原和接受。現在是向前看的時候。接受過去，向前看。",
+        "love": "感情上復原。接受過去，向前看。",
+        "career": "工作上復原。接受過去，向前看。",
+        "money": "財務上復原。接受過去，向前看。",
+        "health": "健康上復原。接受過去，向前看。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_06",
+      "nameZh": "聖杯六",
+      "nameEn": "Six of Cups",
+      "arcana": "minor",
+      "number": 6,
+      "suit": "cups",
+      "rank": "six",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_nostalgia",
+      "upright": {
+        "keywords": [
+          "懷舊",
+          "回憶",
+          "純真",
+          "過去"
+        ],
+        "meaning": "聖杯六代表懷舊和回憶。現在是回憶過去，享受純真的時候。",
+        "love": "感情上懷舊。回憶過去，享受純真。",
+        "career": "工作上懷舊。回憶過去，享受純真。",
+        "money": "財務上懷舊。回憶過去，享受純真。",
+        "health": "健康上懷舊。回憶過去，享受純真。"
+      },
+      "reversed": {
+        "keywords": [
+          "困在過去",
+          "向前看",
+          "成長",
+          "現實"
+        ],
+        "meaning": "逆位的聖杯六代表困在過去。現在是向前看的時候。面對現實，成長。",
+        "love": "感情上困在過去。面對現實，成長。",
+        "career": "工作上困在過去。面對現實，成長。",
+        "money": "財務上困在過去。面對現實，成長。",
+        "health": "健康上困在過去。面對現實，成長。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_07",
+      "nameZh": "聖杯七",
+      "nameEn": "Seven of Cups",
+      "arcana": "minor",
+      "number": 7,
+      "suit": "cups",
+      "rank": "seven",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_illusion",
+      "upright": {
+        "keywords": [
+          "幻想",
+          "選擇",
+          "幻覺",
+          "夢想"
+        ],
+        "meaning": "聖杯七代表幻想和選擇。現在是面對幻想，做出選擇的時候。不要被幻覺所迷惑。",
+        "love": "感情上面對幻想。做出選擇，不要被幻覺所迷惑。",
+        "career": "工作上面對幻想。做出選擇，不要被幻覺所迷惑。",
+        "money": "財務上面對幻想。做出選擇，不要被幻覺所迷惑。",
+        "health": "健康上面對幻想。做出選擇，不要被幻覺所迷惑。"
+      },
+      "reversed": {
+        "keywords": [
+          "清晰",
+          "專注",
+          "現實",
+          "做出選擇"
+        ],
+        "meaning": "逆位的聖杯七代表清晰和專注。現在是面對現實，做出選擇的時候。",
+        "love": "感情上面對現實。做出選擇，不要被幻覺所迷惑。",
+        "career": "工作上面對現實。做出選擇，不要被幻覺所迷惑。",
+        "money": "財務上面對現實。做出選擇，不要被幻覺所迷惑。",
+        "health": "健康上面對現實。做出選擇，不要被幻覺所迷惑。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_08",
+      "nameZh": "聖杯八",
+      "nameEn": "Eight of Cups",
+      "arcana": "minor",
+      "number": 8,
+      "suit": "cups",
+      "rank": "eight",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_departure",
+      "upright": {
+        "keywords": [
+          "離開",
+          "尋找",
+          "放棄",
+          "新開始"
+        ],
+        "meaning": "聖杯八代表離開和尋找。現在是放棄舊的，尋找新的開始的時候。",
+        "love": "感情上離開。放棄舊的，尋找新的開始。",
+        "career": "工作上離開。放棄舊的，尋找新的開始。",
+        "money": "財務上離開。放棄舊的，尋找新的開始。",
+        "health": "健康上離開。放棄舊的，尋找新的開始。"
+      },
+      "reversed": {
+        "keywords": [
+          "害怕改變",
+          "停留",
+          "猶豫",
+          "恐懼"
+        ],
+        "meaning": "逆位的聖杯八代表害怕改變。現在是面對恐懼，做出改變的時候。",
+        "love": "感情上面對恐懼。做出改變，不要猶豫。",
+        "career": "工作上面對恐懼。做出改變，不要猶豫。",
+        "money": "財務上面對恐懼。做出改變，不要猶豫。",
+        "health": "健康上面對恐懼。做出改變，不要猶豫。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_09",
+      "nameZh": "聖杯九",
+      "nameEn": "Nine of Cups",
+      "arcana": "minor",
+      "number": 9,
+      "suit": "cups",
+      "rank": "nine",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_wish",
+      "upright": {
+        "keywords": [
+          "願望實現",
+          "滿足",
+          "幸福",
+          "成功"
+        ],
+        "meaning": "聖杯九代表願望實現和滿足。現在是享受成功的時候。你的願望會實現。",
+        "love": "感情上願望實現。享受成功的愛情。",
+        "career": "工作上願望實現。享受成功的成就。",
+        "money": "財務上願望實現。享受成功的財富。",
+        "health": "健康上願望實現。享受成功的健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "願望未實現",
+          "不滿足",
+          "失望",
+          "挫折"
+        ],
+        "meaning": "逆位的聖杯九代表願望未實現和不滿足。你可能感到失望。重新評估你的願望。",
+        "love": "感情上可能失望。重新評估你的願望。",
+        "career": "工作上可能失望。重新評估你的願望。",
+        "money": "財務上可能失望。重新評估你的願望。",
+        "health": "健康上可能失望。重新評估你的願望。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_10",
+      "nameZh": "聖杯十",
+      "nameEn": "Ten of Cups",
+      "arcana": "minor",
+      "number": 10,
+      "suit": "cups",
+      "rank": "ten",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_harmony",
+      "upright": {
+        "keywords": [
+          "和諧",
+          "幸福",
+          "家庭",
+          "圓滿"
+        ],
+        "meaning": "聖杯十代表和諧和幸福。現在是享受家庭和圓滿的時候。",
+        "love": "感情上和諧幸福。享受家庭和圓滿。",
+        "career": "工作上和諧幸福。享受家庭和圓滿。",
+        "money": "財務上和諧幸福。享受家庭和圓滿。",
+        "health": "健康上和諧幸福。享受家庭和圓滿。"
+      },
+      "reversed": {
+        "keywords": [
+          "不和諧",
+          "家庭問題",
+          "失衡",
+          "衝突"
+        ],
+        "meaning": "逆位的聖杯十代表不和諧和家庭問題。你可能遇到衝突。解決問題，恢復和諧。",
+        "love": "感情上可能不和諧。解決問題，恢復和諧。",
+        "career": "工作上可能不和諧。解決問題，恢復和諧。",
+        "money": "財務上可能不和諧。解決問題，恢復和諧。",
+        "health": "健康上可能不和諧。解決問題，恢復和諧。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_page",
+      "nameZh": "聖杯侍者",
+      "nameEn": "Page of Cups",
+      "arcana": "minor",
+      "number": 11,
+      "suit": "cups",
+      "rank": "page",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_page",
+      "upright": {
+        "keywords": [
+          "直覺",
+          "創意",
+          "消息",
+          "新機會"
+        ],
+        "meaning": "聖杯侍者代表直覺和創意。現在是發揮你的直覺和創意的時候。注意新的消息和機會。",
+        "love": "感情上有新的消息。發揮你的直覺，注意新的機會。",
+        "career": "工作上有新的消息。發揮你的創意，注意新的機會。",
+        "money": "財務上有新的消息。發揮你的直覺，注意新的機會。",
+        "health": "健康上有新的消息。發揮你的直覺，注意新的機會。"
+      },
+      "reversed": {
+        "keywords": [
+          "情緒不穩",
+          "創意受阻",
+          "錯失機會",
+          "延遲"
+        ],
+        "meaning": "逆位的聖杯侍者代表情緒不穩和創意受阻。你可能錯失了機會。重新找回你的直覺。",
+        "love": "感情上可能情緒不穩。重新找回你的直覺。",
+        "career": "工作上可能創意受阻。重新找回你的創意。",
+        "money": "財務上可能錯失機會。重新找回你的直覺。",
+        "health": "健康上可能情緒不穩。重新找回你的直覺。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_knight",
+      "nameZh": "聖杯騎士",
+      "nameEn": "Knight of Cups",
+      "arcana": "minor",
+      "number": 12,
+      "suit": "cups",
+      "rank": "knight",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_knight",
+      "upright": {
+        "keywords": [
+          "浪漫",
+          "魅力",
+          "直覺",
+          "追求"
+        ],
+        "meaning": "聖杯騎士代表浪漫和魅力。現在是發揮你的魅力，追求愛情的時候。",
+        "love": "感情上浪漫。發揮你的魅力，追求愛情。",
+        "career": "工作上浪漫。發揮你的魅力，追求成功。",
+        "money": "財務上浪漫。發揮你的魅力，追求財富。",
+        "health": "健康上浪漫。發揮你的魅力，追求健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "不切實際",
+          "情緒不穩",
+          "延遲",
+          "挫折"
+        ],
+        "meaning": "逆位的聖杯騎士代表不切實際和情緒不穩。你可能遇到挫折。面對現實，調整情緒。",
+        "love": "感情上可能不切實際。面對現實，調整情緒。",
+        "career": "工作上可能不切實際。面對現實，調整情緒。",
+        "money": "財務上可能不切實際。面對現實，調整情緒。",
+        "health": "健康上可能不切實際。面對現實，調整情緒。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_queen",
+      "nameZh": "聖杯皇后",
+      "nameEn": "Queen of Cups",
+      "arcana": "minor",
+      "number": 13,
+      "suit": "cups",
+      "rank": "queen",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_queen",
+      "upright": {
+        "keywords": [
+          "慈悲",
+          "直覺",
+          "滋養",
+          "情感"
+        ],
+        "meaning": "聖杯皇后代表慈悲和直覺。現在是發揮你的慈悲和滋養的時候。",
+        "love": "感情上慈悲。發揮你的滋養，照顧對方。",
+        "career": "工作上慈悲。發揮你的滋養，照顧同事。",
+        "money": "財務上慈悲。發揮你的滋養，照顧他人。",
+        "health": "健康上慈悲。發揮你的滋養，照顧自己。"
+      },
+      "reversed": {
+        "keywords": [
+          "情緒不穩",
+          "依賴",
+          "缺乏慈悲",
+          "自我 neglect"
+        ],
+        "meaning": "逆位的聖杯皇后代表情緒不穩和依賴。你可能缺乏慈悲。重新找回你的滋養。",
+        "love": "感情上可能情緒不穩。重新找回你的滋養。",
+        "career": "工作上可能依賴。重新找回你的滋養。",
+        "money": "財務上可能依賴。重新找回你的滋養。",
+        "health": "健康上可能自我 neglect。重新找回你的滋養。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "cups_king",
+      "nameZh": "聖杯國王",
+      "nameEn": "King of Cups",
+      "arcana": "minor",
+      "number": 14,
+      "suit": "cups",
+      "rank": "king",
+      "element": "water",
+      "image": "",
+      "canvasSymbol": "cups_king",
+      "upright": {
+        "keywords": [
+          "情感平衡",
+          "智慧",
+          "慈悲",
+          "領導力"
+        ],
+        "meaning": "聖杯國王代表情感平衡和智慧。現在是發揮你的情感平衡和領導力的時候。",
+        "love": "感情上情感平衡。發揮你的智慧，領導對方。",
+        "career": "工作上情感平衡。發揮你的智慧，領導團隊。",
+        "money": "財務上情感平衡。發揮你的智慧，領導財務。",
+        "health": "健康上情感平衡。發揮你的智慧，領導健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "情緒不穩",
+          "壓抑",
+          "缺乏智慧",
+          "控制欲"
+        ],
+        "meaning": "逆位的聖杯國王代表情緒不穩和壓抑。你可能缺乏智慧。重新找回你的情感平衡。",
+        "love": "感情上可能情緒不穩。重新找回你的情感平衡。",
+        "career": "工作上可能壓抑。重新找回你的情感平衡。",
+        "money": "財務上可能壓抑。重新找回你的情感平衡。",
+        "health": "健康上可能壓抑。重新找回你的情感平衡。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_01",
+      "nameZh": "寶劍一",
+      "nameEn": "Ace of Swords",
+      "arcana": "minor",
+      "number": 1,
+      "suit": "swords",
+      "rank": "ace",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "sword_clarity",
+      "upright": {
+        "keywords": [
+          "清晰",
+          "真相",
+          "新想法",
+          "突破"
+        ],
+        "meaning": "寶劍一代表清晰和真相。現在是發揮你的清晰和新想法的時候。你會有突破。",
+        "love": "感情上清晰。發揮你的真相，突破困境。",
+        "career": "工作上清晰。發揮你的新想法，突破困境。",
+        "money": "財務上清晰。發揮你的真相，突破困境。",
+        "health": "健康上清晰。發揮你的真相，突破困境。"
+      },
+      "reversed": {
+        "keywords": [
+          "混亂",
+          "缺乏清晰",
+          "延遲",
+          "挫折"
+        ],
+        "meaning": "逆位的寶劍一代表混亂和缺乏清晰。你可能遇到挫折。重新找回你的清晰。",
+        "love": "感情上可能混亂。重新找回你的清晰。",
+        "career": "工作上可能混亂。重新找回你的清晰。",
+        "money": "財務上可能混亂。重新找回你的清晰。",
+        "health": "健康上可能混亂。重新找回你的清晰。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_02",
+      "nameZh": "寶劍二",
+      "nameEn": "Two of Swords",
+      "arcana": "minor",
+      "number": 2,
+      "suit": "swords",
+      "rank": "two",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_balance",
+      "upright": {
+        "keywords": [
+          "平衡",
+          "猶豫",
+          "選擇",
+          "僵局"
+        ],
+        "meaning": "寶劍二代表平衡和猶豫。現在是做出選擇的時候。打破僵局。",
+        "love": "感情上面對選擇。打破僵局，做出決定。",
+        "career": "工作上面對選擇。打破僵局，做出決定。",
+        "money": "財務上面對選擇。打破僵局，做出決定。",
+        "health": "健康上面對選擇。打破僵局，做出決定。"
+      },
+      "reversed": {
+        "keywords": [
+          "資訊 overload",
+          "混亂",
+          "做出決定",
+          "行動"
+        ],
+        "meaning": "逆位的寶劍二代表資訊 overload。現在是做出決定，行動的時候。",
+        "love": "感情上面對資訊 overload。做出決定，行動。",
+        "career": "工作上面對資訊 overload。做出決定，行動。",
+        "money": "財務上面對資訊 overload。做出決定，行動。",
+        "health": "健康上面對資訊 overload。做出決定，行動。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_03",
+      "nameZh": "寶劍三",
+      "nameEn": "Three of Swords",
+      "arcana": "minor",
+      "number": 3,
+      "suit": "swords",
+      "rank": "three",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_heartbreak",
+      "upright": {
+        "keywords": [
+          "心碎",
+          "悲傷",
+          "痛苦",
+          "分離"
+        ],
+        "meaning": "寶劍三代表心碎和悲傷。現在是面對痛苦和分離的時候。接受過去，向前看。",
+        "love": "感情上面對心碎。接受過去，向前看。",
+        "career": "工作上面對心碎。接受過去，向前看。",
+        "money": "財務上面對心碎。接受過去，向前看。",
+        "health": "健康上面對心碎。接受過去，向前看。"
+      },
+      "reversed": {
+        "keywords": [
+          "復原",
+          "釋放",
+          "向前看",
+          "療癒"
+        ],
+        "meaning": "逆位的寶劍三代表復原和釋放。現在是向前看的時候。接受過去，向前看。",
+        "love": "感情上復原。接受過去，向前看。",
+        "career": "工作上復原。接受過去，向前看。",
+        "money": "財務上復原。接受過去，向前看。",
+        "health": "健康上復原。接受過去，向前看。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_04",
+      "nameZh": "寶劍四",
+      "nameEn": "Four of Swords",
+      "arcana": "minor",
+      "number": 4,
+      "suit": "swords",
+      "rank": "four",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_rest",
+      "upright": {
+        "keywords": [
+          "休息",
+          "復原",
+          "獨處",
+          "準備"
+        ],
+        "meaning": "寶劍四代表休息和復原。現在是獨處和準備的時候。休息，為未來做準備。",
+        "love": "感情上需要休息。休息，為未來做準備。",
+        "career": "工作上需要休息。休息，為未來做準備。",
+        "money": "財務上需要休息。休息，為未來做準備。",
+        "health": "健康上需要休息。休息，為未來做準備。"
+      },
+      "reversed": {
+        "keywords": [
+          " burnout",
+          " restlessness",
+          "行動",
+          "準備不足"
+        ],
+        "meaning": "逆位的寶劍四代表 burnout 和 restlessness。你可能準備不足。休息，重新準備。",
+        "love": "感情上可能 burnout。休息，重新準備。",
+        "career": "工作上可能 burnout。休息，重新準備。",
+        "money": "財務上可能 burnout。休息，重新準備。",
+        "health": "健康上可能 burnout。休息，重新準備。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_05",
+      "nameZh": "寶劍五",
+      "nameEn": "Five of Swords",
+      "arcana": "minor",
+      "number": 5,
+      "suit": "swords",
+      "rank": "five",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_conflict",
+      "upright": {
+        "keywords": [
+          "衝突",
+          "緊張",
+          " defeat",
+          "競爭"
+        ],
+        "meaning": "寶劍五代表衝突和緊張。現在是面對 defeat 和競爭的時候。接受結果，向前看。",
+        "love": "感情上面對衝突。接受結果，向前看。",
+        "career": "工作上面對衝突。接受結果，向前看。",
+        "money": "財務上面對衝突。接受結果，向前看。",
+        "health": "健康上面對衝突。接受結果，向前看。"
+      },
+      "reversed": {
+        "keywords": [
+          "和解",
+          "解決",
+          "向前看",
+          "復原"
+        ],
+        "meaning": "逆位的寶劍五代表和解和解決。現在是向前看的時候。尋求和解。",
+        "love": "感情上和解。尋求和解。",
+        "career": "工作上和解。尋求和解。",
+        "money": "財務上和解。尋求和解。",
+        "health": "健康上和解。尋求和解。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_06",
+      "nameZh": "寶劍六",
+      "nameEn": "Six of Swords",
+      "arcana": "minor",
+      "number": 6,
+      "suit": "swords",
+      "rank": "six",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_transition",
+      "upright": {
+        "keywords": [
+          "轉變",
+          "改變",
+          " moving on",
+          "進步"
+        ],
+        "meaning": "寶劍六代表轉變和改變。現在是 moving on 的時候。接受改變，向前進步。",
+        "love": "感情上面對轉變。接受改變，向前進步。",
+        "career": "工作上面對轉變。接受改變，向前進步。",
+        "money": "財務上面對轉變。接受改變，向前進步。",
+        "health": "健康上面對轉變。接受改變，向前進步。"
+      },
+      "reversed": {
+        "keywords": [
+          " stuck",
+          " resistance",
+          "逃避",
+          "無法 moving on"
+        ],
+        "meaning": "逆位的寶劍六代表 stuck 和 resistance。你可能無法 moving on。面對問題，接受改變。",
+        "love": "感情上可能 stuck。面對問題，接受改變。",
+        "career": "工作上可能 stuck。面對問題，接受改變。",
+        "money": "財務上可能 stuck。面對問題，接受改變。",
+        "health": "健康上可能 stuck。面對問題，接受改變。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_07",
+      "nameZh": "寶劍七",
+      "nameEn": "Seven of Swords",
+      "arcana": "minor",
+      "number": 7,
+      "suit": "swords",
+      "rank": "seven",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_strategy",
+      "upright": {
+        "keywords": [
+          "策略",
+          "機智",
+          " resourcefulness",
+          "欺騙"
+        ],
+        "meaning": "寶劍七代表策略和機智。現在是發揮你的 resourcefulness 的時候。注意欺騙。",
+        "love": "感情上發揮策略。注意欺騙。",
+        "career": "工作上發揮策略。注意欺騙。",
+        "money": "財務上發揮策略。注意欺騙。",
+        "health": "健康上發揮策略。注意欺騙。"
+      },
+      "reversed": {
+        "keywords": [
+          "欺騙",
+          "不誠實",
+          "被抓到",
+          "誠實"
+        ],
+        "meaning": "逆位的寶劍七代表欺騙和不誠實。你可能被抓到。誠實面對問題。",
+        "love": "感情上面對欺騙。誠實面對問題。",
+        "career": "工作上面對欺騙。誠實面對問題。",
+        "money": "財務上面對欺騙。誠實面對問題。",
+        "health": "健康上面對欺騙。誠實面對問題。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_08",
+      "nameZh": "寶劍八",
+      "nameEn": "Eight of Swords",
+      "arcana": "minor",
+      "number": 8,
+      "suit": "swords",
+      "rank": "eight",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_restriction",
+      "upright": {
+        "keywords": [
+          " restriction",
+          " limitation",
+          "束縛",
+          "恐懼"
+        ],
+        "meaning": "寶劍八代表 restriction 和 limitation。現在是面對束縛和恐懼的時候。認清真相，掙脫束縛。",
+        "love": "感情上面對 restriction。認清真相，掙脫束縛。",
+        "career": "工作上面對 restriction。認清真相，掙脫束縛。",
+        "money": "財務上面對 restriction。認清真相，掙脫束縛。",
+        "health": "健康上面對 restriction。認清真相，掙脫束縛。"
+      },
+      "reversed": {
+        "keywords": [
+          "自由",
+          " liberation",
+          "新視角",
+          "覺醒"
+        ],
+        "meaning": "逆位的寶劍八代表自由和 liberation。現在是覺醒，掙脫束縛的時候。",
+        "love": "感情上自由。覺醒，掙脫束縛。",
+        "career": "工作上自由。覺醒，掙脫束縛。",
+        "money": "財務上自由。覺醒，掙脫束縛。",
+        "health": "健康上自由。覺醒，掙脫束縛。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_09",
+      "nameZh": "寶劍九",
+      "nameEn": "Nine of Swords",
+      "arcana": "minor",
+      "number": 9,
+      "suit": "swords",
+      "rank": "nine",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_anxiety",
+      "upright": {
+        "keywords": [
+          "焦慮",
+          "擔憂",
+          "恐懼",
+          "失眠"
+        ],
+        "meaning": "寶劍九代表焦慮和擔憂。現在是面對恐懼和失眠的時候。面對問題，尋求幫助。",
+        "love": "感情上面對焦慮。面對問題，尋求幫助。",
+        "career": "工作上面對焦慮。面對問題，尋求幫助。",
+        "money": "財務上面對焦慮。面對問題，尋求幫助。",
+        "health": "健康上面對焦慮。面對問題，尋求幫助。"
+      },
+      "reversed": {
+        "keywords": [
+          "復原",
+          "希望",
+          "隧道盡頭的光",
+          "療癒"
+        ],
+        "meaning": "逆位的寶劍九代表復原和希望。現在是療癒的時候。相信事情會好轉。",
+        "love": "感情上復原。相信事情會好轉。",
+        "career": "工作上復原。相信事情會好轉。",
+        "money": "財務上復原。相信事情會好轉。",
+        "health": "健康上復原。相信事情會好轉。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_10",
+      "nameZh": "寶劍十",
+      "nameEn": "Ten of Swords",
+      "arcana": "minor",
+      "number": 10,
+      "suit": "swords",
+      "rank": "ten",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_end",
+      "upright": {
+        "keywords": [
+          "結束",
+          "背叛",
+          " loss",
+          " rock bottom"
+        ],
+        "meaning": "寶劍十代表結束和背叛。現在是面對 loss 和 rock bottom 的時候。接受結束，重新開始。",
+        "love": "感情上面對結束。接受結束，重新開始。",
+        "career": "工作上面對結束。接受結束，重新開始。",
+        "money": "財務上面對結束。接受結束，重新開始。",
+        "health": "健康上面對結束。接受結束，重新開始。"
+      },
+      "reversed": {
+        "keywords": [
+          "復原",
+          "重生",
+          "新開始",
+          " hope"
+        ],
+        "meaning": "逆位的寶劍十代表復原和重生。現在是新開始的時候。相信希望。",
+        "love": "感情上復原。相信希望，重新開始。",
+        "career": "工作上復原。相信希望，重新開始。",
+        "money": "財務上復原。相信希望，重新開始。",
+        "health": "健康上復原。相信希望，重新開始。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_page",
+      "nameZh": "寶劍侍者",
+      "nameEn": "Page of Swords",
+      "arcana": "minor",
+      "number": 11,
+      "suit": "swords",
+      "rank": "page",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_page",
+      "upright": {
+        "keywords": [
+          "好奇心",
+          "新想法",
+          "敏捷",
+          "學習"
+        ],
+        "meaning": "寶劍侍者代表好奇心和新想法。現在是發揮你的好奇心和學習的時候。",
+        "love": "感情上有新想法。發揮你的好奇心，學習新事物。",
+        "career": "工作上有新想法。發揮你的好奇心，學習新事物。",
+        "money": "財務上有新想法。發揮你的好奇心，學習新事物。",
+        "health": "健康上有新想法。發揮你的好奇心，學習新事物。"
+      },
+      "reversed": {
+        "keywords": [
+          "急躁",
+          "不耐煩",
+          " gossip",
+          "延遲"
+        ],
+        "meaning": "逆位的寶劍侍者代表急躁和不耐煩。你可能遇到延遲。耐心等待，不要急躁。",
+        "love": "感情上可能急躁。耐心等待，不要急躁。",
+        "career": "工作上可能急躁。耐心等待，不要急躁。",
+        "money": "財務上可能急躁。耐心等待，不要急躁。",
+        "health": "健康上可能急躁。耐心等待，不要急躁。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_knight",
+      "nameZh": "寶劍騎士",
+      "nameEn": "Knight of Swords",
+      "arcana": "minor",
+      "number": 12,
+      "suit": "swords",
+      "rank": "knight",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_knight",
+      "upright": {
+        "keywords": [
+          "行動迅速",
+          "果斷",
+          "勇氣",
+          "前進"
+        ],
+        "meaning": "寶劍騎士代表行動迅速和果斷。現在是發揮你的勇氣，積極前進的時候。",
+        "love": "感情上行動迅速。發揮你的勇氣，積極追求。",
+        "career": "工作上行動迅速。發揮你的勇氣，積極前進。",
+        "money": "財務上行動迅速。發揮你的勇氣，積極投資。",
+        "health": "健康上行動迅速。發揮你的勇氣，積極養生。"
+      },
+      "reversed": {
+        "keywords": [
+          "衝動",
+          "魯莽",
+          "延遲",
+          "挫折"
+        ],
+        "meaning": "逆位的寶劍騎士代表衝動和魯莽。你可能遇到挫折。冷靜思考，重新評估。",
+        "love": "感情上可能衝動。冷靜思考，重新評估。",
+        "career": "工作上可能衝動。冷靜思考，重新評估。",
+        "money": "財務上可能衝動。冷靜思考，重新評估。",
+        "health": "健康上可能衝動。冷靜思考，重新評估。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_queen",
+      "nameZh": "寶劍皇后",
+      "nameEn": "Queen of Swords",
+      "arcana": "minor",
+      "number": 13,
+      "suit": "swords",
+      "rank": "queen",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_queen",
+      "upright": {
+        "keywords": [
+          "獨立",
+          "智慧",
+          "公正",
+          " clear boundaries"
+        ],
+        "meaning": "寶劍皇后代表獨立和智慧。現在是發揮你的智慧和公正的時候。設定 clear boundaries。",
+        "love": "感情上獨立。發揮你的智慧，設定 clear boundaries。",
+        "career": "工作上獨立。發揮你的智慧，設定 clear boundaries。",
+        "money": "財務上獨立。發揮你的智慧，設定 clear boundaries。",
+        "health": "健康上獨立。發揮你的智慧，設定 clear boundaries。"
+      },
+      "reversed": {
+        "keywords": [
+          " cold",
+          " bitter",
+          "過度批判",
+          " isolation"
+        ],
+        "meaning": "逆位的寶劍皇后代表 cold 和 bitter。你可能過度批判。重新找回你的 compassion。",
+        "love": "感情上可能 cold。重新找回你的 compassion。",
+        "career": "工作上可能 cold。重新找回你的 compassion。",
+        "money": "財務上可能 cold。重新找回你的 compassion。",
+        "health": "健康上可能 cold。重新找回你的 compassion。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "swords_king",
+      "nameZh": "寶劍國王",
+      "nameEn": "King of Swords",
+      "arcana": "minor",
+      "number": 14,
+      "suit": "swords",
+      "rank": "king",
+      "element": "air",
+      "image": "",
+      "canvasSymbol": "swords_king",
+      "upright": {
+        "keywords": [
+          "權威",
+          "智慧",
+          "公正",
+          "領導力"
+        ],
+        "meaning": "寶劍國王代表權威和智慧。現在是發揮你的公正和領導力的時候。",
+        "love": "感情上權威。發揮你的智慧，領導對方。",
+        "career": "工作上權威。發揮你的智慧，領導團隊。",
+        "money": "財務上權威。發揮你的智慧，領導財務。",
+        "health": "健康上權威。發揮你的智慧，領導健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "專制",
+          " cold",
+          " manipulation",
+          " abuse of power"
+        ],
+        "meaning": "逆位的寶劍國王代表專制和 cold。你可能 abuse of power。重新找回你的公正。",
+        "love": "感情上可能專制。重新找回你的公正。",
+        "career": "工作上可能專制。重新找回你的公正。",
+        "money": "財務上可能專制。重新找回你的公正。",
+        "health": "健康上可能專制。重新找回你的公正。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_01",
+      "nameZh": "錢幣一",
+      "nameEn": "Ace of Pentacles",
+      "arcana": "minor",
+      "number": 1,
+      "suit": "pentacles",
+      "rank": "ace",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacle_coin",
+      "upright": {
+        "keywords": [
+          "新機會",
+          "財富",
+          " abundance",
+          "新開始"
+        ],
+        "meaning": "錢幣一代表新機會和財富。現在是把握新機會，開始新計畫的時候。你會獲得 abundance。",
+        "love": "感情上有新機會。把握機會，開始新戀情。",
+        "career": "工作上有新機會。把握機會，開始新計畫。",
+        "money": "財務上有新機會。把握機會，開始新投資。",
+        "health": "健康上有新機會。把握機會，開始新養生。"
+      },
+      "reversed": {
+        "keywords": [
+          "錯失機會",
+          " lack of planning",
+          "延遲",
+          " setback"
+        ],
+        "meaning": "逆位的錢幣一代表錯失機會和 lack of planning。你可能遇到 setback。重新規劃，把握機會。",
+        "love": "感情上可能錯失機會。重新規劃，把握機會。",
+        "career": "工作上可能錯失機會。重新規劃，把握機會。",
+        "money": "財務上可能錯失機會。重新規劃，把握機會。",
+        "health": "健康上可能錯失機會。重新規劃，把握機會。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_02",
+      "nameZh": "錢幣二",
+      "nameEn": "Two of Pentacles",
+      "arcana": "minor",
+      "number": 2,
+      "suit": "pentacles",
+      "rank": "two",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_balance",
+      "upright": {
+        "keywords": [
+          "平衡",
+          " adaptability",
+          " juggling",
+          " flexibility"
+        ],
+        "meaning": "錢幣二代表平衡和 adaptability。現在是發揮你的 flexibility 的時候。Juggling 多個任務。",
+        "love": "感情上平衡。發揮你的 flexibility，適應變化。",
+        "career": "工作上平衡。發揮你的 flexibility，適應變化。",
+        "money": "財務上平衡。發揮你的 flexibility，適應變化。",
+        "health": "健康上平衡。發揮你的 flexibility，適應變化。"
+      },
+      "reversed": {
+        "keywords": [
+          "失衡",
+          " overcommitment",
+          " financial stress",
+          "延遲"
+        ],
+        "meaning": "逆位的錢幣二代表失衡和 overcommitment。你可能遇到 financial stress。重新平衡，減少 commitments。",
+        "love": "感情上可能失衡。重新平衡，減少 commitments。",
+        "career": "工作上可能失衡。重新平衡，減少 commitments。",
+        "money": "財務上可能失衡。重新平衡，減少 commitments。",
+        "health": "健康上可能失衡。重新平衡，減少 commitments。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_03",
+      "nameZh": "錢幣三",
+      "nameEn": "Three of Pentacles",
+      "arcana": "minor",
+      "number": 3,
+      "suit": "pentacles",
+      "rank": "three",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_teamwork",
+      "upright": {
+        "keywords": [
+          "團隊合作",
+          " collaboration",
+          " mastery",
+          " quality"
+        ],
+        "meaning": "錢幣三代表團隊合作和 collaboration。現在是發揮你的 mastery 的時候。與他人合作，創造 quality。",
+        "love": "感情上團隊合作。發揮你的 collaboration，與伴侶合作。",
+        "career": "工作上團隊合作。發揮你的 collaboration，與同事合作。",
+        "money": "財務上團隊合作。發揮你的 collaboration，與他人合作。",
+        "health": "健康上團隊合作。發揮你的 collaboration，與他人合作。"
+      },
+      "reversed": {
+        "keywords": [
+          "缺乏合作",
+          " disharmony",
+          " lack of quality",
+          "衝突"
+        ],
+        "meaning": "逆位的錢幣三代表缺乏合作和 disharmony。你可能遇到衝突。尋求合作，恢復 harmony。",
+        "love": "感情上可能缺乏合作。尋求合作，恢復 harmony。",
+        "career": "工作上可能缺乏合作。尋求合作，恢復 harmony。",
+        "money": "財務上可能缺乏合作。尋求合作，恢復 harmony。",
+        "health": "健康上可能缺乏合作。尋求合作，恢復 harmony。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_04",
+      "nameZh": "錢幣四",
+      "nameEn": "Four of Pentacles",
+      "arcana": "minor",
+      "number": 4,
+      "suit": "pentacles",
+      "rank": "four",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_security",
+      "upright": {
+        "keywords": [
+          "安全",
+          "穩定",
+          " saving",
+          "保守"
+        ],
+        "meaning": "錢幣四代表安全和穩定。現在是 saving 和保守的時候。建立你的安全。",
+        "love": "感情上安全。建立你的穩定，保守經營。",
+        "career": "工作上安全。建立你的穩定，保守經營。",
+        "money": "財務上安全。建立你的穩定，保守經營。",
+        "health": "健康上安全。建立你的穩定，保守經營。"
+      },
+      "reversed": {
+        "keywords": [
+          "過度保守",
+          " greed",
+          " fear of loss",
+          " generosity"
+        ],
+        "meaning": "逆位的錢幣四代表過度保守和 greed。你可能 fear of loss。學會 generosity。",
+        "love": "感情上可能過度保守。學會 generosity。",
+        "career": "工作上可能過度保守。學會 generosity。",
+        "money": "財務上可能過度保守。學會 generosity。",
+        "health": "健康上可能過度保守。學會 generosity。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_05",
+      "nameZh": "錢幣五",
+      "nameEn": "Five of Pentacles",
+      "arcana": "minor",
+      "number": 5,
+      "suit": "pentacles",
+      "rank": "five",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_hardship",
+      "upright": {
+        "keywords": [
+          " hardship",
+          " poverty",
+          " isolation",
+          " loss"
+        ],
+        "meaning": "錢幣五代表 hardship 和 poverty。現在是面對 isolation 和 loss 的時候。尋求幫助，不要孤軍奮戰。",
+        "love": "感情上面對 hardship。尋求幫助，不要孤軍奮戰。",
+        "career": "工作上面對 hardship。尋求幫助，不要孤軍奮戰。",
+        "money": "財務上面對 hardship。尋求幫助，不要孤軍奮戰。",
+        "health": "健康上面對 hardship。尋求幫助，不要孤軍奮戰。"
+      },
+      "reversed": {
+        "keywords": [
+          "復原",
+          " overcoming hardship",
+          "新機會",
+          " hope"
+        ],
+        "meaning": "逆位的錢幣五代表復原和 overcoming hardship。現在是新機會的時候。相信 hope。",
+        "love": "感情上復原。相信 hope，尋找新機會。",
+        "career": "工作上復原。相信 hope，尋找新機會。",
+        "money": "財務上復原。相信 hope，尋找新機會。",
+        "health": "健康上復原。相信 hope，尋找新機會。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_06",
+      "nameZh": "錢幣六",
+      "nameEn": "Six of Pentacles",
+      "arcana": "minor",
+      "number": 6,
+      "suit": "pentacles",
+      "rank": "six",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_generosity",
+      "upright": {
+        "keywords": [
+          " generosity",
+          " giving",
+          " receiving",
+          "平衡"
+        ],
+        "meaning": "錢幣六代表 generosity 和 giving。現在是 receiving 和平衡的時候。學會 generosity。",
+        "love": "感情上 generosity。學會 giving 和 receiving。",
+        "career": "工作上 generosity。學會 giving 和 receiving。",
+        "money": "財務上 generosity。學會 giving 和 receiving。",
+        "health": "健康上 generosity。學會 giving 和 receiving。"
+      },
+      "reversed": {
+        "keywords": [
+          "自私",
+          " imbalance",
+          " strings attached",
+          " debt"
+        ],
+        "meaning": "逆位的錢幣六代表自私和 imbalance。你可能 strings attached。學會 balance。",
+        "love": "感情上可能自私。學會 balance。",
+        "career": "工作上可能自私。學會 balance。",
+        "money": "財務上可能自私。學會 balance。",
+        "health": "健康上可能自私。學會 balance。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_07",
+      "nameZh": "錢幣七",
+      "nameEn": "Seven of Pentacles",
+      "arcana": "minor",
+      "number": 7,
+      "suit": "pentacles",
+      "rank": "seven",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_patience",
+      "upright": {
+        "keywords": [
+          "耐心",
+          " long-term view",
+          " investment",
+          " perseverance"
+        ],
+        "meaning": "錢幣七代表耐心和 long-term view。現在是 investment 和 perseverance 的時候。耐心等待收穫。",
+        "love": "感情上耐心。耐心等待收穫。",
+        "career": "工作上耐心。耐心等待收穫。",
+        "money": "財務上耐心。耐心等待收穫。",
+        "health": "健康上耐心。耐心等待收穫。"
+      },
+      "reversed": {
+        "keywords": [
+          "缺乏耐心",
+          " impatience",
+          "延遲",
+          "挫折"
+        ],
+        "meaning": "逆位的錢幣七代表缺乏耐心和 impatience。你可能遇到挫折。耐心等待，不要急躁。",
+        "love": "感情上可能缺乏耐心。耐心等待，不要急躁。",
+        "career": "工作上可能缺乏耐心。耐心等待，不要急躁。",
+        "money": "財務上可能缺乏耐心。耐心等待，不要急躁。",
+        "health": "健康上可能缺乏耐心。耐心等待，不要急躁。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_08",
+      "nameZh": "錢幣八",
+      "nameEn": "Eight of Pentacles",
+      "arcana": "minor",
+      "number": 8,
+      "suit": "pentacles",
+      "rank": "eight",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_diligence",
+      "upright": {
+        "keywords": [
+          "勤奮",
+          " hard work",
+          " mastery",
+          " craftsmanship"
+        ],
+        "meaning": "錢幣八代表勤奮和 hard work。現在是 mastery 和 craftsmanship 的時候。努力工作，精益求精。",
+        "love": "感情上勤奮。努力經營，精益求精。",
+        "career": "工作上勤奮。努力工作，精益求精。",
+        "money": "財務上勤奮。努力工作，精益求精。",
+        "health": "健康上勤奮。努力養生，精益求精。"
+      },
+      "reversed": {
+        "keywords": [
+          "缺乏 focus",
+          " laziness",
+          " lack of ambition",
+          " perfectionism"
+        ],
+        "meaning": "逆位的錢幣八代表缺乏 focus 和 laziness。你可能 perfectionism。重新找回你的 focus。",
+        "love": "感情上可能缺乏 focus。重新找回你的 focus。",
+        "career": "工作上可能缺乏 focus。重新找回你的 focus。",
+        "money": "財務上可能缺乏 focus。重新找回你的 focus。",
+        "health": "健康上可能缺乏 focus。重新找回你的 focus。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_09",
+      "nameZh": "錢幣九",
+      "nameEn": "Nine of Pentacles",
+      "arcana": "minor",
+      "number": 9,
+      "suit": "pentacles",
+      "rank": "nine",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_abundance",
+      "upright": {
+        "keywords": [
+          " abundance",
+          " luxury",
+          " self-sufficiency",
+          "財務自由"
+        ],
+        "meaning": "錢幣九代表 abundance 和 luxury。現在是 self-sufficiency 和財務自由的時候。享受你的 abundance。",
+        "love": "感情上 abundance。享受你的 luxury。",
+        "career": "工作上 abundance。享受你的成就。",
+        "money": "財務上 abundance。享受你的財務自由。",
+        "health": "健康上 abundance。享受你的健康。"
+      },
+      "reversed": {
+        "keywords": [
+          "過度消費",
+          " lack of self-worth",
+          "依賴",
+          " financial insecurity"
+        ],
+        "meaning": "逆位的錢幣九代表過度消費和 lack of self-worth。你可能 financial insecurity。重新建立你的 self-worth。",
+        "love": "感情上可能過度消費。重新建立你的 self-worth。",
+        "career": "工作上可能 lack of self-worth。重新建立你的 self-worth。",
+        "money": "財務上可能 financial insecurity。重新建立你的 self-worth。",
+        "health": "健康上可能 lack of self-worth。重新建立你的 self-worth。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_10",
+      "nameZh": "錢幣十",
+      "nameEn": "Ten of Pentacles",
+      "arcana": "minor",
+      "number": 10,
+      "suit": "pentacles",
+      "rank": "ten",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_legacy",
+      "upright": {
+        "keywords": [
+          " wealth",
+          " family",
+          " legacy",
+          " long-term success"
+        ],
+        "meaning": "錢幣十代表 wealth 和 family。現在是 legacy 和 long-term success 的時候。建立你的 legacy。",
+        "love": "感情上 wealth。建立你的 family，享受 legacy。",
+        "career": "工作上 wealth。建立你的 legacy，享受 long-term success。",
+        "money": "財務上 wealth。建立你的 legacy，享受財務 success。",
+        "health": "健康上 wealth。建立你的 legacy，享受健康 success。"
+      },
+      "reversed": {
+        "keywords": [
+          " family conflict",
+          " financial loss",
+          " lack of stability",
+          "孤獨"
+        ],
+        "meaning": "逆位的錢幣十代表 family conflict 和 financial loss。你可能 lack of stability。解決問題，恢復 harmony。",
+        "love": "感情上可能 family conflict。解決問題，恢復 harmony。",
+        "career": "工作上可能 financial loss。解決問題，恢復 stability。",
+        "money": "財務上可能 financial loss。解決問題，恢復 stability。",
+        "health": "健康上可能 lack of stability。解決問題，恢復 stability。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_page",
+      "nameZh": "錢幣侍者",
+      "nameEn": "Page of Pentacles",
+      "arcana": "minor",
+      "number": 11,
+      "suit": "pentacles",
+      "rank": "page",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_page",
+      "upright": {
+        "keywords": [
+          "學習",
+          "新機會",
+          " ambition",
+          " diligence"
+        ],
+        "meaning": "錢幣侍者代表學習和新機會。現在是發揮你的 ambition 和 diligence 的時候。",
+        "love": "感情上有新機會。發揮你的 ambition，學習新事物。",
+        "career": "工作上有新機會。發揮你的 ambition，學習新事物。",
+        "money": "財務上有新機會。發揮你的 ambition，學習新事物。",
+        "health": "健康上有新機會。發揮你的 ambition，學習新事物。"
+      },
+      "reversed": {
+        "keywords": [
+          " lack of progress",
+          " procrastination",
+          "延遲",
+          "挫折"
+        ],
+        "meaning": "逆位的錢幣侍者代表 lack of progress 和 procrastination。你可能遇到挫折。停止 procrastination，採取行動。",
+        "love": "感情上可能 lack of progress。停止 procrastination，採取行動。",
+        "career": "工作上可能 lack of progress。停止 procrastination，採取行動。",
+        "money": "財務上可能 lack of progress。停止 procrastination，採取行動。",
+        "health": "健康上可能 lack of progress。停止 procrastination，採取行動。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_knight",
+      "nameZh": "錢幣騎士",
+      "nameEn": "Knight of Pentacles",
+      "arcana": "minor",
+      "number": 12,
+      "suit": "pentacles",
+      "rank": "knight",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_knight",
+      "upright": {
+        "keywords": [
+          " reliability",
+          " hard work",
+          " responsibility",
+          " routine"
+        ],
+        "meaning": "錢幣騎士代表 reliability 和 hard work。現在是 responsibility 和 routine 的時候。努力工作，承擔責任。",
+        "love": "感情上 reliability。努力經營，承擔責任。",
+        "career": "工作上 reliability。努力工作，承擔責任。",
+        "money": "財務上 reliability。努力工作，承擔責任。",
+        "health": "健康上 reliability。努力養生，承擔責任。"
+      },
+      "reversed": {
+        "keywords": [
+          " laziness",
+          " unreliability",
+          " lack of ambition",
+          " stubbornness"
+        ],
+        "meaning": "逆位的錢幣騎士代表 laziness 和 unreliability。你可能 lack of ambition。重新找回你的 reliability。",
+        "love": "感情上可能 laziness。重新找回你的 reliability。",
+        "career": "工作上可能 laziness。重新找回你的 reliability。",
+        "money": "財務上可能 laziness。重新找回你的 reliability。",
+        "health": "健康上可能 laziness。重新找回你的 reliability。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_queen",
+      "nameZh": "錢幣皇后",
+      "nameEn": "Queen of Pentacles",
+      "arcana": "minor",
+      "number": 13,
+      "suit": "pentacles",
+      "rank": "queen",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_queen",
+      "upright": {
+        "keywords": [
+          " nurturing",
+          " abundance",
+          " security",
+          " practicality"
+        ],
+        "meaning": "錢幣皇后代表 nurturing 和 abundance。現在是 security 和 practicality 的時候。發揮你的 nurturing，創造 abundance。",
+        "love": "感情上 nurturing。發揮你的 nurturing，照顧對方。",
+        "career": "工作上 nurturing。發揮你的 nurturing，照顧同事。",
+        "money": "財務上 nurturing。發揮你的 nurturing，照顧財務。",
+        "health": "健康上 nurturing。發揮你的 nurturing，照顧自己。"
+      },
+      "reversed": {
+        "keywords": [
+          "過度 nurturing",
+          " financial insecurity",
+          " jealousy",
+          " self-neglect"
+        ],
+        "meaning": "逆位的錢幣皇后代表過度 nurturing 和 financial insecurity。你可能 self-neglect。重新平衡你的 nurturing。",
+        "love": "感情上可能過度 nurturing。重新平衡你的 nurturing。",
+        "career": "工作上可能過度 nurturing。重新平衡你的 nurturing。",
+        "money": "財務上可能 financial insecurity。重新平衡你的 nurturing。",
+        "health": "健康上可能 self-neglect。重新平衡你的 nurturing。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    },
+    {
+      "id": "pentacles_king",
+      "nameZh": "錢幣國王",
+      "nameEn": "King of Pentacles",
+      "arcana": "minor",
+      "number": 14,
+      "suit": "pentacles",
+      "rank": "king",
+      "element": "earth",
+      "image": "",
+      "canvasSymbol": "pentacles_king",
+      "upright": {
+        "keywords": [
+          " wealth",
+          " business",
+          " leadership",
+          " security"
+        ],
+        "meaning": "錢幣國王代表 wealth 和 business。現在是 leadership 和 security 的時候。發揮你的 leadership，創造 wealth。",
+        "love": "感情上 wealth。發揮你的 leadership，創造 security。",
+        "career": "工作上 wealth。發揮你的 leadership，創造 business。",
+        "money": "財務上 wealth。發揮你的 leadership，創造財務 security。",
+        "health": "健康上 wealth。發揮你的 leadership，創造健康 security。"
+      },
+      "reversed": {
+        "keywords": [
+          "過度 materialistic",
+          " financial loss",
+          " stubbornness",
+          " greed"
+        ],
+        "meaning": "逆位的錢幣國王代表過度 materialistic 和 financial loss。你可能 greed。重新平衡你的 priorities。",
+        "love": "感情上可能過度 materialistic。重新平衡你的 priorities。",
+        "career": "工作上可能 financial loss。重新平衡你的 priorities。",
+        "money": "財務上可能 financial loss。重新平衡你的 priorities。",
+        "health": "健康上可能過度 materialistic。重新平衡你的 priorities。"
+      },
+      "sourceIds": [
+        "wikimedia_rws_public_domain"
+      ]
+    }
+  ]
+}

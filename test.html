@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自動測試 - 台灣籤詩 + 塔羅占卜</title>
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; padding: 20px; background: #f7efe2; }
+        .test-result { margin: 10px 0; padding: 15px; border-radius: 8px; }
+        .pass { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .fail { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        h1 { color: #9b1c1c; }
+        h2 { color: #2b2118; margin-top: 30px; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        #test-summary { font-size: 1.2em; font-weight: bold; margin: 20px 0; padding: 20px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <h1>自動測試 - 台灣籤詩 + 塔羅占卜</h1>
+    
+    <div id="test-summary"></div>
+    
+    <h2>1. 亂數引擎測試</h2>
+    <div id="test-random"></div>
+    
+    <h2>2. 擲 councill 測試</h2>
+    <div id="test-cup"></div>
+    
+    <h2>3. 千數聚 councill 法測試</h2>
+    <div id="test-thousand"></div>
+    
+    <h2>4. 籤詩系統載入測試</h2>
+    <div id="test-fortune"></div>
+    
+    <h2>5. 塔羅系統載入測試</h2>
+    <div id="test-tarot"></div>
+    
+    <h2>6. 籤詩 Canvas 測試</h2>
+    <div id="test-fortune-canvas"></div>
+    
+    <h2>7. 塔羅 Canvas 測試</h2>
+    <div id="test-tarot-canvas"></div>
+    
+    <h2>8. 塔羅抽牌測試</h2>
+    <div id="test-tarot-draw"></div>
+
+    <script src="assets/js/random-engine.js"></script>
+    <script src="assets/js/state.js"></script>
+    <script src="assets/js/fortune-engine.js"></script>
+    <script src="assets/js/tarot-engine.js"></script>
+    <script src="assets/js/fortune-canvas.js"></script>
+    <script src="assets/js/tarot-canvas.js"></script>
+    <script>
+        let totalTests = 0;
+        let passedTests = 0;
+        let failedTests = 0;
+
+        function log(elementId, message, type = 'info') {
+            const div = document.getElementById(elementId);
+            const result = document.createElement('div');
+            result.className = `test-result ${type}`;
+            result.textContent = message;
+            div.appendChild(result);
+            totalTests++;
+            if (type === 'pass') passedTests++;
+            if (type === 'fail') failedTests++;
+        }
+
+        async function runTests() {
+            // Test 1: Random Engine
+            log('test-random', '測試 1.1: Web Crypto API 可用性', 'info');
+            try {
+                const arr = new Uint32Array(1);
+                crypto.getRandomValues(arr);
+                log('test-random', '✅ Web Crypto API 可用', 'pass');
+            } catch (e) {
+                log('test-random', '❌ Web Crypto API 不可用: ' + e.message, 'fail');
+            }
+
+            log('test-random', '測試 1.2: getCryptoInt 函數', 'info');
+            try {
+                const num = RandomEngine.getCryptoInt();
+                log('test-random', `✅ getCryptoInt 返回: ${num}`, 'pass');
+            } catch (e) {
+                log('test-random', '❌ getCryptoInt 失敗: ' + e.message, 'fail');
+            }
+
+            // Test 2: Cup Throwing
+            log('test-cup', '測試 2.1: 擲 councill 函數', 'info');
+            try {
+                const result = RandomEngine.throwCup();
+                if (['holy', 'laugh', 'yin'].includes(result)) {
+                    log('test-cup', `✅ 擲 councill 結果: ${result}`, 'pass');
+                } else {
+                    log('test-cup', '❌ 擲 councill 結果無效: ' + result, 'fail');
+                }
+            } catch (e) {
+                log('test-cup', '❌ 擲 councill 失敗: ' + e.message, 'fail');
+            }
+
+            log('test-cup', '測試 2.2: 多次擲 councill 統計', 'info');
+            try {
+                const results = { holy: 0, laugh: 0, yin: 0 };
+                for (let i = 0; i < 100; i++) {
+                    results[RandomEngine.throwCup()]++;
+                }
+                log('test-cup', `✅ 100次擲 councill: 聖筊=${results.holy}, 笑筊=${results.laugh}, 陰筊=${results.yin}`, 'pass');
+            } catch (e) {
+                log('test-cup', '❌ 多次擲 councill 失敗: ' + e.message, 'fail');
+            }
+
+            // Test 3: Thousand Mode
+            log('test-thousand', '測試 3.1: 千數聚 councill 法 (60張籤)', 'info');
+            try {
+                const index = RandomEngine.drawByThousandMode(60);
+                if (index >= 0 && index < 60) {
+                    log('test-thousand', `✅ 千數聚 councill 法返回 index: ${index} (籤號: ${index + 1})`, 'pass');
+                } else {
+                    log('test-thousand', '❌ 千數聚 councill 法返回無效 index: ' + index, 'fail');
+                }
+            } catch (e) {
+                log('test-thousand', '❌ 千數聚 councill 法失敗: ' + e.message, 'fail');
+            }
+
+            log('test-thousand', '測試 3.2: 千數聚 councill 法 (100張籤)', 'info');
+            try {
+                const index = RandomEngine.drawByThousandMode(100);
+                if (index >= 0 && index < 100) {
+                    log('test-thousand', `✅ 千數聚 councill 法返回 index: ${index} (籤號: ${index + 1})`, 'pass');
+                } else {
+                    log('test-thousand', '❌ 千數聚 councill 法返回無效 index: ' + index, 'fail');
+                }
+            } catch (e) {
+                log('test-thousand', '❌ 千數聚 councill 法失敗: ' + e.message, 'fail');
+            }
+
+            log('test-thousand', '測試 3.3: 塔羅抽牌 (不重複)', 'info');
+            try {
+                const cards = RandomEngine.drawTarotCards(3, 78);
+                const indices = cards.map(c => c.index);
+                const uniqueIndices = [...new Set(indices)];
+                if (indices.length === uniqueIndices.length) {
+                    log('test-thousand', `✅ 塔羅抽牌不重複: ${indices.join(', ')}`, 'pass');
+                } else {
+                    log('test-thousand', '❌ 塔羅抽牌有重複: ' + indices.join(', '), 'fail');
+                }
+            } catch (e) {
+                log('test-thousand', '❌ 塔羅抽牌失敗: ' + e.message, 'fail');
+            }
+
+            // Test 4: Fortune Systems
+            log('test-fortune', '測試 4.1: 籤詩系統初始化', 'info');
+            try {
+                await FortuneEngine.init();
+                const systems = FortuneEngine.getSystems();
+                if (systems.length > 0) {
+                    log('test-fortune', `✅ 載入 ${systems.length} 個籤詩系統`, 'pass');
+                    systems.forEach(s => {
+                        log('test-fortune', `   - ${s.name} (${s.systemId}): ${s.total}張`, 'info');
+                    });
+                } else {
+                    log('test-fortune', '❌ 沒有載入任何籤詩系統', 'fail');
+                }
+            } catch (e) {
+                log('test-fortune', '❌ 籤詩系統初始化失敗: ' + e.message, 'fail');
+            }
+
+            log('test-fortune', '測試 4.2: 載入籤詩資料', 'info');
+            try {
+                const data = await FortuneEngine.loadFortuneData('guanyin_100');
+                if (data && data.items && data.items.length > 0) {
+                    log('test-fortune', `✅ 載入觀音籤: ${data.items.length} 張`, 'pass');
+                    log('test-fortune', `   第一籤: ${data.items[0].displayNo} - ${data.items[0].title}`, 'info');
+                } else {
+                    log('test-fortune', '❌ 沒有載入籤詩資料', 'fail');
+                }
+            } catch (e) {
+                log('test-fortune', '❌ 載入籤詩資料失敗: ' + e.message, 'fail');
+            }
+
+            log('test-fortune', '測試 4.3: 抽籤測試', 'info');
+            try {
+                const fortune = await FortuneEngine.drawFortune('guanyin_100');
+                if (fortune && fortune.no && fortune.poem) {
+                    log('test-fortune', `✅ 抽到: ${fortune.displayNo} - ${fortune.title}`, 'pass');
+                    log('test-fortune', `   吉凶: ${fortune.level}`, 'info');
+                    log('test-fortune', `   籤詩: ${fortune.poem[0]}`, 'info');
+                } else {
+                    log('test-fortune', '❌ 抽籤結果無效', 'fail');
+                }
+            } catch (e) {
+                log('test-fortune', '❌ 抽籤失敗: ' + e.message, 'fail');
+            }
+
+            // Test 5: Tarot Systems
+            log('test-tarot', '測試 5.1: 塔羅系統初始化', 'info');
+            try {
+                await TarotEngine.init();
+                const cards = TarotEngine.cards;
+                const spreads = TarotEngine.getSpreads();
+                if (cards && cards.length === 78) {
+                    log('test-tarot', `✅ 載入 ${cards.length} 張塔羅牌`, 'pass');
+                } else {
+                    log('test-tarot', `❌ 塔羅牌數量不正確: ${cards ? cards.length : 0}`, 'fail');
+                }
+                if (spreads && spreads.length > 0) {
+                    log('test-tarot', `✅ 載入 ${spreads.length} 個牌陣`, 'pass');
+                    spreads.forEach(s => {
+                        log('test-tarot', `   - ${s.name} (${s.positions.length}張)`, 'info');
+                    });
+                } else {
+                    log('test-tarot', '❌ 沒有載入任何牌陣', 'fail');
+                }
+            } catch (e) {
+                log('test-tarot', '❌ 塔羅系統初始化失敗: ' + e.message, 'fail');
+            }
+
+            log('test-tarot', '測試 5.2: 塔羅牌資料完整性', 'info');
+            try {
+                const majorCount = TarotEngine.cards.filter(c => c.arcana === 'major').length;
+                const minorCount = TarotEngine.cards.filter(c => c.arcana === 'minor').length;
+                log('test-tarot', `✅ 大阿爾克那: ${majorCount} 張`, 'pass');
+                log('test-tarot', `✅ 小阿爾克那: ${minorCount} 張`, 'pass');
+                
+                const suits = ['wands', 'cups', 'swords', 'pentacles'];
+                suits.forEach(suit => {
+                    const count = TarotEngine.cards.filter(c => c.suit === suit).length;
+                    log('test-tarot', `   ${suit}: ${count} 張`, 'info');
+                });
+            } catch (e) {
+                log('test-tarot', '❌ 塔羅牌資料完整性檢查失敗: ' + e.message, 'fail');
+            }
+
+            // Test 6: Fortune Canvas
+            log('test-fortune-canvas', '測試 6.1: 籤詩 Canvas 繪製', 'info');
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = 900;
+                canvas.height = 1200;
+                const fortune = await FortuneEngine.drawFortune('guanyin_100');
+                const system = FortuneEngine.getSystemInfo('guanyin_100');
+                FortuneCanvas.draw(canvas, fortune, system, 'gold_lotus_ink');
+                log('test-fortune-canvas', '✅ 籤詩 Canvas 繪製成功', 'pass');
+                document.getElementById('test-fortune-canvas').appendChild(canvas);
+            } catch (e) {
+                log('test-fortune-canvas', '❌ 籤詩 Canvas 繪製失敗: ' + e.message, 'fail');
+            }
+
+            // Test 7: Tarot Canvas
+            log('test-tarot-canvas', '測試 7.1: 塔羅 Canvas 繪製 (大阿爾克那)', 'info');
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = 280;
+                canvas.height = 420;
+                const fool = TarotEngine.cards.find(c => c.id === 'major_00_fool');
+                TarotCanvas.draw(canvas, fool, false);
+                log('test-tarot-canvas', '✅ 大阿爾克那 Canvas 繪製成功', 'pass');
+                document.getElementById('test-tarot-canvas').appendChild(canvas);
+            } catch (e) {
+                log('test-tarot-canvas', '❌ 大阿爾克那 Canvas 繪製失敗: ' + e.message, 'fail');
+            }
+
+            log('test-tarot-canvas', '測試 7.2: 塔羅 Canvas 繪製 (小阿爾克那)', 'info');
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = 280;
+                canvas.height = 420;
+                const aceWands = TarotEngine.cards.find(c => c.id === 'wands_01');
+                TarotCanvas.draw(canvas, aceWands, false);
+                log('test-tarot-canvas', '✅ 小阿爾克那 Canvas 繪製成功', 'pass');
+                document.getElementById('test-tarot-canvas').appendChild(canvas);
+            } catch (e) {
+                log('test-tarot-canvas', '❌ 小阿爾克那 Canvas 繪製失敗: ' + e.message, 'fail');
+            }
+
+            log('test-tarot-canvas', '測試 7.3: 塔羅 Canvas 繪製 (逆位)', 'info');
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = 280;
+                canvas.height = 420;
+                const fool = TarotEngine.cards.find(c => c.id === 'major_00_fool');
+                TarotCanvas.draw(canvas, fool, true);
+                log('test-tarot-canvas', '✅ 逆位 Canvas 繪製成功', 'pass');
+                document.getElementById('test-tarot-canvas').appendChild(canvas);
+            } catch (e) {
+                log('test-tarot-canvas', '❌ 逆位 Canvas 繪製失敗: ' + e.message, 'fail');
+            }
+
+            // Test 8: Tarot Drawing
+            log('test-tarot-draw', '測試 8.1: 單張牌陣', 'info');
+            try {
+                const results = await TarotEngine.drawCards('single');
+                if (results && results.length === 1) {
+                    log('test-tarot-draw', `✅ 單張牌陣: ${results[0].card.nameZh} (${results[0].isReversed ? '逆位' : '正位'})`, 'pass');
+                } else {
+                    log('test-tarot-draw', '❌ 單張牌陣結果無效', 'fail');
+                }
+            } catch (e) {
+                log('test-tarot-draw', '❌ 單張牌陣失敗: ' + e.message, 'fail');
+            }
+
+            log('test-tarot-draw', '測試 8.2: 三張牌陣', 'info');
+            try {
+                const results = await TarotEngine.drawCards('three_past_present_future');
+                if (results && results.length === 3) {
+                    log('test-tarot-draw', `✅ 三張牌陣:`, 'pass');
+                    results.forEach((r, i) => {
+                        log('test-tarot-draw', `   ${r.position.name}: ${r.card.nameZh} (${r.isReversed ? '逆位' : '正位'})`, 'info');
+                    });
+                } else {
+                    log('test-tarot-draw', '❌ 三張牌陣結果無效', 'fail');
+                }
+            } catch (e) {
+                log('test-tarot-draw', '❌ 三張牌陣失敗: ' + e.message, 'fail');
+            }
+
+            log('test-tarot-draw', '測試 8.3: 五張牌陣', 'info');
+            try {
+                const results = await TarotEngine.drawCards('five_cross');
+                if (results && results.length === 5) {
+                    log('test-tarot-draw', `✅ 五張牌陣:`, 'pass');
+                    results.forEach((r, i) => {
+                        log('test-tarot-draw', `   ${r.position.name}: ${r.card.nameZh} (${r.isReversed ? '逆位' : '正位'})`, 'info');
+                    });
+                } else {
+                    log('test-tarot-draw', '❌ 五張牌陣結果無效', 'fail');
+                }
+            } catch (e) {
+                log('test-tarot-draw', '❌ 五張牌陣失敗: ' + e.message, 'fail');
+            }
+
+            // Summary
+            const summary = document.getElementById('test-summary');
+            if (failedTests === 0) {
+                summary.className = 'test-result pass';
+                summary.textContent = `✅ 所有測試通過！共 ${passedTests} 項測試全部成功。`;
+            } else {
+                summary.className = 'test-result fail';
+                summary.textContent = `❌ 測試完成: ${passedTests} 通過, ${failedTests} 失敗, 共 ${totalTests} 項測試`;
+            }
+        }
+
+        // 執行測試
+        runTests();
+    </script>
+</body>
+</html>
