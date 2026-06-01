@@ -487,29 +487,64 @@ const UIRenderer = {
         
         // 顯示解讀
         resultDiv.innerHTML = `
-            <div class="tarot-result-content">
-                <h2>塔羅占卜結果</h2>
-                ${question ? `<p class="tarot-question">問題：${question}</p>` : ''}
+            <div class="tarot-result-card">
+                <div class="tarot-result-header">
+                    <div class="tarot-result-icon">🔮</div>
+                    <h2>塔羅占卜結果</h2>
+                    ${question ? `<p class="tarot-question">"${question}"</p>` : ''}
+                </div>
                 
-                ${results.map(result => {
-                    const cardMeaning = TarotEngine.getCardMeaning(result.card, result.isReversed);
-                    return `
-                        <div class="tarot-card-reading">
-                            <h3>${result.position.name}：${result.card.nameZh} ${result.isReversed ? '(逆位)' : '(正位)'}</h3>
-                            <p class="tarot-keywords">關鍵字：${cardMeaning.keywords.join('、')}</p>
-                            <p>${cardMeaning.meaning}</p>
-                            
-                            <div class="tarot-details">
-                                <div><strong>感情：</strong>${cardMeaning.love}</div>
-                                <div><strong>事業：</strong>${cardMeaning.career}</div>
-                                <div><strong>財務：</strong>${cardMeaning.money}</div>
-                                <div><strong>健康：</strong>${cardMeaning.health}</div>
+                <div class="tarot-result-body">
+                    ${results.map(result => {
+                        const cardMeaning = TarotEngine.getCardMeaning(result.card, result.isReversed);
+                        const reversedClass = result.isReversed ? 'reversed' : 'upright';
+                        return `
+                            <div class="tarot-reading-card">
+                                <div class="tarot-reading-header">
+                                    <span class="tarot-reading-position">${result.position.name}</span>
+                                    <span class="tarot-reading-card-name">${result.card.nameZh}</span>
+                                    <span class="tarot-reading-orientation ${reversedClass}">${result.isReversed ? '逆位' : '正位'}</span>
+                                </div>
+                                
+                                <div class="tarot-reading-keywords">
+                                    ${cardMeaning.keywords.map(k => `<span class="keyword-tag">${k}</span>`).join('')}
+                                </div>
+                                
+                                <div class="tarot-reading-meaning">
+                                    ${cardMeaning.meaning}
+                                </div>
+                                
+                                <div class="tarot-reading-details">
+                                    <div class="detail-item">
+                                        <span class="detail-icon">💕</span>
+                                        <span class="detail-label">感情</span>
+                                        <span class="detail-text">${cardMeaning.love}</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">💼</span>
+                                        <span class="detail-label">事業</span>
+                                        <span class="detail-text">${cardMeaning.career}</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">💰</span>
+                                        <span class="detail-label">財務</span>
+                                        <span class="detail-text">${cardMeaning.money}</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-icon">🏥</span>
+                                        <span class="detail-label">健康</span>
+                                        <span class="detail-text">${cardMeaning.health}</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    `;
-                }).join('<hr>')}
+                        `;
+                    }).join('')}
+                </div>
                 
-                <button onclick="UIRenderer.handleDownloadTarot()" class="btn-download">下載塔羅 PNG</button>
+                <div class="tarot-result-footer">
+                    <div class="tarot-result-note">占卜結果僅供參考，命運掌握在自己手中</div>
+                    <button onclick="UIRenderer.handleDownloadTarot()" class="btn btn-download-tarot">下載塔羅 PNG</button>
+                </div>
             </div>
         `;
     },
