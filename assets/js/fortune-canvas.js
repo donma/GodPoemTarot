@@ -1,5 +1,5 @@
 /**
- * 籤詩 Canvas 繪圖引擎 - 中國風版
+ * 籤詩 Canvas 繪圖引擎 - 優雅中國風
  */
 const FortuneCanvas = {
     draw(canvas, fortune, system, style) {
@@ -8,318 +8,226 @@ const FortuneCanvas = {
         const h = canvas.height;
         ctx.clearRect(0, 0, w, h);
 
-        const colors = this.getColors(system.canvasStyle);
+        const c = this.getColor(system.canvasStyle);
         
         // 背景
-        const bgGrad = ctx.createLinearGradient(0, 0, 0, h);
-        bgGrad.addColorStop(0, colors.bg);
-        bgGrad.addColorStop(1, colors.bgGrad);
-        ctx.fillStyle = bgGrad;
+        const bg = ctx.createLinearGradient(0, 0, 0, h);
+        bg.addColorStop(0, c.bg);
+        bg.addColorStop(1, c.bg2);
+        ctx.fillStyle = bg;
         ctx.fillRect(0, 0, w, h);
         
         // 邊框
-        this.drawBorder(ctx, w, h, colors);
+        this.drawFrame(ctx, w, h, c);
         
         // 內容
-        this.drawContent(ctx, w, h, fortune, system, colors);
+        this.drawBody(ctx, w, h, fortune, system, c);
     },
 
-    getColors(style) {
-        const themes = {
-            'gold_lotus_ink': { bg: '#1a0f0a', bgGrad: '#2d1810', accent: '#d4a574', text: '#f5e6d3', border: '#8b6914', gold: '#ffd700' },
-            'red_temple_stick': { bg: '#2d0a0a', bgGrad: '#1a0505', accent: '#c79a3b', text: '#f5e6d3', border: '#8b0000', gold: '#ffd700' },
-            'rice_paper_red': { bg: '#1a0f0a', bgGrad: '#2d1810', accent: '#c41e3a', text: '#f5e6d3', border: '#8b0000', gold: '#ffd700' },
-            'gold_temple': { bg: '#1a150a', bgGrad: '#2d2510', accent: '#d4a574', text: '#f5e6d3', border: '#8b6914', gold: '#ffd700' },
-            'purple_divine': { bg: '#1a0f2d', bgGrad: '#0d071a', accent: '#b39ddb', text: '#e8e0f0', border: '#7e57c2', gold: '#ffd700' },
-            'green_taoist': { bg: '#0a1a0f', bgGrad: '#051a0a', accent: '#81c784', text: '#e0f0e0', border: '#388e3c', gold: '#ffd700' },
-            'pink_motherly': { bg: '#2d1a1a', bgGrad: '#1a0f0f', accent: '#f48fb1', text: '#f5e6e6', border: '#c2185b', gold: '#ffd700' },
-            'blue_divine': { bg: '#0a1a2d', bgGrad: '#050f1a', accent: '#90caf9', text: '#e0e8f5', border: '#1976d2', gold: '#ffd700' },
-            'green_medicine': { bg: '#0a1a15', bgGrad: '#051a0f', accent: '#80cbc4', text: '#e0f0ea', border: '#00897b', gold: '#ffd700' }
+    getColor(s) {
+        const t = {
+            'gold_lotus_ink':    { bg:'#1a0f0a', bg2:'#2d1810', acc:'#d4a574', txt:'#f5e6d3', bdr:'#8b6914', gold:'#ffd700' },
+            'red_temple_stick':  { bg:'#2d0a0a', bg2:'#1a0505', acc:'#c79a3b', txt:'#f5e6d3', bdr:'#8b0000', gold:'#ffd700' },
+            'rice_paper_red':    { bg:'#1a0f0a', bg2:'#2d1810', acc:'#c41e3a', txt:'#f5e6d3', bdr:'#8b0000', gold:'#ffd700' },
+            'gold_temple':       { bg:'#1a150a', bg2:'#2d2510', acc:'#d4a574', txt:'#f5e6d3', bdr:'#8b6914', gold:'#ffd700' },
+            'purple_divine':     { bg:'#1a0f2d', bg2:'#0d071a', acc:'#b39ddb', txt:'#e8e0f0', bdr:'#7e57c2', gold:'#ffd700' },
+            'green_taoist':      { bg:'#0a1a0f', bg2:'#051a0a', acc:'#81c784', txt:'#e0f0e0', bdr:'#388e3c', gold:'#ffd700' },
+            'pink_motherly':     { bg:'#2d1a1a', bg2:'#1a0f0f', acc:'#f48fb1', txt:'#f5e6e6', bdr:'#c2185b', gold:'#ffd700' },
+            'blue_divine':       { bg:'#0a1a2d', bg2:'#050f1a', acc:'#90caf9', txt:'#e0e8f5', bdr:'#1976d2', gold:'#ffd700' },
+            'green_medicine':    { bg:'#0a1a15', bg2:'#051a0f', acc:'#80cbc4', txt:'#e0f0ea', bdr:'#00897b', gold:'#ffd700' }
         };
-        return themes[style] || themes['gold_lotus_ink'];
+        return t[s] || t['gold_lotus_ink'];
     },
 
-    drawBorder(ctx, w, h, colors) {
-        const p = 15;
-        ctx.strokeStyle = colors.border;
+    drawFrame(ctx, w, h, c) {
+        const p = 20;
+        // 外框
+        ctx.strokeStyle = c.bdr;
         ctx.lineWidth = 3;
-        this.roundRect(ctx, p, p, w - p*2, h - p*2, 8);
-        
-        ctx.strokeStyle = colors.accent;
+        this.rr(ctx, p, p, w-p*2, h-p*2, 10);
+        // 內框
+        ctx.strokeStyle = c.acc;
         ctx.lineWidth = 1;
-        ctx.globalAlpha = 0.4;
-        this.roundRect(ctx, p+8, p+8, w - (p+8)*2, h - (p+8)*2, 5);
+        ctx.globalAlpha = 0.3;
+        this.rr(ctx, p+10, p+10, w-(p+10)*2, h-(p+10)*2, 6);
         ctx.globalAlpha = 1;
-        
-        this.drawCorners(ctx, w, h, p, colors);
+        // 角飾
+        this.corners(ctx, w, h, p, c);
     },
 
-    drawCorners(ctx, w, h, p, colors) {
-        const s = 25;
-        ctx.strokeStyle = colors.accent;
+    corners(ctx, w, h, p, c) {
+        const s = 30;
+        ctx.strokeStyle = c.acc;
         ctx.lineWidth = 2;
-        ctx.globalAlpha = 0.6;
-        
-        [[p+5, p+5, 1, 1], [w-p-5, p+5, -1, 1], [p+5, h-p-5, 1, -1], [w-p-5, h-p-5, -1, -1]].forEach(([x, y, dx, dy]) => {
-            ctx.beginPath();
-            ctx.moveTo(x, y + s*dy);
-            ctx.lineTo(x, y);
-            ctx.lineTo(x + s*dx, y);
-            ctx.stroke();
+        ctx.globalAlpha = 0.5;
+        [[p+8,p+8,1,1],[w-p-8,p+8,-1,1],[p+8,h-p-8,1,-1],[w-p-8,h-p-8,-1,-1]].forEach(([x,y,dx,dy])=>{
+            ctx.beginPath(); ctx.moveTo(x,y+s*dy); ctx.lineTo(x,y); ctx.lineTo(x+s*dx,y); ctx.stroke();
+            ctx.beginPath(); ctx.arc(x+5*dx,y+5*dy,2,0,Math.PI*2); ctx.fillStyle=c.acc; ctx.fill();
         });
         ctx.globalAlpha = 1;
     },
 
-    drawContent(ctx, w, h, fortune, system, colors) {
-        const cx = w / 2;
-        const pad = 50;
-        const maxW = w - pad * 2;
-        const maxY = h - 50;
-        let y = 50;
+    drawBody(ctx, w, h, f, sys, c) {
+        const cx = w/2, pad = 55, mw = w-pad*2, my = h-55;
+        let y = 55;
+        const sc = Math.min(w/800, 1.15);
+        const fs = s => Math.round(s*sc)+'px';
+        const safe = (t,x,yy) => { if(yy<my) ctx.fillText(t,x,yy); };
 
-        const fs = (s) => Math.round(s * Math.min(w/800, 1.2)) + 'px';
-        
-        const safe = (text, x, yy) => {
-            if (yy < maxY) ctx.fillText(text, x, yy);
-        };
-
-        // 系統名稱
+        // ── 系統名 ──
         ctx.textAlign = 'center';
-        ctx.fillStyle = colors.accent;
-        ctx.font = `bold ${fs(20)} "Noto Serif TC", serif`;
-        ctx.globalAlpha = 0.7;
-        safe(`〔${system.name}〕`, cx, y);
+        ctx.fillStyle = c.acc;
+        ctx.font = `600 ${fs(18)} "Noto Serif TC", serif`;
+        ctx.globalAlpha = 0.6;
+        safe(`【${sys.name}】`, cx, y);
         ctx.globalAlpha = 1;
-        y += 40;
+        y += 42;
 
-        // 分隔線
-        this.divider(ctx, pad+20, y, w-pad-20, colors);
-        y += 45;
-
-        // 籤號
-        ctx.fillStyle = colors.gold;
-        ctx.font = `bold ${fs(38)} "Noto Serif TC", serif`;
-        ctx.shadowColor = 'rgba(255,215,0,0.4)';
-        ctx.shadowBlur = 10;
-        safe(fortune.displayNo, cx, y);
+        // ── 籤號 ──
+        ctx.fillStyle = c.gold;
+        ctx.font = `700 ${fs(44)} "Noto Serif TC", serif`;
+        ctx.shadowColor = 'rgba(255,215,0,0.35)';
+        ctx.shadowBlur = 12;
+        safe(f.displayNo, cx, y);
         ctx.shadowBlur = 0;
-        y += 45;
+        y += 52;
 
-        // 吉凶
-        const lc = {'上上':'#ffd700','上吉':'#ffd700','上籤':'#ffd700','大吉':'#ffd700','中平':'#e8c9a0','中吉':'#e8c9a0','中籤':'#e8c9a0','下下':'#c41e3a','下籤':'#c41e3a','下吉':'#c41e3a','全凶':'#c41e3a'};
-        ctx.fillStyle = lc[fortune.level] || colors.accent;
-        ctx.font = `bold ${fs(26)} "Noto Serif TC", serif`;
-        safe(fortune.level, cx, y);
-        y += 45;
+        // ── 吉凶 ──
+        const lc = {'上上':'#ffd700','上吉':'#ffd700','上籤':'#ffd700','大吉':'#ffd700','中平':'#e8c9a0','中吉':'#e8c9a0','中籤':'#e8c9a0','下下':'#e57373','下籤':'#e57373','下吉':'#e57373','全凶':'#e57373'};
+        ctx.fillStyle = lc[f.level]||c.acc;
+        ctx.font = `700 ${fs(28)} "Noto Serif TC", serif`;
+        safe(f.level, cx, y);
+        y += 48;
 
-        // 點線
-        this.dots(ctx, pad+30, y, w-pad-30, colors.accent);
-        y += 35;
+        // ── 分隔 ──
+        this.sep(ctx, pad+25, y, w-pad-25, c);
+        y += 38;
 
-        // 詩句
-        ctx.fillStyle = colors.text;
-        ctx.font = `bold ${fs(24)} "Noto Serif TC", serif`;
-        (fortune.poem || []).forEach(line => {
-            ctx.shadowColor = 'rgba(0,0,0,0.2)';
-            ctx.shadowBlur = 4;
-            safe(line, cx, y);
-            ctx.shadowBlur = 0;
+        // ── 詩句 ──
+        ctx.fillStyle = c.txt;
+        ctx.font = `700 ${fs(24)} "Noto Serif TC", serif`;
+        (f.poem||[]).forEach(l => {
+            ctx.shadowColor='rgba(0,0,0,0.2)'; ctx.shadowBlur=4;
+            safe(l, cx, y);
+            ctx.shadowBlur=0;
             y += 42;
         });
-        y += 15;
+        y += 18;
 
-        // 分隔線
-        this.divider(ctx, pad+20, y, w-pad-20, colors);
-        y += 30;
+        // ── 分隔 ──
+        this.sep(ctx, pad+25, y, w-pad-25, c);
+        y += 32;
 
-        // 白話解釋
-        ctx.textAlign = 'left';
-        ctx.fillStyle = colors.accent;
-        ctx.font = `bold ${fs(16)} "Noto Serif TC", serif`;
-        safe('【白話解釋】', pad, y);
-        y += 28;
+        // ── 白話解釋 ──
+        y = this.drawSection(ctx, pad, y, mw, '白話解釋', f.plainMeaning||f.classicMeaning||'暫無解釋', c, fs, safe, 5, my);
+        y += 8;
 
-        ctx.fillStyle = colors.text;
-        ctx.font = `${fs(14)} "Noto Sans TC", sans-serif`;
-        const plain = fortune.plainMeaning || fortune.classicMeaning || '暫無解釋';
-        this.wrapText(ctx, plain, maxW).slice(0, 5).forEach(line => {
-            safe(line, pad, y);
-            y += 24;
-        });
-        y += 12;
-
-        // 聖意
-        const sy = fortune.categoryReadings?.聖意 || '';
-        if (sy && sy.length > 3 && y < maxY) {
-            ctx.fillStyle = colors.accent;
-            ctx.font = `bold ${fs(16)} "Noto Serif TC", serif`;
-            safe('【聖意】', pad, y);
-            y += 28;
-            ctx.fillStyle = colors.text;
-            ctx.font = `${fs(13)} "Noto Sans TC", sans-serif`;
-            this.wrapText(ctx, sy, maxW).slice(0, 4).forEach(line => {
-                safe(line, pad, y);
-                y += 20;
-            });
-            y += 12;
+        // ── 聖意 ──
+        const sy = f.categoryReadings?.聖意||'';
+        if(sy && sy.length>3 && y<my) {
+            y = this.drawSection(ctx, pad, y, mw, '聖意', sy, c, fs, safe, 4, my);
+            y += 8;
         }
 
-        // 解曰
-        const jy = fortune.categoryReadings?.解曰 || fortune.categoryReadings?.總論 || '';
-        if (jy && jy.length > 3 && jy !== sy && y < maxY) {
-            ctx.fillStyle = colors.accent;
-            ctx.font = `bold ${fs(16)} "Noto Serif TC", serif`;
-            safe('【解曰】', pad, y);
-            y += 28;
-            ctx.fillStyle = colors.text;
-            ctx.font = `${fs(13)} "Noto Sans TC", sans-serif`;
-            this.wrapText(ctx, jy, maxW).slice(0, 5).forEach(line => {
-                safe(line, pad, y);
-                y += 20;
-            });
-            y += 12;
+        // ── 解曰 ──
+        const jy = f.categoryReadings?.解曰||f.categoryReadings?.總論||'';
+        if(jy && jy.length>3 && jy!==sy && y<my) {
+            y = this.drawSection(ctx, pad, y, mw, '解曰', jy, c, fs, safe, 5, my);
+            y += 8;
         }
 
-        // 行動建議
-        const adv = fortune.actionAdvice?.[0] || '';
-        if (adv && adv.length > 3 && y < maxY) {
-            ctx.fillStyle = colors.gold;
-            ctx.font = `bold ${fs(15)} "Noto Serif TC", serif`;
+        // ── 行動建議 ──
+        const adv = f.actionAdvice?.[0]||'';
+        if(adv && adv.length>3 && y<my) {
+            ctx.fillStyle = c.gold;
+            ctx.font = `700 ${fs(15)} "Noto Serif TC", serif`;
             safe('【行動建議】', pad, y);
             y += 26;
-            ctx.fillStyle = colors.text;
-            ctx.font = `${fs(13)} "Noto Sans TC", sans-serif`;
-            this.wrapText(ctx, adv, maxW).slice(0, 3).forEach(line => {
-                safe(line, pad, y);
-                y += 20;
-            });
-            y += 12;
+            ctx.fillStyle = c.txt;
+            ctx.font = `400 ${fs(14)} "Noto Sans TC", sans-serif`;
+            this.wrap(ctx, adv, mw).slice(0,3).forEach(l => { safe(l, pad, y); y += 22; });
+            y += 10;
         }
 
-        // 底部
-        if (y + 40 < maxY) {
-            this.divider(ctx, pad+10, y, w-pad-10, colors);
-            y += 25;
+        // ── 底部 ──
+        if(y+45<my) {
+            this.sep(ctx, pad+15, y, w-pad-15, c);
+            y += 28;
             ctx.textAlign = 'center';
-            ctx.fillStyle = colors.accent;
-            ctx.globalAlpha = 0.35;
-            ctx.font = `${fs(11)} "Noto Serif TC", serif`;
-            ctx.fillText(`${system.name} ｜ 當麻實驗室`, cx, y);
+            ctx.fillStyle = c.acc;
+            ctx.globalAlpha = 0.3;
+            ctx.font = `400 ${fs(11)} "Noto Serif TC", serif`;
+            ctx.fillText(`${sys.name} ｜ 當麻實驗室`, cx, y);
             ctx.globalAlpha = 1;
         }
     },
 
-    wrapText(ctx, text, maxW) {
-        if (!text) return [];
-        const lines = [];
-        let cur = '';
-        for (const ch of text) {
-            if (ctx.measureText(cur + ch).width > maxW && cur) {
-                lines.push(cur);
-                cur = ch;
-            } else {
-                cur += ch;
-            }
-        }
-        if (cur) lines.push(cur);
-        return lines;
+    drawSection(ctx, pad, y, mw, title, text, c, fs, safe, maxLines, my) {
+        ctx.fillStyle = c.acc;
+        ctx.font = `700 ${fs(15)} "Noto Serif TC", serif`;
+        safe(`【${title}】`, pad, y);
+        y += 26;
+        ctx.fillStyle = c.txt;
+        ctx.font = `400 ${fs(14)} "Noto Sans TC", sans-serif`;
+        this.wrap(ctx, text, mw).slice(0, maxLines).forEach(l => {
+            safe(l, pad, y);
+            y += 22;
+        });
+        return y;
     },
 
-    divider(ctx, x1, y, x2, colors) {
-        const mid = (x1 + x2) / 2;
-        ctx.strokeStyle = colors.accent;
-        ctx.lineWidth = 1;
-        ctx.globalAlpha = 0.4;
-        ctx.beginPath();
-        ctx.moveTo(x1, y);
-        ctx.lineTo(mid - 12, y);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(mid + 12, y);
-        ctx.lineTo(x2, y);
-        ctx.stroke();
-        ctx.fillStyle = colors.accent;
-        ctx.beginPath();
-        ctx.moveTo(mid, y-5);
-        ctx.lineTo(mid+7, y);
-        ctx.lineTo(mid, y+5);
-        ctx.lineTo(mid-7, y);
-        ctx.fill();
-        ctx.globalAlpha = 1;
+    wrap(ctx, t, mw) {
+        if(!t) return [];
+        const r=[]; let c='';
+        for(const ch of t) {
+            if(ctx.measureText(c+ch).width>mw && c) { r.push(c); c=ch; }
+            else c+=ch;
+        }
+        if(c) r.push(c);
+        return r;
     },
 
-    dots(ctx, x1, y, x2, color) {
-        ctx.fillStyle = color;
-        ctx.globalAlpha = 0.25;
-        for (let x = x1; x < x2; x += 8) {
-            ctx.beginPath();
-            ctx.arc(x, y, 1.5, 0, Math.PI * 2);
-            ctx.fill();
-        }
-        ctx.globalAlpha = 1;
+    sep(ctx, x1, y, x2, c) {
+        const m=(x1+x2)/2;
+        ctx.strokeStyle=c.acc; ctx.lineWidth=1; ctx.globalAlpha=0.35;
+        ctx.beginPath(); ctx.moveTo(x1,y); ctx.lineTo(m-15,y); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(m+15,y); ctx.lineTo(x2,y); ctx.stroke();
+        ctx.fillStyle=c.acc;
+        ctx.beginPath(); ctx.moveTo(m,y-5); ctx.lineTo(m+7,y); ctx.lineTo(m,y+5); ctx.lineTo(m-7,y); ctx.fill();
+        ctx.globalAlpha=1;
     },
 
-    roundRect(ctx, x, y, w, h, r) {
+    rr(ctx,x,y,w,h,r) {
         ctx.beginPath();
-        ctx.moveTo(x+r, y);
-        ctx.lineTo(x+w-r, y);
-        ctx.quadraticCurveTo(x+w, y, x+w, y+r);
-        ctx.lineTo(x+w, y+h-r);
-        ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
-        ctx.lineTo(x+r, y+h);
-        ctx.quadraticCurveTo(x, y+h, x, y+h-r);
-        ctx.lineTo(x, y+r);
-        ctx.quadraticCurveTo(x, y, x+r, y);
-        ctx.closePath();
-        ctx.stroke();
+        ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+        ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+        ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+        ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y);
+        ctx.closePath(); ctx.stroke();
     },
 
-    calculateHeight(fortune, system) {
-        const canvas = document.createElement('canvas');
-        canvas.width = 800;
-        const ctx = canvas.getContext('2d');
-        const maxW = 680;
-        let y = 50;
-
-        y += 40;  // 系統名稱
-        y += 45;  // 分隔線
-        y += 45;  // 籤號
-        y += 45;  // 吉凶
-        y += 35;  // 點線
-        y += 42 * (fortune.poem?.length || 4);  // 詩句
-        y += 15;
-        y += 30;  // 分隔線
-        y += 28;  // 白話解釋標題
-        ctx.font = '14px "Noto Sans TC"';
-        y += 24 * Math.min(this.wrapText(ctx, fortune.plainMeaning || fortune.classicMeaning || '', maxW).length, 5);
-        y += 12;
-
-        const sy = fortune.categoryReadings?.聖意 || '';
-        if (sy && sy.length > 3) {
-            y += 28;
-            ctx.font = '13px "Noto Sans TC"';
-            y += 20 * Math.min(this.wrapText(ctx, sy, maxW).length, 4);
-            y += 12;
-        }
-
-        const jy = fortune.categoryReadings?.解曰 || fortune.categoryReadings?.總論 || '';
-        if (jy && jy.length > 3 && jy !== sy) {
-            y += 28;
-            ctx.font = '13px "Noto Sans TC"';
-            y += 20 * Math.min(this.wrapText(ctx, jy, maxW).length, 5);
-            y += 12;
-        }
-
-        const adv = fortune.actionAdvice?.[0] || '';
-        if (adv && adv.length > 3) {
-            y += 26;
-            ctx.font = '13px "Noto Sans TC"';
-            y += 20 * Math.min(this.wrapText(ctx, adv, maxW).length, 3);
-            y += 12;
-        }
-
-        y += 60;  // 底部+邊距
-        return Math.max(y, 650);
+    calculateHeight(f, sys) {
+        const cv=document.createElement('canvas'); cv.width=800;
+        const ctx=cv.getContext('2d'), mw=690;
+        let y=55;
+        y+=42; // 系統名
+        y+=52; // 籤號
+        y+=48; // 吉凶
+        y+=38; // 分隔
+        y+=42*(f.poem?.length||4); // 詩
+        y+=18;
+        y+=32; // 分隔
+        y+=26; ctx.font='14px "Noto Sans TC"';
+        y+=22*Math.min(this.wrap(ctx,f.plainMeaning||f.classicMeaning||'',mw).length,5);
+        y+=8;
+        const sy=f.categoryReadings?.聖意||'';
+        if(sy&&sy.length>3){y+=26;y+=22*Math.min(this.wrap(ctx,sy,mw).length,4);y+=8;}
+        const jy=f.categoryReadings?.解曰||f.categoryReadings?.總論||'';
+        if(jy&&jy.length>3&&jy!==sy){y+=26;y+=22*Math.min(this.wrap(ctx,jy,mw).length,5);y+=8;}
+        const adv=f.actionAdvice?.[0]||'';
+        if(adv&&adv.length>3){y+=26;y+=22*Math.min(this.wrap(ctx,adv,mw).length,3);y+=10;}
+        y+=55;
+        return Math.max(y,680);
     }
 };
 
