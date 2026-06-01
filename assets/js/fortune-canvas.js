@@ -81,23 +81,23 @@ const FortuneCanvas = {
         ctx.globalAlpha = 0.6;
         safe(`【${sys.name}】`, cx, y);
         ctx.globalAlpha = 1;
-        y += 42;
+        y += 55;
 
         // ── 籤號 ──
         ctx.fillStyle = c.gold;
-        ctx.font = `700 ${fs(44)} "Noto Serif TC", serif`;
+        ctx.font = `700 ${fs(48)} "Noto Serif TC", serif`;
         ctx.shadowColor = 'rgba(255,215,0,0.35)';
         ctx.shadowBlur = 12;
         safe(f.displayNo, cx, y);
         ctx.shadowBlur = 0;
-        y += 52;
+        y += 60;
 
         // ── 吉凶 ──
         const lc = {'上上':'#ffd700','上吉':'#ffd700','上籤':'#ffd700','大吉':'#ffd700','中平':'#e8c9a0','中吉':'#e8c9a0','中籤':'#e8c9a0','下下':'#e57373','下籤':'#e57373','下吉':'#e57373','全凶':'#e57373'};
         ctx.fillStyle = lc[f.level]||c.acc;
-        ctx.font = `700 ${fs(28)} "Noto Serif TC", serif`;
+        ctx.font = `700 ${fs(30)} "Noto Serif TC", serif`;
         safe(f.level, cx, y);
-        y += 48;
+        y += 55;
 
         // ── 分隔 ──
         this.sep(ctx, pad+25, y, w-pad-25, c);
@@ -211,9 +211,9 @@ const FortuneCanvas = {
         const cv=document.createElement('canvas'); cv.width=800;
         const ctx=cv.getContext('2d'), mw=690;
         let y=55;
-        y+=42; // 系統名
-        y+=52; // 籤號
-        y+=48; // 吉凶
+        y+=55; // 系統名
+        y+=60; // 籤號
+        y+=55; // 吉凶
         y+=38; // 分隔
         y+=42*(f.poem?.length||4); // 詩
         y+=18;
