@@ -149,17 +149,13 @@ const FortuneCanvas = {
             y += 10;
         }
 
-        // ── 底部 ──
-        if(y+45<my) {
-            this.sep(ctx, pad+15, y, w-pad-15, c);
-            y += 28;
-            ctx.textAlign = 'center';
-            ctx.fillStyle = c.acc;
-            ctx.globalAlpha = 0.3;
-            ctx.font = `400 ${fs(11)} "Noto Serif TC", serif`;
-            ctx.fillText(`${sys.name} ｜ 當麻實驗室`, cx, y);
-            ctx.globalAlpha = 1;
-        }
+        // ── 底部浮水印 ──
+        ctx.textAlign = 'center';
+        ctx.fillStyle = c.acc;
+        ctx.globalAlpha = 0.35;
+        ctx.font = `400 ${fs(10)} "Noto Serif TC", serif`;
+        ctx.fillText(`${sys.name} ｜ 當麻實驗室`, cx, h - 30);
+        ctx.globalAlpha = 1;
     },
 
     drawSection(ctx, cx, y, mw, title, text, c, fs, safe, maxLines, my) {
