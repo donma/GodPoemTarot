@@ -188,8 +188,15 @@ const FortuneCanvas = {
         return y;
     },
 
+    decodeHTML(text) {
+        if (!text) return '';
+        const doc = new DOMParser().parseFromString(text, 'text/html');
+        return doc.documentElement.textContent;
+    },
+    
     wrap(ctx, t, mw) {
         if(!t) return [];
+        t = this.decodeHTML(t);
         const r=[]; let c='';
         for(const ch of t) {
             if(ctx.measureText(c+ch).width>mw && c) { r.push(c); c=ch; }
