@@ -229,6 +229,13 @@ const FortuneCanvas = {
         if(adv&&adv.length>3){y+=26;y+=22*Math.min(this.wrap(ctx,adv,mw).length,3);y+=10;}
         y+=55;
         return Math.max(y,680);
+    },
+
+    downloadPNG(canvas, filename) {
+        const link = document.createElement('a');
+        link.download = filename || 'fortune.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
     }
 };
 
