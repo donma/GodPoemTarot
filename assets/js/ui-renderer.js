@@ -485,7 +485,7 @@ const UIRenderer = {
             </div>
         `).join('');
         
-        // 顯示解讀
+        // 顯示解讀 - 每張牌獨立卡片
         resultDiv.innerHTML = `
             <div class="tarot-result-card">
                 <div class="tarot-result-header">
@@ -543,7 +543,6 @@ const UIRenderer = {
                 
                 <div class="tarot-result-footer">
                     <div class="tarot-result-note">占卜結果僅供參考，命運掌握在自己手中</div>
-                    <button onclick="UIRenderer.handleDownloadTarot()" class="btn btn-download-tarot">下載塔羅 PNG</button>
                 </div>
             </div>
         `;
