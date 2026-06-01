@@ -179,6 +179,7 @@ body {
 /* ===== 擲筊區 ===== */
 .card-cup {
     border-color: var(--gold);
+    text-align: center;
 }
 
 .cup-stage {
