@@ -928,6 +928,114 @@ body {
     transform: translateY(-2px);
 }
 
+/* ===== 塔羅牌陣佈局 ===== */
+.tarot-spread-container {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 單張牌 */
+.tarot-layout-single {
+    flex-direction: column;
+}
+
+/* 三張牌 - 水平排列 */
+.tarot-layout-three {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.tarot-arrow {
+    font-size: 2rem;
+    color: var(--gold);
+    align-self: center;
+    margin-top: 80px;
+}
+
+/* 五張牌 - 十字排列 */
+.tarot-layout-five {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tarot-pos-center {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.tarot-pos-left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.tarot-pos-top {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.tarot-pos-right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.tarot-pos-bottom {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+/* 牌面位置 */
+.tarot-card-position {
+    text-align: center;
+}
+
+.tarot-position-label {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.tarot-canvas {
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.tarot-canvas:hover {
+    transform: scale(1.05);
+}
+
+.tarot-card-info {
+    margin-top: 10px;
+}
+
+.tarot-card-title {
+    display: block;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.tarot-card-orient {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
 /* ===== RWD ===== */
 @media (max-width: 768px) {
     .hero { padding: 40px 16px 32px; }
@@ -952,6 +1060,31 @@ body {
     .cup-instructions { gap: 16px; font-size: 0.8rem; }
     
     .btn-large { padding: 14px 36px; font-size: 1rem; }
+    
+    /* 塔羅牌陣 RWD */
+    .tarot-layout-three {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tarot-arrow {
+        transform: rotate(90deg);
+        margin: 0;
+    }
+    
+    .tarot-layout-five {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .tarot-pos-center,
+    .tarot-pos-left,
+    .tarot-pos-top,
+    .tarot-pos-right,
+    .tarot-pos-bottom {
+        grid-column: 1;
+        grid-row: auto;
+    }
 }
 
 @media (max-width: 480px) {

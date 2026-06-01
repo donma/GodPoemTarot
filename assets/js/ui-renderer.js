@@ -476,14 +476,29 @@ const UIRenderer = {
         
         if (!containerDiv || !resultDiv) return;
         
-        // 繪製 Canvas 區域
-        containerDiv.innerHTML = results.map((result, index) => `
-            <div class="tarot-card-item">
-                <div class="tarot-position">${result.position.name}</div>
-                <canvas id="tarot-canvas-${index}" width="280" height="420" class="tarot-canvas"></canvas>
-                <div class="tarot-card-name">${result.card.nameZh} ${result.isReversed ? '(逆位)' : '(正位)'}</div>
+        // 根據牌數選擇佈局
+        const cardCount = results.length;
+        let layoutClass = 'tarot-layout-single';
+        let cardHTML = '';
+        
+        if (cardCount === 1) {
+            layoutClass = 'tarot-layout-single';
+            cardHTML = this.renderSingleCard(results[0], 0);
+        } else if (cardCount === 3) {
+            layoutClass = 'tarot-layout-three';
+            cardHTML = results.map((r, i) => this.renderThreeCard(r, i)).join('');
+        } else if (cardCount === 5) {
+            layoutClass = 'tarot-layout-five';
+            cardHTML = this.renderFiveCard(results);
+        } else {
+            cardHTML = results.map((r, i) => this.renderDefaultCard(r, i)).join('');
+        }
+        
+        containerDiv.innerHTML = `
+            <div class="tarot-spread-container ${layoutClass}">
+                ${cardHTML}
             </div>
-        `).join('');
+        `;
         
         // 顯示解讀 - 每張牌獨立卡片
         resultDiv.innerHTML = `
@@ -566,6 +581,87 @@ const UIRenderer = {
             
             this.updateUI();
         }
+    },
+
+    /**
+     * 渲染單張牌
+     */
+    renderSingleCard(result, index) {
+        return `
+            <div class="tarot-card-position">
+                <div class="tarot-position-label">${result.position.name}</div>
+                <canvas id="tarot-canvas-${index}" width="280" height="420" class="tarot-canvas"></canvas>
+                <div class="tarot-card-info">
+                    <span class="tarot-card-title">${result.card.nameZh}</span>
+                    <span class="tarot-card-orient">${result.isReversed ? '逆位' : '正位'}</span>
+                </div>
+            </div>
+        `;
+    },
+
+    /**
+     * 渲染三張牌佈局
+     */
+    renderThreeCard(result, index) {
+        const arrow = index < 2 ? '<div class="tarot-arrow">→</div>' : '';
+        return `
+            <div class="tarot-card-position">
+                <div class="tarot-position-label">${result.position.name}</div>
+                <canvas id="tarot-canvas-${index}" width="240" height="360" class="tarot-canvas"></canvas>
+                <div class="tarot-card-info">
+                    <span class="tarot-card-title">${result.card.nameZh}</span>
+                    <span class="tarot-card-orient">${result.isReversed ? '逆位' : '正位'}</span>
+                </div>
+            </div>
+            ${arrow}
+        `;
+    },
+
+    /**
+     * 渲染五張牌十字佈局
+     */
+    renderFiveCard(results) {
+        // 十字牌陣: 
+        //     [2]
+        // [1] [0] [3]
+        //     [4]
+        const positions = [
+            { class: 'center', index: 0 },
+            { class: 'left', index: 1 },
+            { class: 'top', index: 2 },
+            { class: 'right', index: 3 },
+            { class: 'bottom', index: 4 }
+        ];
+        
+        return positions.map(pos => {
+            const result = results[pos.index];
+            return `
+                <div class="tarot-card-position tarot-pos-${pos.class}">
+                    <div class="tarot-position-label">${result.position.name}</div>
+                    <canvas id="tarot-canvas-${pos.index}" width="200" height="300" class="tarot-canvas"></canvas>
+                    <div class="tarot-card-info">
+                        <span class="tarot-card-title">${result.card.nameZh}</span>
+                        <span class="tarot-card-orient">${result.isReversed ? '逆位' : '正位'}</span>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    },
+
+    /**
+     * 渲染預設牌佈局
+     */
+    renderDefaultCard(result, index) {
+        return `
+            <div class="tarot-card-position">
+                <div class="tarot-position-label">${result.position.name}</div>
+                <canvas id="tarot-canvas-${index}" width="240" height="360" class="tarot-canvas"></canvas>
+                <div class="tarot-card-info">
+                    <span class="tarot-card-title">${result.card.nameZh}</span>
+                    <span class="tarot-card-orient">${result.isReversed ? '逆位' : '正位'}</span>
+                </div>
+            </div>
+        `;
     },
 
     /**
