@@ -2,7 +2,22 @@
  * 籤詩 Canvas 繪圖引擎 - 優雅中國風
  */
 const FortuneCanvas = {
-    draw(canvas, fortune, system, style) {
+    fontLoaded: false,
+    
+    async ensureFont() {
+        if (this.fontLoaded) return;
+        try {
+            await document.fonts.load('400 16px "Noto Serif TC"');
+            await document.fonts.load('700 16px "Noto Serif TC"');
+            this.fontLoaded = true;
+        } catch (e) {
+            console.warn('Font loading failed, using fallback');
+        }
+    },
+    
+    async draw(canvas, fortune, system, style) {
+        await this.ensureFont();
+        
         const ctx = canvas.getContext('2d');
         const w = canvas.width;
         const h = canvas.height;

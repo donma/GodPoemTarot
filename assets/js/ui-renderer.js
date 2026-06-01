@@ -310,7 +310,7 @@ const UIRenderer = {
                 // 計算所需高度
                 const requiredHeight = this.calculateFortuneCanvasHeight(fortune, canvas.width);
                 canvas.height = requiredHeight;
-                FortuneCanvas.draw(canvas, fortune, system, system.canvasStyle);
+                await FortuneCanvas.draw(canvas, fortune, system, system.canvasStyle);
             }
             
         } catch (e) {
