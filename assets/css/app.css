@@ -540,6 +540,206 @@ body {
 /* ===== Hidden ===== */
 .hidden { display: none !important; }
 
+/* ===== 籤詩結果 ===== */
+#fortune-result {
+    margin-top: 30px;
+}
+
+.fortune-result-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 8px 30px var(--shadow);
+}
+
+.fortune-result-header {
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+    color: #fff;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.fortune-result-system {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+
+.fortune-result-no {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.fortune-result-level {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.fortune-result-level.level-good {
+    background: rgba(255,215,0,0.2);
+    color: #ffd700;
+    border: 1px solid rgba(255,215,0,0.4);
+}
+
+.fortune-result-level.level-mid {
+    background: rgba(232,201,160,0.2);
+    color: #e8c9a0;
+    border: 1px solid rgba(232,201,160,0.4);
+}
+
+.fortune-result-level.level-bad {
+    background: rgba(229,115,115,0.2);
+    color: #e57373;
+    border: 1px solid rgba(229,115,115,0.4);
+}
+
+.fortune-result-poem {
+    background: var(--bg-secondary);
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px solid var(--border);
+}
+
+.fortune-result-poem p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 4px;
+    line-height: 2;
+    margin: 0;
+}
+
+.fortune-result-section {
+    padding: 24px 30px;
+    border-bottom: 1px solid var(--bg-secondary);
+}
+
+.fortune-result-section:last-of-type {
+    border-bottom: none;
+}
+
+.fortune-result-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+}
+
+.fortune-result-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--ink-light);
+}
+
+.fortune-result-shengyi {
+    background: var(--bg-secondary);
+    padding: 16px 20px;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--gold);
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+.fortune-result-categories {
+    display: grid;
+    gap: 10px;
+}
+
+.fortune-cat-item {
+    padding: 14px 18px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+}
+
+.fortune-cat-item.active {
+    background: rgba(199,154,59,0.08);
+    border-left-color: var(--gold);
+}
+
+.fortune-cat-name {
+    font-weight: 600;
+    color: var(--red);
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+.fortune-cat-text {
+    color: var(--ink-light);
+    font-size: 0.95rem;
+}
+
+.fortune-result-advice {
+    background: rgba(199,154,59,0.05);
+}
+
+.fortune-result-advice ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fortune-result-advice li {
+    padding: 10px 0;
+    padding-left: 24px;
+    position: relative;
+    color: var(--ink-light);
+    line-height: 1.6;
+}
+
+.fortune-result-advice li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.7rem;
+    top: 14px;
+}
+
+.fortune-result-footer {
+    padding: 24px 30px;
+    background: var(--bg-secondary);
+    text-align: center;
+}
+
+.fortune-result-note {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-bottom: 16px;
+}
+
+.btn-download-fortune {
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Noto Serif TC', serif;
+}
+
+.btn-download-fortune:hover {
+    background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 100%);
+    transform: translateY(-2px);
+}
+
 /* ===== RWD ===== */
 @media (max-width: 768px) {
     .hero { padding: 40px 16px 32px; }

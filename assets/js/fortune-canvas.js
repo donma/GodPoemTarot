@@ -119,20 +119,20 @@ const FortuneCanvas = {
         y += 32;
 
         // ── 白話解釋 ──
-        y = this.drawSection(ctx, pad, y, mw, '白話解釋', f.plainMeaning||f.classicMeaning||'暫無解釋', c, fs, safe, 5, my);
+        y = this.drawSection(ctx, pad, y, mw, '白話解釋', f.plainMeaning||f.classicMeaning||'暫無解釋', c, fs, safe, 4, my);
         y += 8;
 
         // ── 聖意 ──
         const sy = f.categoryReadings?.聖意||'';
         if(sy && sy.length>3 && y<my) {
-            y = this.drawSection(ctx, pad, y, mw, '聖意', sy, c, fs, safe, 4, my);
+            y = this.drawSection(ctx, pad, y, mw, '聖意', sy, c, fs, safe, 3, my);
             y += 8;
         }
 
         // ── 解曰 ──
         const jy = f.categoryReadings?.解曰||f.categoryReadings?.總論||'';
         if(jy && jy.length>3 && jy!==sy && y<my) {
-            y = this.drawSection(ctx, pad, y, mw, '解曰', jy, c, fs, safe, 5, my);
+            y = this.drawSection(ctx, pad, y, mw, '解曰', jy, c, fs, safe, 4, my);
             y += 8;
         }
 
@@ -145,7 +145,7 @@ const FortuneCanvas = {
             y += 26;
             ctx.fillStyle = c.txt;
             ctx.font = `400 ${fs(14)} "Noto Sans TC", sans-serif`;
-            this.wrap(ctx, adv, mw).slice(0,3).forEach(l => { safe(l, pad, y); y += 22; });
+            this.wrap(ctx, adv, mw).slice(0,2).forEach(l => { safe(l, pad, y); y += 22; });
             y += 10;
         }
 

@@ -332,62 +332,80 @@ const UIRenderer = {
         if (!resultDiv) return;
         
         const cr = fortune.categoryReadings || {};
+        const levelClass = this.getLevelClass(fortune.level);
         
-        // 建立所有分類的 HTML
-        const allCategoriesHTML = Object.entries(cr).map(([cat, text]) => {
-            const isSelected = cat === category;
-            const bgColor = isSelected ? 'rgba(199, 154, 59, 0.1)' : 'transparent';
-            const borderLeft = isSelected ? '4px solid #c79a3b' : '4px solid transparent';
-            return `
-                <div class="fortune-category-item" style="background:${bgColor}; border-left:${borderLeft}; padding:12px 16px; margin:8px 0; border-radius:0 8px 8px 0;">
-                    <strong style="color:#9b1c1c;">【${cat}】</strong>
-                    <span style="color:#2b2118;">${text}</span>
-                </div>
-            `;
-        }).join('');
+        // 聖意內容
+        const shengYi = cr['聖意'] || '';
+        
+        // 其他分類（排除聖意）
+        const otherCategories = Object.entries(cr).filter(([cat]) => cat !== '聖意');
         
         resultDiv.innerHTML = `
-            <div class="fortune-result-content">
-                <h2>${system.name} - ${fortune.displayNo}</h2>
-                <div class="fortune-level ${fortune.level}">${fortune.level}</div>
-                <h3>${fortune.title}</h3>
+            <div class="fortune-result-card">
+                <div class="fortune-result-header">
+                    <span class="fortune-result-system">${system.name}</span>
+                    <span class="fortune-result-no">${fortune.displayNo}</span>
+                    <span class="fortune-result-level ${levelClass}">${fortune.level}</span>
+                </div>
                 
-                <div class="fortune-poem">
+                <div class="fortune-result-poem">
                     ${fortune.poem.map(line => `<p>${line}</p>`).join('')}
                 </div>
                 
-                <div class="fortune-section">
-                    <h4>故事典故</h4>
-                    <p>${fortune.story || '暫無典故'}</p>
+                ${fortune.story ? `
+                <div class="fortune-result-section">
+                    <div class="fortune-result-title">📜 故事典故</div>
+                    <div class="fortune-result-text">${fortune.story}</div>
+                </div>
+                ` : ''}
+                
+                <div class="fortune-result-section">
+                    <div class="fortune-result-title">💬 白話解釋</div>
+                    <div class="fortune-result-text">${fortune.plainMeaning || fortune.classicMeaning || '暫無解釋'}</div>
                 </div>
                 
-                <div class="fortune-section">
-                    <h4>白話解釋</h4>
-                    <p>${fortune.plainMeaning || fortune.classicMeaning || '暫無解釋'}</p>
+                ${shengYi ? `
+                <div class="fortune-result-section">
+                    <div class="fortune-result-title">🎋 聖意</div>
+                    <div class="fortune-result-text fortune-result-shengyi">${shengYi}</div>
                 </div>
+                ` : ''}
                 
-                <div class="fortune-section">
-                    <h4>各項運勢解讀</h4>
-                    ${allCategoriesHTML}
+                ${otherCategories.length > 0 ? `
+                <div class="fortune-result-section">
+                    <div class="fortune-result-title">📊 各項運勢</div>
+                    <div class="fortune-result-categories">
+                        ${otherCategories.map(([cat, text]) => `
+                            <div class="fortune-cat-item ${cat === category ? 'active' : ''}">
+                                <span class="fortune-cat-name">【${cat}】</span>
+                                <span class="fortune-cat-text">${text}</span>
+                            </div>
+                        `).join('')}
+                    </div>
                 </div>
+                ` : ''}
                 
-                <div class="fortune-section">
-                    <h4>行動建議</h4>
+                ${(fortune.actionAdvice || []).length > 0 ? `
+                <div class="fortune-result-section fortune-result-advice">
+                    <div class="fortune-result-title">✨ 行動建議</div>
                     <ul>
-                        ${(fortune.actionAdvice || []).map(advice => `<li>${advice}</li>`).join('')}
+                        ${fortune.actionAdvice.map(a => `<li>${a}</li>`).join('')}
                     </ul>
                 </div>
+                ` : ''}
                 
-                <div class="fortune-section">
-                    <h4>注意事項</h4>
-                    <ul>
-                        ${(fortune.warnings || []).map(warning => `<li>${warning}</li>`).join('')}
-                    </ul>
+                <div class="fortune-result-footer">
+                    <div class="fortune-result-note">占卜結果僅供參考，不代表絕對結果</div>
+                    <button onclick="UIRenderer.handleDownloadFortune()" class="btn btn-download-fortune">下載籤詩 PNG</button>
                 </div>
-                
-                <button onclick="UIRenderer.handleDownloadFortune()" class="btn-download">下載籤詩 PNG</button>
             </div>
         `;
+    },
+    
+    getLevelClass(level) {
+        if (['上上','上吉','上籤','大吉'].includes(level)) return 'level-good';
+        if (['中平','中吉','中籤'].includes(level)) return 'level-mid';
+        return 'level-bad';
     },
 
     /**
