@@ -668,46 +668,9 @@ const UIRenderer = {
      * 計算籤詩 Canvas 所需高度
      */
     calculateFortuneCanvasHeight(fortune, width) {
+        const h = FortuneCanvas.calculateHeight(fortune);
         const scale = width / 800;
-        let height = 40; // 頂部間距
-        
-        // 系統名稱
-        height += 35 * scale;
-        height += 25; // 分隔線
-        
-        // 籤號 + 吉凶
-        height += 40 * scale;
-        height += 30; // 裝飾線
-        
-        // 標題
-        height += 35 * scale;
-        
-        // 籤詩 (每行38px, 假設最多4行，每行可能換行)
-        const poemLines = fortune.poem || [];
-        poemLines.forEach(line => {
-            // 估算是否需要換行 (每行約10個字)
-            const wrappedLines = Math.ceil(line.length / 10);
-            height += 38 * scale * wrappedLines;
-        });
-        height += 15 * scale;
-        height += 25; // 分隔線
-        
-        // 白話解釋 (假設6行)
-        height += 28 * scale; // 標題
-        height += 24 * scale * 6; // 內容
-        height += 15 * scale;
-        
-        // 聖意 (假設4行)
-        height += 28 * scale; // 標題
-        height += 22 * scale * 4; // 內容
-        height += 10 * scale;
-        
-        // 底部
-        height += 20; // 分隔線
-        height += 30; // 標註
-        height += 20; // 底部間距
-        
-        return Math.max(600, height);
+        return Math.round(h * scale) + 100;
     },
 
     /**

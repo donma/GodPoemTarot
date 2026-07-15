@@ -56,24 +56,18 @@ const FortuneCanvas = {
 
     drawFrame(ctx, w, h, c) {
         const p = 20;
-        // 外框
-        ctx.strokeStyle = c.bdr;
-        ctx.lineWidth = 3;
+        ctx.strokeStyle = c.bdr; ctx.lineWidth = 3;
         this.rr(ctx, p, p, w-p*2, h-p*2, 10);
-        // 內框
-        ctx.strokeStyle = c.acc;
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = c.acc; ctx.lineWidth = 1;
         ctx.globalAlpha = 0.3;
         this.rr(ctx, p+10, p+10, w-(p+10)*2, h-(p+10)*2, 6);
         ctx.globalAlpha = 1;
-        // 角飾
         this.corners(ctx, w, h, p, c);
     },
 
     corners(ctx, w, h, p, c) {
         const s = 30;
-        ctx.strokeStyle = c.acc;
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = c.acc; ctx.lineWidth = 2;
         ctx.globalAlpha = 0.5;
         [[p+8,p+8,1,1],[w-p-8,p+8,-1,1],[p+8,h-p-8,1,-1],[w-p-8,h-p-8,-1,-1]].forEach(([x,y,dx,dy])=>{
             ctx.beginPath(); ctx.moveTo(x,y+s*dy); ctx.lineTo(x,y); ctx.lineTo(x+s*dx,y); ctx.stroke();
@@ -83,13 +77,13 @@ const FortuneCanvas = {
     },
 
     drawBody(ctx, w, h, f, sys, c) {
-        const cx = w/2, pad = 55, mw = w-pad*2, my = h-55;
+        const cx = w/2, pad = 55, mw = w-pad*2, my = h - 55;
         let y = 55;
         const sc = Math.min(w/800, 1.15);
         const fs = s => Math.round(s*sc)+'px';
-        const safe = (t,x,yy) => { if(yy<my) ctx.fillText(t,x,yy); };
+        const safe = (t, x, yy) => { if (yy < my) ctx.fillText(t, x, yy); };
 
-        // ── 系統名 ──
+        // 系統名
         ctx.textAlign = 'center';
         ctx.fillStyle = c.acc;
         ctx.font = `600 ${fs(18)} "Noto Serif TC", serif`;
@@ -98,7 +92,7 @@ const FortuneCanvas = {
         ctx.globalAlpha = 1;
         y += 55;
 
-        // ── 籤號 ──
+        // 籤號
         ctx.fillStyle = c.gold;
         ctx.font = `700 ${fs(48)} "Noto Serif TC", serif`;
         ctx.shadowColor = 'rgba(255,215,0,0.35)';
@@ -107,18 +101,18 @@ const FortuneCanvas = {
         ctx.shadowBlur = 0;
         y += 60;
 
-        // ── 吉凶 ──
-        const lc = {'上上':'#ffd700','上吉':'#ffd700','上籤':'#ffd700','大吉':'#ffd700','中平':'#e8c9a0','中吉':'#e8c9a0','中籤':'#e8c9a0','下下':'#e57373','下籤':'#e57373','下吉':'#e57373','全凶':'#e57373'};
+        // 吉凶
+        const lc = {'上上':'#ffd700','上吉':'#ffd700','上籤':'#ffd700','大吉':'#ffd700','中平':'#e8c9a0','中吉':'#e8c9a0','中籤':'#e8c9a0','下下':'#e57373','下籤':'#e57373'};
         ctx.fillStyle = lc[f.level]||c.acc;
         ctx.font = `700 ${fs(30)} "Noto Serif TC", serif`;
         safe(f.level, cx, y);
         y += 55;
 
-        // ── 分隔 ──
+        // 分隔
         this.sep(ctx, pad+25, y, w-pad-25, c);
         y += 38;
 
-        // ── 詩句 ──
+        // 詩句
         ctx.fillStyle = c.txt;
         ctx.font = `700 ${fs(24)} "Noto Serif TC", serif`;
         (f.poem||[]).forEach(l => {
@@ -129,42 +123,40 @@ const FortuneCanvas = {
         });
         y += 18;
 
-        // ── 分隔 ──
+        // 分隔
         this.sep(ctx, pad+25, y, w-pad-25, c);
         y += 32;
 
-        // ── 白話解釋 ──
-        y = this.drawSection(ctx, cx, y, mw, '白話解釋', f.plainMeaning||f.classicMeaning||'暫無解釋', c, fs, safe, 4, my);
+        // 白話解釋
+        y = this.drawSection(ctx, cx, y, mw, '白話解釋', f.plainMeaning||'', c, fs, safe, 6, my);
         y += 8;
 
-        // ── 聖意 ──
-        const sy = f.categoryReadings?.聖意||'';
-        if(sy && sy.length>3 && y<my) {
-            y = this.drawSection(ctx, cx, y, mw, '聖意', sy, c, fs, safe, 3, my);
-            y += 8;
+        // 各項運勢 - 分段顯示
+        const cats = f.categoryReadings||{};
+        const catNames = ['總論','事業','考試','求才','求財','失物','健康','婚姻','人際','感情','出行','家宅','修心建議','聖意'];
+        
+        for (const cat of catNames) {
+            const text = cats[cat]||'';
+            if (text && text.length > 3 && y < my) {
+                y = this.drawSection(ctx, cx, y, mw, cat, text, c, fs, safe, 3, my);
+                y += 4;
+            }
         }
 
-        // ── 解曰 ──
-        const jy = f.categoryReadings?.解曰||f.categoryReadings?.總論||'';
-        if(jy && jy.length>3 && jy!==sy && y<my) {
-            y = this.drawSection(ctx, cx, y, mw, '解曰', jy, c, fs, safe, 4, my);
-            y += 8;
-        }
-
-        // ── 行動建議 ──
+        // 行動建議
         const adv = f.actionAdvice?.[0]||'';
-        if(adv && adv.length>3 && y<my) {
+        if (adv && adv.length > 3 && y < my) {
             ctx.fillStyle = c.gold;
             ctx.font = `700 ${fs(15)} "Noto Serif TC", serif`;
             safe('【行動建議】', cx, y);
             y += 26;
             ctx.fillStyle = c.txt;
             ctx.font = `400 ${fs(14)} "Noto Sans TC", sans-serif`;
-            this.wrap(ctx, adv, mw).slice(0,2).forEach(l => { safe(l, cx, y); y += 22; });
+            this.wrap(ctx, adv, mw).slice(0, 4).forEach(l => { safe(l, cx, y); y += 22; });
             y += 10;
         }
 
-        // ── 底部浮水印 ──
+        // 底部浮水印
         ctx.textAlign = 'center';
         ctx.fillStyle = c.acc;
         ctx.globalAlpha = 0.35;
@@ -180,10 +172,10 @@ const FortuneCanvas = {
         safe(`【${title}】`, cx, y);
         y += 26;
         ctx.fillStyle = c.txt;
-        ctx.font = `400 ${fs(14)} "Noto Sans TC", sans-serif`;
+        ctx.font = `400 ${fs(13)} "Noto Sans TC", sans-serif`;
         this.wrap(ctx, text, mw).slice(0, maxLines).forEach(l => {
             safe(l, cx, y);
-            y += 22;
+            y += 20;
         });
         return y;
     },
@@ -195,58 +187,80 @@ const FortuneCanvas = {
     },
     
     wrap(ctx, t, mw) {
-        if(!t) return [];
+        if (!t) return [];
         t = this.decodeHTML(t);
-        const r=[]; let c='';
-        for(const ch of t) {
-            if(ctx.measureText(c+ch).width>mw && c) { r.push(c); c=ch; }
-            else c+=ch;
+        const r = []; let c = '';
+        for (const ch of t) {
+            if (ctx.measureText(c + ch).width > mw && c) { r.push(c); c = ch; }
+            else c += ch;
         }
-        if(c) r.push(c);
+        if (c) r.push(c);
         return r;
     },
 
     sep(ctx, x1, y, x2, c) {
-        const m=(x1+x2)/2;
-        ctx.strokeStyle=c.acc; ctx.lineWidth=1; ctx.globalAlpha=0.35;
-        ctx.beginPath(); ctx.moveTo(x1,y); ctx.lineTo(m-15,y); ctx.stroke();
-        ctx.beginPath(); ctx.moveTo(m+15,y); ctx.lineTo(x2,y); ctx.stroke();
-        ctx.fillStyle=c.acc;
-        ctx.beginPath(); ctx.moveTo(m,y-5); ctx.lineTo(m+7,y); ctx.lineTo(m,y+5); ctx.lineTo(m-7,y); ctx.fill();
-        ctx.globalAlpha=1;
+        const m = (x1 + x2) / 2;
+        ctx.strokeStyle = c.acc; ctx.lineWidth = 1; ctx.globalAlpha = 0.35;
+        ctx.beginPath(); ctx.moveTo(x1, y); ctx.lineTo(m - 15, y); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(m + 15, y); ctx.lineTo(x2, y); ctx.stroke();
+        ctx.fillStyle = c.acc;
+        ctx.beginPath(); ctx.moveTo(m, y - 5); ctx.lineTo(m + 7, y); ctx.lineTo(m, y + 5); ctx.lineTo(m - 7, y); ctx.fill();
+        ctx.globalAlpha = 1;
     },
 
-    rr(ctx,x,y,w,h,r) {
+    rr(ctx, x, y, w, h, r) {
         ctx.beginPath();
-        ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r);
-        ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
-        ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
-        ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y);
+        ctx.moveTo(x+r, y); ctx.lineTo(x+w-r, y); ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+        ctx.lineTo(x+w, y+h-r); ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+        ctx.lineTo(x+r, y+h); ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+        ctx.lineTo(x, y+r); ctx.quadraticCurveTo(x, y, x+r, y);
         ctx.closePath(); ctx.stroke();
     },
 
     calculateHeight(f, sys) {
-        const cv=document.createElement('canvas'); cv.width=800;
-        const ctx=cv.getContext('2d'), mw=690;
-        let y=55;
-        y+=55; // 系統名
-        y+=60; // 籤號
-        y+=55; // 吉凶
-        y+=38; // 分隔
-        y+=42*(f.poem?.length||4); // 詩
-        y+=18;
-        y+=32; // 分隔
-        y+=26; ctx.font='14px "Noto Sans TC"';
-        y+=22*Math.min(this.wrap(ctx,f.plainMeaning||f.classicMeaning||'',mw).length,5);
-        y+=8;
-        const sy=f.categoryReadings?.聖意||'';
-        if(sy&&sy.length>3){y+=26;y+=22*Math.min(this.wrap(ctx,sy,mw).length,4);y+=8;}
-        const jy=f.categoryReadings?.解曰||f.categoryReadings?.總論||'';
-        if(jy&&jy.length>3&&jy!==sy){y+=26;y+=22*Math.min(this.wrap(ctx,jy,mw).length,5);y+=8;}
-        const adv=f.actionAdvice?.[0]||'';
-        if(adv&&adv.length>3){y+=26;y+=22*Math.min(this.wrap(ctx,adv,mw).length,3);y+=10;}
-        y+=55;
-        return Math.max(y,680);
+        const cv = document.createElement('canvas'); cv.width = 800;
+        const ctx = cv.getContext('2d'), mw = 690;
+        let y = 55;
+
+        y += 55;  // 系統名
+        y += 60;  // 籤號
+        y += 55;  // 吉凶
+        y += 38;  // 分隔
+        y += 42 * (f.poem?.length || 4);  // 詩句
+        y += 18;
+        y += 32;  // 分隔
+
+        // 白話解釋
+        y += 26;
+        ctx.font = '13px "Noto Sans TC"';
+        const plainText = f.plainMeaning || '';
+        y += 20 * Math.min(this.wrap(ctx, plainText, mw).length, 6);
+        y += 8;
+
+        // 各項運勢
+        const cats = f.categoryReadings || {};
+        const catNames = ['總論','事業','考試','求才','求財','失物','健康','婚姻','人際','感情','出行','家宅','修心建議','聖意'];
+        for (const cat of catNames) {
+            const text = cats[cat] || '';
+            if (text && text.length > 3) {
+                y += 26;
+                ctx.font = '13px "Noto Sans TC"';
+                y += 20 * Math.min(this.wrap(ctx, text, mw).length, 3);
+                y += 4;
+            }
+        }
+
+        // 行動建議
+        const adv = f.actionAdvice?.[0] || '';
+        if (adv && adv.length > 3) {
+            y += 26;
+            ctx.font = '13px "Noto Sans TC"';
+            y += 20 * Math.min(this.wrap(ctx, adv, mw).length, 4);
+            y += 10;
+        }
+
+        y += 60; // 邊距+浮水印
+        return Math.max(y, 800);
     },
 
     downloadPNG(canvas, filename) {
