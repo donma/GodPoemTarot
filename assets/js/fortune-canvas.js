@@ -128,20 +128,8 @@ const FortuneCanvas = {
         y += 32;
 
         // 白話解釋
-        y = this.drawSection(ctx, cx, y, mw, '白話解釋', f.plainMeaning||'', c, fs, safe, 6, my);
+        y = this.drawSection(ctx, cx, y, mw, '白話解釋', f.plainMeaning||'', c, fs, safe, 8, my);
         y += 8;
-
-        // 各項運勢 - 分段顯示
-        const cats = f.categoryReadings||{};
-        const catNames = ['總論','事業','考試','求才','求財','失物','健康','婚姻','人際','感情','出行','家宅','修心建議','聖意'];
-        
-        for (const cat of catNames) {
-            const text = cats[cat]||'';
-            if (text && text.length > 3 && y < my) {
-                y = this.drawSection(ctx, cx, y, mw, cat, text, c, fs, safe, 3, my);
-                y += 4;
-            }
-        }
 
         // 行動建議
         const adv = f.actionAdvice?.[0]||'';
@@ -152,7 +140,7 @@ const FortuneCanvas = {
             y += 26;
             ctx.fillStyle = c.txt;
             ctx.font = `400 ${fs(14)} "Noto Sans TC", sans-serif`;
-            this.wrap(ctx, adv, mw).slice(0, 4).forEach(l => { safe(l, cx, y); y += 22; });
+            this.wrap(ctx, adv, mw).slice(0, 6).forEach(l => { safe(l, cx, y); y += 22; });
             y += 10;
         }
 
@@ -234,33 +222,20 @@ const FortuneCanvas = {
         y += 26;
         ctx.font = '13px "Noto Sans TC"';
         const plainText = f.plainMeaning || '';
-        y += 20 * Math.min(this.wrap(ctx, plainText, mw).length, 6);
+        y += 20 * Math.min(this.wrap(ctx, plainText, mw).length, 8);
         y += 8;
-
-        // 各項運勢
-        const cats = f.categoryReadings || {};
-        const catNames = ['總論','事業','考試','求才','求財','失物','健康','婚姻','人際','感情','出行','家宅','修心建議','聖意'];
-        for (const cat of catNames) {
-            const text = cats[cat] || '';
-            if (text && text.length > 3) {
-                y += 26;
-                ctx.font = '13px "Noto Sans TC"';
-                y += 20 * Math.min(this.wrap(ctx, text, mw).length, 3);
-                y += 4;
-            }
-        }
 
         // 行動建議
         const adv = f.actionAdvice?.[0] || '';
         if (adv && adv.length > 3) {
             y += 26;
             ctx.font = '13px "Noto Sans TC"';
-            y += 20 * Math.min(this.wrap(ctx, adv, mw).length, 4);
+            y += 20 * Math.min(this.wrap(ctx, adv, mw).length, 6);
             y += 10;
         }
 
         y += 60; // 邊距+浮水印
-        return Math.max(y, 800);
+        return Math.max(y, 600);
     },
 
     downloadPNG(canvas, filename) {
