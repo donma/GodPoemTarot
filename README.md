@@ -20,9 +20,9 @@
 | 護國嘉濟江東王靈籤 | 100 | ai-guide jiangdong-king-100-lots | ✅ 完整 |
 | 四聖真君靈籤 | 49 | ai-guide sisheng-49-lots-complete-rebuild | ✅ 完整 |
 | 扶天廣聖如意靈籤 | 120 | ai-guide futian-guangsheng-120-lots-complete-rebuild | ✅ 完整 |
-| 註生娘娘靈籤 | 99 | ai-guide zhusheng-30-lots-researched (1-30) | ⚠️ 31-99待更新 |
+| 註生娘娘靈籤 | 30 | ai-guide zhusheng-30-lots-researched | ✅ 完整 |
 
-**總計：628 首籤詩**
+**總計：579 首籤詩**
 
 ### Rider-Waite 塔羅牌
 - 78 張完整牌組（22 大阿爾克那 + 56 小阿爾克那）
