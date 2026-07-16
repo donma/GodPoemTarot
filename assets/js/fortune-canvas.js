@@ -41,17 +41,28 @@ const FortuneCanvas = {
 
     getColor(s) {
         const t = {
-            'gold_lotus_ink':    { bg:'#1a0f0a', bg2:'#2d1810', acc:'#d4a574', txt:'#f5e6d3', bdr:'#8b6914', gold:'#ffd700' },
-            'red_temple_stick':  { bg:'#2d0a0a', bg2:'#1a0505', acc:'#c79a3b', txt:'#f5e6d3', bdr:'#8b0000', gold:'#ffd700' },
-            'rice_paper_red':    { bg:'#1a0f0a', bg2:'#2d1810', acc:'#c41e3a', txt:'#f5e6d3', bdr:'#8b0000', gold:'#ffd700' },
-            'gold_temple':       { bg:'#1a150a', bg2:'#2d2510', acc:'#d4a574', txt:'#f5e6d3', bdr:'#8b6914', gold:'#ffd700' },
-            'purple_divine':     { bg:'#1a0f2d', bg2:'#0d071a', acc:'#b39ddb', txt:'#e8e0f0', bdr:'#7e57c2', gold:'#ffd700' },
-            'green_taoist':      { bg:'#0a1a0f', bg2:'#051a0a', acc:'#81c784', txt:'#e0f0e0', bdr:'#388e3c', gold:'#ffd700' },
-            'pink_motherly':     { bg:'#2d1a1a', bg2:'#1a0f0f', acc:'#f48fb1', txt:'#f5e6e6', bdr:'#c2185b', gold:'#ffd700' },
-            'blue_divine':       { bg:'#0a1a2d', bg2:'#050f1a', acc:'#90caf9', txt:'#e0e8f5', bdr:'#1976d2', gold:'#ffd700' },
-            'green_medicine':    { bg:'#0a1a15', bg2:'#051a0f', acc:'#80cbc4', txt:'#e0f0ea', bdr:'#00897b', gold:'#ffd700' },
-            'beige_divine':     { bg:'#faf3e0', bg2:'#f5ecd7', acc:'#8b6914', txt:'#3e2723', bdr:'#c79a3b', gold:'#c79a3b' },
-            'teal_temple':      { bg:'#1a3a3a', bg2:'#0d2a2a', acc:'#4db6ac', txt:'#e0f0ef', bdr:'#00897b', gold:'#ffd700' }
+            // 觀音一百籤 - 淡金蓮花水墨
+            'gold_lotus_ink':    { bg:'#faf5e8', bg2:'#f0e8d0', acc:'#8b6914', txt:'#2b1810', bdr:'#c79a3b', gold:'#8b6914' },
+            // 關聖帝君一百籤 - 深紅武廟金邊
+            'red_temple_stick':  { bg:'#3d1212', bg2:'#1a0505', acc:'#d4a017', txt:'#f0e0c0', bdr:'#8b0000', gold:'#ffd700' },
+            // 六十甲子籤 - 米黃古紙朱紅
+            'rice_paper_red':    { bg:'#f7efe2', bg2:'#ece0cc', acc:'#a31515', txt:'#2b1810', bdr:'#8b0000', gold:'#8b4513' },
+            // 護國江東王靈籤 - 古典宮廟深棕金
+            'gold_temple':       { bg:'#2d1f10', bg2:'#1a1005', acc:'#c9a050', txt:'#f0e8d8', bdr:'#8b6914', gold:'#d4a574' },
+            // 四聖真君靈籤 - 道家紫金
+            'purple_divine':     { bg:'#1e1530', bg2:'#0d0a18', acc:'#c9a0dc', txt:'#e8ddf5', bdr:'#7e57c2', gold:'#d4a5ff' },
+            // 扶天廣聖如意靈籤 - 松綠道家
+            'green_taoist':      { bg:'#0d2818', bg2:'#051208', acc:'#8dc99a', txt:'#d8f0dc', bdr:'#3a7d44', gold:'#a5d6a7' },
+            // 註生娘娘靈籤 - 粉紅母性
+            'pink_motherly':     { bg:'#fdf0f3', bg2:'#f5e0e5', acc:'#c2185b', txt:'#3d1525', bdr:'#e91e63', gold:'#d81b60' },
+            // 洪恩靈濟真君靈籤 - 深藍神聖
+            'blue_divine':       { bg:'#0d1b3e', bg2:'#050d20', acc:'#7eb8f5', txt:'#d8e8fa', bdr:'#1a5dc4', gold:'#90caf9' },
+            // 靈濟真君注生堂靈籤 - 墨綠藥草
+            'green_medicine':    { bg:'#0d2820', bg2:'#051510', acc:'#6dc9b8', txt:'#d8f0ea', bdr:'#1a7d6e', gold:'#80cbc4' },
+            // 保生大帝六十籤 - 米黃暖色
+            'beige_divine':      { bg:'#faf3e0', bg2:'#f0e5cc', acc:'#9b6b1e', txt:'#3e2723', bdr:'#c79a3b', gold:'#8b6914' },
+            // 媽祖天后宮一百籤 - 深青海洋
+            'teal_temple':       { bg:'#0a2a35', bg2:'#051520', acc:'#5cc9c0', txt:'#d8f0f2', bdr:'#0d7a85', gold:'#80deea' }
         };
         return t[s] || t['gold_lotus_ink'];
     },
