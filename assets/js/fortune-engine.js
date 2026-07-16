@@ -121,7 +121,7 @@ const FortuneEngine = {
                 deity: "保生大帝",
                 total: 60,
                 dataFile: "data/fortune/baosheng-60.json",
-                canvasStyle: "green_taoist",
+                canvasStyle: "beige_divine",
                 categories: ["總論", "事業", "求財", "感情", "婚姻", "健康", "家宅", "考試", "官司", "出行", "失物"],
                 sourceIds: ["ai_guide_baosheng"],
                 status: "complete"
