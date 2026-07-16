@@ -107,7 +107,7 @@ const FortuneEngine = {
                 name: "註生娘娘靈籤",
                 shortName: "註生娘娘籤",
                 deity: "註生娘娘",
-                total: 99,
+                total: 30,
                 dataFile: "data/fortune/zhusheng-99.json",
                 canvasStyle: "pink_motherly",
                 categories: ["總論", "求子", "生育", "感情", "婚姻", "健康", "家宅"],
