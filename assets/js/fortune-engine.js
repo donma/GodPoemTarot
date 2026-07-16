@@ -6,23 +6,14 @@ const FortuneEngine = {
     fortuneData: {},
 
     /**
-     * 初始化 - 載入 fortune-systems.json
+     * 初始化 - 使用內嵌系統資料
+     * 注意：本站為純前端純內嵌架構，不使用 fetch() 載入 JSON，
+     * 以確保 file:/// 協定與靜態託管環境（如 GitHub Pages）皆能正確運作，
+     * 並避免舊版 data/fortune/*.json 檔案覆蓋內嵌於 *-data.js 的最新資料。
      */
     async init() {
-        try {
-            // 嘗試用 fetch 載入
-            const response = await fetch('data/fortune-systems.json');
-            if (!response.ok) throw new Error('Fetch failed');
-            const data = await response.json();
-            this.systems = data.systems;
-            console.log('Loaded fortune systems via fetch:', this.systems.length);
-            return this.systems;
-        } catch (e) {
-            console.warn('Fetch failed, using embedded data:', e.message);
-            // 使用內嵌資料作為備案
-            this.systems = this.getEmbeddedSystems();
-            return this.systems;
-        }
+        this.systems = this.getEmbeddedSystems();
+        return this.systems;
     },
 
     /**
@@ -137,6 +128,18 @@ const FortuneEngine = {
                 categories: ["總論", "事業", "求財", "感情", "婚姻", "健康", "家宅", "考試", "官司", "出行", "失物"],
                 sourceIds: ["ai_guide_tianhou"],
                 status: "complete"
+            },
+            {
+                systemId: "luzu_60",
+                name: "台北指南宮呂祖靈籤六十首",
+                shortName: "呂祖籤",
+                deity: "呂洞賓",
+                total: 60,
+                dataFile: "data/fortune/luzu-60.json",
+                canvasStyle: "indigo_immortal",
+                categories: ["總論", "事業", "求財", "感情", "婚姻", "健康", "家宅", "考試", "官司", "出行", "失物"],
+                sourceIds: ["ai_guide_luzu"],
+                status: "complete"
             }
         ];
     },
@@ -150,6 +153,8 @@ const FortuneEngine = {
 
     /**
      * 載入指定系統的籤詩資料
+     * 注意：直接使用內嵌資料，不透過 fetch() 載入外部 JSON，
+     * 避免舊版 data/fortune/*.json 檔案在靜態託管環境下覆蓋內嵌資料。
      */
     async loadFortuneData(systemId) {
         if (this.fortuneData[systemId]) {
@@ -161,19 +166,9 @@ const FortuneEngine = {
             throw new Error(`System not found: ${systemId}`);
         }
 
-        try {
-            const response = await fetch(system.dataFile);
-            if (!response.ok) throw new Error('Fetch failed');
-            const data = await response.json();
-            this.fortuneData[systemId] = data;
-            return data;
-        } catch (e) {
-            console.warn(`Fetch failed for ${systemId}, using embedded data`);
-            // 使用內嵌的示範資料
-            const embeddedData = this.getEmbeddedFortuneData(systemId, system.total);
-            this.fortuneData[systemId] = embeddedData;
-            return embeddedData;
-        }
+        const embeddedData = this.getEmbeddedFortuneData(systemId, system.total);
+        this.fortuneData[systemId] = embeddedData;
+        return embeddedData;
     },
 
     /**
@@ -223,6 +218,11 @@ const FortuneEngine = {
         // 媽祖天后宮一百籤
         if (systemId === 'tianhou_100' && typeof TIANHOU_100_DATA !== 'undefined') {
             return { systemId, name: '媽祖天后宮一百籤（澎湖天后宮版）', items: TIANHOU_100_DATA };
+        }
+
+        // 台北指南宮呂祖靈籤六十首
+        if (systemId === 'luzu_60' && typeof LUZU_60_DATA !== 'undefined') {
+            return { systemId, name: '台北指南宮呂祖靈籤六十首', items: LUZU_60_DATA };
         }
 
         // 其他系統用佔位符

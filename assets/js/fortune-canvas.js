@@ -62,7 +62,9 @@ const FortuneCanvas = {
             // 保生大帝六十籤 - 米黃暖色
             'beige_divine':      { bg:'#faf3e0', bg2:'#f0e5cc', acc:'#9b6b1e', txt:'#3e2723', bdr:'#c79a3b', gold:'#8b6914' },
             // 媽祖天后宮一百籤 - 深青海洋
-            'teal_temple':       { bg:'#0a2a35', bg2:'#051520', acc:'#5cc9c0', txt:'#d8f0f2', bdr:'#0d7a85', gold:'#80deea' }
+            'teal_temple':       { bg:'#0a2a35', bg2:'#051520', acc:'#5cc9c0', txt:'#d8f0f2', bdr:'#0d7a85', gold:'#80deea' },
+            // 台北指南宮呂祖靈籤 - 靛藍仙氣
+            'indigo_immortal':   { bg:'#1a1a3e', bg2:'#0d0d20', acc:'#b8a9d4', txt:'#e0ddf5', bdr:'#5c4a8a', gold:'#d4c5ff' }
         };
         return t[s] || t['gold_lotus_ink'];
     },
