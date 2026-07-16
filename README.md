@@ -10,7 +10,7 @@
 - 紅色真實筊杯圖片 + 3D 翻轉動畫
 - 連續三次聖筊才能解鎖抽籤功能
 
-### 九大籤詩系統
+### 十大籤詩系統
 
 | 系統 | 籤數 | 資料來源 | 狀態 |
 |------|------|----------|------|
@@ -24,8 +24,9 @@
 | 保生大帝六十籤（大龍峒保安宮版） | 60 | ai-guide baoan-baosheng-60-lots-researched | ✅ 完整 |
 | 媽祖天后宮一百籤（澎湖天后宮版） | 100 | ai-guide penghu-tianhou-100-lots-researched | ✅ 完整 |
 | 台北指南宮呂祖靈籤六十首 | 60 | ai-guide zhinan-luzu-60-lots-researched | ✅ 完整 |
+| 玄天上帝感應靈籤四十九首 | 49 | ai-guide xuantian-ganying-49-lots-researched | ✅ 完整 |
 
-**總計：799 首籤詩**
+**總計：848 首籤詩**
 
 ### Rider-Waite 塔羅牌
 - 78 張完整牌組（22 大阿爾克那 + 56 小阿爾克那）

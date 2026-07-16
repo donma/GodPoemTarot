@@ -140,6 +140,18 @@ const FortuneEngine = {
                 categories: ["總論", "事業", "求財", "感情", "婚姻", "健康", "家宅", "考試", "官司", "出行", "失物"],
                 sourceIds: ["ai_guide_luzu"],
                 status: "complete"
+            },
+            {
+                systemId: "xuantian_49",
+                name: "玄天上帝感應靈籤四十九首",
+                shortName: "玄天籤",
+                deity: "玄天上帝",
+                total: 49,
+                dataFile: "data/fortune/xuantian-49.json",
+                canvasStyle: "obsidian_xuan",
+                categories: ["總論", "事業", "求財", "感情", "婚姻", "健康", "家宅", "考試", "出行", "失物", "人際", "修心建議"],
+                sourceIds: ["ai_guide_xuantian"],
+                status: "complete"
             }
         ];
     },
@@ -223,6 +235,11 @@ const FortuneEngine = {
         // 台北指南宮呂祖靈籤六十首
         if (systemId === 'luzu_60' && typeof LUZU_60_DATA !== 'undefined') {
             return { systemId, name: '台北指南宮呂祖靈籤六十首', items: LUZU_60_DATA };
+        }
+
+        // 玄天上帝感應靈籤四十九首
+        if (systemId === 'xuantian_49' && typeof XUANTIAN_49_DATA !== 'undefined') {
+            return { systemId, name: '玄天上帝感應靈籤四十九首', items: XUANTIAN_49_DATA };
         }
 
         // 其他系統用佔位符

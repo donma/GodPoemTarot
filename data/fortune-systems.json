@@ -217,7 +217,7 @@
         "wikisource_zhushengtang"
       ],
       "status": "complete"
-},
+    },
     {
       "systemId": "baosheng_60",
       "name": "保生大帝六十籤（大龍峒保安宮版）",
@@ -225,7 +225,7 @@
       "deity": "保生大帝",
       "total": 60,
       "dataFile": "data/fortune/baosheng-60.json",
-      "canvasStyle": "blue_divine",
+      "canvasStyle": "beige_divine",
       "categories": [
         "總論",
         "事業",
@@ -243,9 +243,7 @@
         "ai_guide_baosheng"
       ],
       "status": "complete"
-    }
-  ]
-},
+    },
     {
       "systemId": "tianhou_100",
       "name": "媽祖天后宮一百籤（澎湖天后宮版）",
@@ -297,4 +295,33 @@
         "ai_guide_luzu"
       ],
       "status": "complete"
+    },
+    {
+      "systemId": "xuantian_49",
+      "name": "玄天上帝感應靈籤四十九首",
+      "shortName": "玄天籤",
+      "deity": "玄天上帝",
+      "total": 49,
+      "dataFile": "data/fortune/xuantian-49.json",
+      "canvasStyle": "obsidian_xuan",
+      "categories": [
+        "總論",
+        "事業",
+        "求財",
+        "感情",
+        "婚姻",
+        "健康",
+        "家宅",
+        "考試",
+        "出行",
+        "失物",
+        "人際",
+        "修心建議"
+      ],
+      "sourceIds": [
+        "ai_guide_xuantian"
+      ],
+      "status": "complete"
     }
+  ]
+}

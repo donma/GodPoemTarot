@@ -64,7 +64,9 @@ const FortuneCanvas = {
             // 媽祖天后宮一百籤 - 深青海洋
             'teal_temple':       { bg:'#0a2a35', bg2:'#051520', acc:'#5cc9c0', txt:'#d8f0f2', bdr:'#0d7a85', gold:'#80deea' },
             // 台北指南宮呂祖靈籤 - 靛藍仙氣
-            'indigo_immortal':   { bg:'#1a1a3e', bg2:'#0d0d20', acc:'#b8a9d4', txt:'#e0ddf5', bdr:'#5c4a8a', gold:'#d4c5ff' }
+            'indigo_immortal':   { bg:'#1a1a3e', bg2:'#0d0d20', acc:'#b8a9d4', txt:'#e0ddf5', bdr:'#5c4a8a', gold:'#d4c5ff' },
+            // 玄天上帝感應靈籤 - 玄黑龜蛇
+            'obsidian_xuan':     { bg:'#0a0a12', bg2:'#050508', acc:'#7c8ba8', txt:'#dfe6f0', bdr:'#3a4a63', gold:'#c9a86a' }
         };
         return t[s] || t['gold_lotus_ink'];
     },
