@@ -50,7 +50,8 @@ const FortuneCanvas = {
             'pink_motherly':     { bg:'#2d1a1a', bg2:'#1a0f0f', acc:'#f48fb1', txt:'#f5e6e6', bdr:'#c2185b', gold:'#ffd700' },
             'blue_divine':       { bg:'#0a1a2d', bg2:'#050f1a', acc:'#90caf9', txt:'#e0e8f5', bdr:'#1976d2', gold:'#ffd700' },
             'green_medicine':    { bg:'#0a1a15', bg2:'#051a0f', acc:'#80cbc4', txt:'#e0f0ea', bdr:'#00897b', gold:'#ffd700' },
-            'beige_divine':     { bg:'#faf3e0', bg2:'#f5ecd7', acc:'#8b6914', txt:'#3e2723', bdr:'#c79a3b', gold:'#c79a3b' }
+            'beige_divine':     { bg:'#faf3e0', bg2:'#f5ecd7', acc:'#8b6914', txt:'#3e2723', bdr:'#c79a3b', gold:'#c79a3b' },
+            'teal_temple':      { bg:'#1a3a3a', bg2:'#0d2a2a', acc:'#4db6ac', txt:'#e0f0ef', bdr:'#00897b', gold:'#ffd700' }
         };
         return t[s] || t['gold_lotus_ink'];
     },

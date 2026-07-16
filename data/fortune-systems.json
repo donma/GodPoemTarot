@@ -245,4 +245,30 @@
       "status": "complete"
     }
   ]
-}
+},
+    {
+      "systemId": "tianhou_100",
+      "name": "媽祖天后宮一百籤（澎湖天后宮版）",
+      "shortName": "天后宮籤",
+      "deity": "媽祖",
+      "total": 100,
+      "dataFile": "data/fortune/tianhou-100.json",
+      "canvasStyle": "teal_temple",
+      "categories": [
+        "總論",
+        "事業",
+        "求財",
+        "感情",
+        "婚姻",
+        "健康",
+        "家宅",
+        "考試",
+        "官司",
+        "出行",
+        "失物"
+      ],
+      "sourceIds": [
+        "ai_guide_tianhou"
+      ],
+      "status": "complete"
+    }
