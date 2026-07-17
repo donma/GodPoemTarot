@@ -1,91 +1,33 @@
-/**
- * 狀態管理 - 使用 LocalStorage
- */
+/** Local state with legacy system-id migration. */
 const State = {
-    STORAGE_KEY: 'fortuneApp',
-
-    defaultState: {
-        isUnlocked: false,
-        successiveHolyCount: 0,
-        lastCupResult: null,
-        lastFortune: null,
-        lastTarot: null
-    },
-
-    /**
-     * 載入狀態
-     */
-    load() {
-        try {
-            const saved = localStorage.getItem(this.STORAGE_KEY);
-            if (saved) {
-                return { ...this.defaultState, ...JSON.parse(saved) };
-            }
-        } catch (e) {
-            console.error('Failed to load state:', e);
-        }
-        return { ...this.defaultState };
-    },
-
-    /**
-     * 儲存狀態
-     */
-    save(state) {
-        try {
-            localStorage.setItem(this.STORAGE_KEY, JSON.stringify(state));
-        } catch (e) {
-            console.error('Failed to save state:', e);
-        }
-    },
-
-    /**
-     * 更新狀態
-     */
-    update(partial) {
-        const state = this.load();
-        const newState = { ...state, ...partial };
-        this.save(newState);
-        return newState;
-    },
-
-    /**
-     * 重置狀態
-     */
-    reset() {
-        this.save(this.defaultState);
-        return { ...this.defaultState };
-    },
-
-    /**
-     * 處理擲筊結果
-     */
-    handleCupResult(result) {
-        const state = this.load();
-        
-        if (result === "holy") {
-            state.successiveHolyCount++;
-        } else {
-            state.successiveHolyCount = 0;
-        }
-
-        state.lastCupResult = result;
-
-        if (state.successiveHolyCount >= 3) {
-            state.isUnlocked = true;
-        }
-
-        this.save(state);
-        return state;
-    },
-
-    /**
-     * 檢查是否已解鎖
-     */
-    isUnlocked() {
-        const state = this.load();
-        return state.isUnlocked;
+  STORAGE_KEY: 'fortuneApp',
+  defaultState: { isUnlocked:false, successiveHolyCount:0, lastCupResult:null, lastTarot:null, selectedFortuneSystem:null },
+  migrate(value) {
+    if (!value || typeof value !== 'object') return value;
+    if (Array.isArray(value)) return value.map(item => this.migrate(item));
+    const result = {};
+    for (const [key, item] of Object.entries(value)) result[key] = this.migrate(item);
+    for (const key of ['systemId','selectedFortuneSystem','fortuneSystem']) {
+      if (result[key] === 'zhusheng_99') result[key] = 'zhusheng_30';
     }
+    return result;
+  },
+  load() {
+    try {
+      const saved = localStorage.getItem(this.STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        const migrated = this.migrate(parsed);
+        if (JSON.stringify(parsed) !== JSON.stringify(migrated)) localStorage.setItem(this.STORAGE_KEY, JSON.stringify(migrated));
+        return Object.assign({}, this.defaultState, migrated);
+      }
+    } catch (error) { console.error('Failed to load state:', error); }
+    return Object.assign({}, this.defaultState);
+  },
+  save(state) { try { localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.migrate(state))); } catch (error) { console.error('Failed to save state:', error); } },
+  update(partial) { const state=Object.assign({},this.load(),partial); this.save(state); return state; },
+  reset() { this.save(this.defaultState); return Object.assign({},this.defaultState); },
+  handleCupResult(result) { const state=this.load(); state.successiveHolyCount=result==='holy'?state.successiveHolyCount+1:0; state.lastCupResult=result; if(state.successiveHolyCount>=3)state.isUnlocked=true; this.save(state); return state; },
+  isUnlocked() { return this.load().isUnlocked; }
 };
-
-// 匯出
 window.State = State;

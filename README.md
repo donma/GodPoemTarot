@@ -1,104 +1,48 @@
-# 神明籤詩塔羅 GodPoemTarot
+# GodPoemTarot
 
-> 純前端台灣傳統籤詩 + Rider-Waite 塔羅牌占卜系統
-> 支援 `file:///` 直接開啟，無需伺服器
+純前端、可由 file:// 或靜態網站開啟的台灣籤詩與 Rider–Waite–Smith 塔羅專案。
 
-## 功能特色
+## 正式內容
 
-### 三聖筊解鎖機制
-- 使用 Web Crypto API 產生加密安全隨機數
-- 紅色真實筊杯圖片 + 3D 翻轉動畫
-- 連續三次聖筊才能解鎖抽籤功能
+| systemId | 版本 | 數量 | 審核狀態 |
+|---|---|---:|---|
+| guanyin_100 | 台灣流通常見觀音一百籤 | 100 | draft_review |
+| guandi_100 | 雷雨師一百籤台灣流通本 | 100 | draft_review |
+| liu_shi_jia_zi_60 | 六十甲子籤台灣流通本 | 60 | draft_review |
+| sizhen_49 | 《正統道藏》四聖真君靈籤 | 49 | draft_review |
+| futian_120 | 《正統道藏》扶天廣聖如意靈籤 | 120 | draft_review |
+| zhusheng_30 | 台灣民間流通註生娘娘三十籤 | 30 | draft_review |
+| baosheng_60 | 大龍峒保安宮保生大帝六十籤 | 60 | draft_review |
+| tianhou_100 | 澎湖天后宮一百籤台灣流通本 | 100 | draft_review |
+| tarot_rws_78 | Rider–Waite–Smith 78 張 | 78 | content_present |
 
-### 十大籤詩系統
+籤詩共 619 首，塔羅 78 張，正式內容總計 697 筆。
 
-| 系統 | 籤數 | 資料來源 | 狀態 |
-|------|------|----------|------|
-| 觀音一百籤 | 100 | ai-guide guanyin-100-lots | ✅ 完整 |
-| 關聖帝君一百籤 | 100 | ai-guide guandi-100-lots-v2-rebuilt | ✅ 完整 |
-| 六十甲子籤 | 60 | ai-guide sixty-jiazi-lots | ✅ 完整 |
-| 護國嘉濟江東王靈籤 | 100 | ai-guide jiangdong-king-100-lots | ✅ 完整 |
-| 四聖真君靈籤 | 49 | ai-guide sisheng-49-lots-complete-rebuild | ✅ 完整 |
-| 扶天廣聖如意靈籤 | 120 | ai-guide futian-guangsheng-120-lots-complete-rebuild | ✅ 完整 |
-| 註生娘娘靈籤 | 30 | ai-guide zhusheng-30-lots-researched | ✅ 完整 |
-| 保生大帝六十籤（大龍峒保安宮版） | 60 | ai-guide baoan-baosheng-60-lots-researched | ✅ 完整 |
-| 媽祖天后宮一百籤（澎湖天后宮版） | 100 | ai-guide penghu-tianhou-100-lots-researched | ✅ 完整 |
-| 台北指南宮呂祖靈籤六十首 | 60 | ai-guide zhinan-luzu-60-lots-researched | ✅ 完整 |
-| 玄天上帝感應靈籤四十九首 | 49 | ai-guide xuantian-ganying-49-lots-researched | ✅ 完整 |
+## 資料政策
 
-**總計：848 首籤詩**
+正式籤詩使用 Schema 3.0，分開保存原文、傳統文本、故事類型、白話說明、現代領域、來源定位與作者／審核狀態。assets/js/fortune-catalog.js 是唯一系統清冊；程式、UI 與驗證器均讀取它。
 
-### Rider-Waite 塔羅牌
-- 78 張完整牌組（22 大阿爾克那 + 56 小阿爾克那）
-- 四種牌陣：單張、三張（過去/現在/未來）、三張（狀況/阻礙/建議）、五張十字牌陣
-- Canvas 渲染塔羅牌面
+來源不得使用 AI、ChatGPT、Codex、generated 或 unknown 作為文獻。每筆資料以 sourceRefs 指向 data/source-index.json，並以 sourceLocators 記錄籤號。AI 僅可標示在 authoring.method，不可冒充來源。
 
-### 籤詩內容結構
-每首籤詩包含：
-- 籤詩原文
-- 故事典故（學術考據 + 民間配籤）
-- 白話解釋（四句逐句解析）
-- 12 項分類運勢（事業、考試、求財、失物、健康、總論、婚姻、人際、感情、出行、家宅、修心建議）
-- 行動建議（具體步驟 + 檢查表）
+目前 619 筆資料都標為 ai_assisted／draft，尚未經具名人工逐首核准。目前保生與天后保留 1,580 筆具逐項證據且通過模板相似度門檻的現代解讀；其餘沒有足夠傳統分項證據的領域標為 insufficient，不由總籤等或通用模板推導。人工複核完成前不得改標 approved。
 
-### Canvas 籤詩卡片
-- 九種中國風視覺風格
-- 籤詩 + 白話解釋 + 行動建議
-- 「當麻實驗室」浮水印
-- 支援 PNG 下載
+## 安全聲明
 
-## 快速開始
+民俗占卜只作文化與自我整理參考，不能取代醫療、產檢、法律、財務或人身安全的專業判斷。健康、懷孕、法律、財務、感情安全、出行與失物安全使用專屬 warning code；完整文字在 assets/js/safety-warnings.js。
 
-```bash
-# 直接用瀏覽器開啟 index.html
-open index.html
-```
+## 驗證
 
-或部署到 GitHub Pages / Cloudflare Pages / 任何靜態網頁伺服器。
+需要 Node.js 20 以上：
 
-## 技術架構
+    node tools/validate-content.mjs
+    node tools/validate-sources.mjs
+    node tools/detect-template.mjs
+    node tools/validate-load-chain.mjs
 
-```
-fortune-tarot-app/
-├── index.html                    # 主頁面
-├── README.md                     # 本文件
-├── assets/
-│   ├── css/
-│   │   └── app.css              # 中國風淺色主題（含RWD）
-│   ├── images/
-│   │   ├── cup-left.png         # 筊杯陽面
-│   │   ├── cup-right.png        # 筊杯陰面
-│   │   └── ...                  # 筊杯圖片
-│   └── js/
-│       ├── random-engine.js     # Web Crypto API 亂數引擎
-│       ├── state.js             # LocalStorage 狀態管理
-│       ├── fortune-engine.js    # 籤詩系統載入引擎
-│       ├── tarot-engine.js      # 78 張塔羅牌引擎
-│       ├── fortune-canvas.js    # 籤詩 Canvas 渲染器
-│       ├── tarot-canvas.js      # 塔羅 Canvas 渲染器
-│       ├── ui-renderer.js       # UI 互動邏輯
-│       └── *-data.js            # 各系統嵌入資料檔
-├── data/
-│   ├── fortune-systems.json     # 系統定義
-│   └── tarot/                   # 塔羅牌資料
-├── ai-guide/                    # AI 研究資料來源
-│   ├── guanyin-100-lots/
-│   ├── guandi-100-lots-v2-rebuilt/
-│   ├── sixty-jiazi-lots/
-│   ├── jiangdong-king-100-lots/
-│   ├── sisheng-49-lots-complete-rebuild/
-│   ├── futian-guangsheng-120-lots-complete-rebuild/
-│   └── zhusheng-30-lots-researched/
-└── docs/                        # 開發文件
-```
+報告輸出至 reports/。自動驗證 PASS 只代表結構、計數、來源解析、模板門檻與載入鏈通過；人工內容審核狀態另見 reports/manual-review-checklist.md。
 
-## 版權聲明
+## 執行
 
-- 籤詩資料來自公有領域文獻（維基文庫等）
-- 現代白話解釋為 AI 輔助生成
-- 塔羅牌使用 Emoji + Canvas 渲染
-- 占卜結果僅供參考，不代表絕對結果
+直接開啟 index.html 可使用 file://；也可放到 GitHub Pages 或任一靜態 HTTP 主機。正式資料缺少時初始化會明確拋出錯誤，不會生成 placeholder 籤詩。
 
-## 授權
-
-MIT License
+docs/ 為保留的研究與核對資料，不由清理程序刪除。

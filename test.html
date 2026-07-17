@@ -47,6 +47,16 @@
 
     <script src="assets/js/random-engine.js"></script>
     <script src="assets/js/state.js"></script>
+    <script src="assets/js/fortune-catalog.js"></script>
+    <script src="assets/js/safety-warnings.js"></script>
+    <script src="assets/js/guanyin-100-data.js"></script>
+    <script src="assets/js/guandi-100-data.js"></script>
+    <script src="assets/js/liushi-60-data.js"></script>
+    <script src="assets/js/sizhen-49-data.js"></script>
+    <script src="assets/js/futian-120-data.js"></script>
+    <script src="assets/js/zhusheng-30-data.js"></script>
+    <script src="assets/js/baosheng-60-data.js"></script>
+    <script src="assets/js/tianhou-100-data.js"></script>
     <script src="assets/js/fortune-engine.js"></script>
     <script src="assets/js/tarot-engine.js"></script>
     <script src="assets/js/fortune-canvas.js"></script>
@@ -154,7 +164,7 @@
             try {
                 await FortuneEngine.init();
                 const systems = FortuneEngine.getSystems();
-                if (systems.length > 0) {
+                if (systems.length === 8 && systems.reduce((sum, item) => sum + item.total, 0) === 619) {
                     log('test-fortune', `✅ 載入 ${systems.length} 個籤詩系統`, 'pass');
                     systems.forEach(s => {
                         log('test-fortune', `   - ${s.name} (${s.systemId}): ${s.total}張`, 'info');

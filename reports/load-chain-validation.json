@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "scripts": [
+    "assets/js/random-engine.js",
+    "assets/js/state.js",
+    "assets/js/fortune-catalog.js",
+    "assets/js/safety-warnings.js",
+    "assets/js/semantic-readings-data.js",
+    "assets/js/guanyin-100-data.js",
+    "assets/js/liushi-60-data.js",
+    "assets/js/guandi-100-data.js",
+    "assets/js/sizhen-49-data.js",
+    "assets/js/futian-120-data.js",
+    "assets/js/zhusheng-30-data.js",
+    "assets/js/baosheng-60-data.js",
+    "assets/js/tianhou-100-data.js",
+    "assets/js/fortune-engine.js",
+    "assets/js/tarot-engine.js",
+    "assets/js/fortune-canvas.js",
+    "assets/js/tarot-canvas.js",
+    "assets/js/ui-renderer.js"
+  ],
+  "officialSystems": [
+    {
+      "systemId": "guanyin_100",
+      "dataFile": "assets/js/guanyin-100-data.js",
+      "globalName": "GUANYIN_100_DATA",
+      "total": 100
+    },
+    {
+      "systemId": "guandi_100",
+      "dataFile": "assets/js/guandi-100-data.js",
+      "globalName": "GUANDI_100_DATA",
+      "total": 100
+    },
+    {
+      "systemId": "liu_shi_jia_zi_60",
+      "dataFile": "assets/js/liushi-60-data.js",
+      "globalName": "LIUSHIJIAZI_60_DATA",
+      "total": 60
+    },
+    {
+      "systemId": "sizhen_49",
+      "dataFile": "assets/js/sizhen-49-data.js",
+      "globalName": "SIZHEN_49_DATA",
+      "total": 49
+    },
+    {
+      "systemId": "futian_120",
+      "dataFile": "assets/js/futian-120-data.js",
+      "globalName": "FUTIAN_120_DATA",
+      "total": 120
+    },
+    {
+      "systemId": "zhusheng_30",
+      "dataFile": "assets/js/zhusheng-30-data.js",
+      "globalName": "ZHUSHENG_30_DATA",
+      "total": 30
+    },
+    {
+      "systemId": "baosheng_60",
+      "dataFile": "assets/js/baosheng-60-data.js",
+      "globalName": "BAOSHENG_60_DATA",
+      "total": 60
+    },
+    {
+      "systemId": "tianhou_100",
+      "dataFile": "assets/js/tianhou-100-data.js",
+      "globalName": "TIANHOU_100_DATA",
+      "total": 100
+    }
+  ]
+}

@@ -327,82 +327,123 @@ const UIRenderer = {
     /**
      * 顯示籤詩結果
      */
+    escapeHTML(value) {
+  return String(value ?? '').replace(/[&<>"']/g, character => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[character]);
+},
+
+    formatTraditionalValue(value) {
+  if (value == null) return '';
+  if (typeof value === 'string') return value;
+  const parts = [];
+  if (value.summary) parts.push(value.summary);
+  if (value.evidence?.traditionalClause) parts.push('古斷：' + value.evidence.traditionalClause);
+  if (!parts.length && value.text) parts.push(value.text);
+  return parts.join('；');
+},
+
     showFortuneResult(fortune, system, category, question) {
-        const resultDiv = document.getElementById('fortune-result');
-        if (!resultDiv) return;
-        
-        const cr = fortune.categoryReadings || {};
-        const levelClass = this.getLevelClass(fortune.level);
-        
-        // 聖意內容
-        const shengYi = cr['聖意'] || '';
-        
-        // 其他分類（排除聖意）
-        const otherCategories = Object.entries(cr).filter(([cat]) => cat !== '聖意');
-        
-        resultDiv.innerHTML = `
-            <div class="fortune-result-card">
-                <div class="fortune-result-header">
-                    <span class="fortune-result-system">${system.name}</span>
-                    <span class="fortune-result-no">${fortune.displayNo}</span>
-                    <span class="fortune-result-level ${levelClass}">${fortune.level}</span>
-                </div>
-                
-                <div class="fortune-result-poem">
-                    ${fortune.poem.map(line => `<p>${line}</p>`).join('')}
-                </div>
-                
-                ${fortune.story ? `
-                <div class="fortune-result-section">
-                    <div class="fortune-result-title">📜 故事典故</div>
-                    <div class="fortune-result-text">${fortune.story}</div>
-                </div>
-                ` : ''}
-                
-                <div class="fortune-result-section">
-                    <div class="fortune-result-title">💬 白話解釋</div>
-                    <div class="fortune-result-text">${fortune.plainMeaning || fortune.classicMeaning || '暫無解釋'}</div>
-                </div>
-                
-                ${shengYi ? `
-                <div class="fortune-result-section">
-                    <div class="fortune-result-title">🎋 聖意</div>
-                    <div class="fortune-result-text fortune-result-shengyi">${shengYi}</div>
-                </div>
-                ` : ''}
-                
-                ${otherCategories.length > 0 ? `
-                <div class="fortune-result-section">
-                    <div class="fortune-result-title">📊 各項運勢</div>
-                    <div class="fortune-result-categories">
-                        ${otherCategories.map(([cat, text]) => `
-                            <div class="fortune-cat-item ${cat === category ? 'active' : ''}">
-                                <span class="fortune-cat-name">【${cat}】</span>
-                                <span class="fortune-cat-text">${text}</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                ` : ''}
-                
-                ${(fortune.actionAdvice || []).length > 0 ? `
-                <div class="fortune-result-section fortune-result-advice">
-                    <div class="fortune-result-title">✨ 行動建議</div>
-                    <ul>
-                        ${fortune.actionAdvice.map(a => `<li>${a}</li>`).join('')}
-                    </ul>
-                </div>
-                ` : ''}
-                
-                <div class="fortune-result-footer">
-                    <div class="fortune-result-note">占卜結果僅供參考，不代表絕對結果</div>
-                    <button onclick="UIRenderer.handleDownloadFortune()" class="btn btn-download-fortune">下載籤詩 PNG</button>
-                </div>
-            </div>
-        `;
-    },
-    
-    getLevelClass(level) {
+  const resultDiv = document.getElementById('fortune-result');
+  if (!resultDiv) return;
+
+  const esc = value => this.escapeHTML(value);
+  const levelClass = this.getLevelClass(fortune.level);
+  const modernEntries = Object.entries(fortune.categoryReadings || {}).filter(([, text]) => text);
+  const traditionalEntries = Object.entries(fortune.traditionalSections || {})
+    .map(([name, value]) => [name, this.formatTraditionalValue(value)])
+    .filter(([, text]) => text);
+  const insufficient = fortune.insufficientDomains || [];
+  const warnings = fortune.warnings || [];
+  const sourceRefs = fortune.sourceRefs || [];
+
+  resultDiv.innerHTML = `
+    <div class="fortune-result-card">
+      <div class="fortune-result-header">
+        <span class="fortune-result-system">${esc(system.name)}</span>
+        <span class="fortune-result-no">${esc(fortune.displayNo)}</span>
+        <span class="fortune-result-level ${levelClass}">${esc(fortune.level)}</span>
+      </div>
+
+      <div class="fortune-result-poem">
+        ${(fortune.poem || []).map(line => `<p>${esc(line)}</p>`).join('')}
+      </div>
+
+      ${fortune.plainMeaning ? `
+      <div class="fortune-result-section">
+        <div class="fortune-result-title">💬 白話解釋</div>
+        <div class="fortune-result-text">${esc(fortune.plainMeaning)}</div>
+      </div>` : ''}
+
+      ${fortune.classicMeaning ? `
+      <div class="fortune-result-section">
+        <div class="fortune-result-title">🎋 傳統解曰</div>
+        <div class="fortune-result-text">${esc(fortune.classicMeaning)}</div>
+      </div>` : `
+      <div class="fortune-result-section fortune-result-note-panel">
+        此選定版本未找到可核對的傳統解曰，未以通用文字補寫。
+      </div>`}
+
+      ${traditionalEntries.length ? `
+      <details class="fortune-result-details">
+        <summary>傳統分項（${traditionalEntries.length}）</summary>
+        <div class="fortune-result-categories">
+          ${traditionalEntries.map(([name, text]) => `
+          <div class="fortune-cat-item">
+            <span class="fortune-cat-name">【${esc(name)}】</span>
+            <span class="fortune-cat-text">${esc(text)}</span>
+          </div>`).join('')}
+        </div>
+      </details>` : ''}
+
+      ${modernEntries.length ? `
+      <details class="fortune-result-details">
+        <summary>現代領域解讀（${modernEntries.length}）</summary>
+        <div class="fortune-result-categories">
+          ${modernEntries.map(([name, text]) => `
+          <div class="fortune-cat-item ${name === category ? 'active' : ''}">
+            <span class="fortune-cat-name">【${esc(name)}】</span>
+            <span class="fortune-cat-text">${esc(text)}</span>
+          </div>`).join('')}
+        </div>
+      </details>` : ''}
+
+      ${insufficient.length ? `
+      <div class="fortune-result-section fortune-result-note-panel">
+        <strong>未作無證據推導：</strong>${esc(insufficient.join('、'))}
+      </div>` : ''}
+
+      ${(fortune.story || fortune.storyDetail) ? `
+      <details class="fortune-result-details">
+        <summary>📜 ${esc(fortune.story || '故事與意象考釋')}</summary>
+        ${fortune.storyDetail ? `<div class="fortune-result-text">${esc(fortune.storyDetail)}</div>` : ''}
+      </details>` : ''}
+
+      ${(fortune.actionAdvice || []).length ? `
+      <div class="fortune-result-section fortune-result-advice">
+        <div class="fortune-result-title">✨ 行動建議</div>
+        <ul>${fortune.actionAdvice.map(advice => `<li>${esc(advice)}</li>`).join('')}</ul>
+      </div>` : ''}
+
+      ${sourceRefs.length ? `
+      <details class="fortune-result-details">
+        <summary>🔗 來源識別</summary>
+        <div class="fortune-result-text">${sourceRefs.map(esc).join('、')}</div>
+      </details>` : ''}
+
+      <div class="fortune-result-footer">
+        <div class="fortune-result-note">使用提醒：籤詩屬民俗文化與自我整理參考；健康、懷孕、法律、投資、交通、人身安全及其他重大事項，請統一以現實證據與合格專業意見判斷。</div>
+        <button onclick="UIRenderer.handleDownloadFortune()" class="btn btn-download-fortune">下載籤詩 PNG</button>
+      </div>
+    </div>
+  `;
+},
+
+        getLevelClass(level) {
         if (['上上','上吉','上籤','大吉'].includes(level)) return 'level-good';
         if (['中平','中吉','中籤'].includes(level)) return 'level-mid';
         return 'level-bad';

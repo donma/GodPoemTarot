@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-07-16T17:14:45.035Z",
+  "fortuneSystems": [
+    {
+      "systemId": "guanyin_100",
+      "count": 100,
+      "editionId": "guanyin-taiwan-common-v1",
+      "status": "draft_review"
+    },
+    {
+      "systemId": "guandi_100",
+      "count": 100,
+      "editionId": "guandi-leiyushi-common-v1",
+      "status": "draft_review"
+    },
+    {
+      "systemId": "liu_shi_jia_zi_60",
+      "count": 60,
+      "editionId": "liushi-taiwan-common-v1",
+      "status": "draft_review"
+    },
+    {
+      "systemId": "sizhen_49",
+      "count": 49,
+      "editionId": "sizhen-zhengtong-daozang-v1",
+      "status": "draft_review"
+    },
+    {
+      "systemId": "futian_120",
+      "count": 120,
+      "editionId": "futian-zhengtong-daozang-v1",
+      "status": "draft_review"
+    },
+    {
+      "systemId": "zhusheng_30",
+      "count": 30,
+      "editionId": "zhusheng-taiwan-30-v1",
+      "status": "draft_review"
+    },
+    {
+      "systemId": "baosheng_60",
+      "count": 60,
+      "editionId": "baosheng-baoan-60-v1",
+      "status": "draft_review"
+    },
+    {
+      "systemId": "tianhou_100",
+      "count": 100,
+      "editionId": "tianhou-penghu-100-v1",
+      "status": "draft_review"
+    }
+  ],
+  "fortuneTotal": 619,
+  "tarotCount": 78,
+  "grandTotal": 697
+}

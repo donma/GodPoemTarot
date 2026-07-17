@@ -47,8 +47,6 @@ const FortuneCanvas = {
             'red_temple_stick':  { bg:'#3d1212', bg2:'#1a0505', acc:'#d4a017', txt:'#f0e0c0', bdr:'#8b0000', gold:'#ffd700' },
             // 六十甲子籤 - 米黃古紙朱紅
             'rice_paper_red':    { bg:'#f7efe2', bg2:'#ece0cc', acc:'#a31515', txt:'#2b1810', bdr:'#8b0000', gold:'#8b4513' },
-            // 護國江東王靈籤 - 古典宮廟深棕金
-            'gold_temple':       { bg:'#2d1f10', bg2:'#1a1005', acc:'#c9a050', txt:'#f0e8d8', bdr:'#8b6914', gold:'#d4a574' },
             // 四聖真君靈籤 - 道家紫金
             'purple_divine':     { bg:'#1e1530', bg2:'#0d0a18', acc:'#c9a0dc', txt:'#e8ddf5', bdr:'#7e57c2', gold:'#d4a5ff' },
             // 扶天廣聖如意靈籤 - 松綠道家

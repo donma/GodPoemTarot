@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "eligibleReadingCount": 1580,
+  "insufficientReadings": 7086,
+  "exactDuplicates": [],
+  "repeatedSentences": [],
+  "similarity": []
+}
